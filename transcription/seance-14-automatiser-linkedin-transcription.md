@@ -1,0 +1,570 @@
+# Séance 14 - Automatiser ses posts LinkedIn
+
+## Moments importants
+
+- **00:00:00** - Je lance la séance et le dossier Codex.
+- **00:01:15** - Je colle le prompt pour générer le XLSX de 100 posts.
+- **00:02:04** - Je détaille le rôle : stratège B2B, ghostwriter, consultant IA restaurant.
+- **00:05:10** - Je clarifie l'objectif : des posts utiles au secteur, pas les coulisses de l'audit.
+- **00:09:01** - Je pose la logique n8n : trigger quotidien, ligne non traitée, publication.
+- **00:10:45** - Je connecte LinkedIn dans n8n Cloud.
+- **00:11:55** - Je vérifie le XLSX généré.
+- **00:15:06** - Je configure le node LinkedIn et l'Organization URN.
+- **00:19:39** - Je connecte n8n à Codex via Instance-level MCP.
+- **00:22:25** - Je demande à Codex de créer le workflow n8n.
+- **00:25:26** - Je relance/compacte quand Codex bloque.
+- **00:30:39** - Je repère les posts trop répétitifs et je demande une amélioration.
+- **00:37:05** - Je précise d'utiliser le node LinkedIn natif.
+- **00:42:06** - Je détaille l'anti-doublon : une ligne publiée devient terminée.
+- **00:45:25** - Je teste le workflow node par node.
+- **00:47:25** - Je diagnostique le problème d'image locale.
+- **00:55:28** - Le workflow a deux branches : image et sans image.
+- **00:59:18** - Le test avec image fonctionne et la ligne est traitée.
+- **01:00:35** - Je rappelle l'import JSON du workflow.
+
+## Prompts repris
+
+### codex_command
+
+```text
+codex --dangerously-bypass-approvals-and-sandbox
+```
+
+### main_generation
+
+```text
+Tu es un stratège B2B senior, ghostwriter LinkedIn, consultant en automatisation IA pour restaurants et directeur artistique photo documentaire.
+
+CONTEXTE BUSINESS
+Tu vas recevoir un audit SEO/GEO complet, le site, les offres, les concurrents, les avis clients, les objections commerciales et les sources chiffrées disponibles.
+Objectif : créer une banque de 100 posts LinkedIn avec images pour positionner l'entreprise comme spécialiste des automatisations IA concrètes pour restaurants.
+
+RÈGLE IMPORTANTE
+Les posts ne doivent jamais parler de l'audit SEO/GEO, de la stratégie de contenu ou de RestIA comme sujet principal.
+Ces éléments servent uniquement à comprendre le business.
+Le lecteur doit lire des posts utiles pour son restaurant, pas les coulisses de notre acquisition.
+
+AUDIENCE
+- Restaurateurs indépendants, managers de salle, franchisés, groupes locaux, traiteurs, dark kitchens.
+- Niveau technique faible à moyen.
+- Préoccupations : coût matière, coût staff, no-shows, avis Google, réservations, fidélisation, livraison, planning, manque de temps.
+
+CONTRAINTE STRATÉGIQUE
+Le contenu doit faire terrain, sobre, utile, crédible.
+Interdit : hype IA, robot, jargon technique, promesse miracle, ROI inventé, post générique, formulation LinkedIn cliché.
+Chaque post doit donner une idée exploitable, un calcul, une méthode, une erreur fréquente, un workflow ou une décision opérationnelle.
+
+CONTRAINTE DE VOLUME
+- Génère exactement 100 posts.
+- Chaque post doit avoir un titre, un texte LinkedIn, un CTA, des hashtags, un statut, un ordre de publication et une consigne image.
+- Les 100 posts doivent être différents : pas de hook similaire, pas de même histoire, pas de CTA répété en boucle, pas de même visuel.
+
+PILIERS À COUVRIR
+1. Marges et coûts : food cost, temps manager, tâches répétitives, reporting.
+2. Réservations et no-shows : confirmation, rappel, annulation, liste d'attente.
+3. Avis et réputation : Google reviews, réponses, analyse des irritants, preuve sociale.
+4. Fidélisation : clients dormants, offres personnalisées, anniversaires, segmentation.
+5. Staff et planning : onboarding, documents internes, passation, recrutement.
+6. Menu, livraison, catering : menu engineering, commandes en ligne, communication locale.
+
+FORMAT DE SORTIE
+Crée un fichier XLSX compatible avec une table n8n.
+Colonnes attendues :
+id, publish_order, status, scheduled_date, pillar, persona, pain, title, linkedin_text, cta, hashtags, proof_type, image_needed, image_prompt, image_file_name, image_alt, published_at, linkedin_post_id
+
+RÈGLES D'ÉCRITURE
+- Langue : français.
+- Longueur linkedin_text : 900 à 1600 caractères.
+- Premières lignes courtes et percutantes.
+- Une seule idée forte par post.
+- Chiffres : si estimation, écrire clairement "exemple simple" ou "scénario".
+- CTA discret : audit, commentaire mot-clé, demande de schéma, diagnostic, exemple workflow.
+- Hashtags : 2 à 4 maximum, spécifiques, pas de spam.
+
+RÈGLES IMAGE
+Chaque image_prompt doit produire une photo réaliste et minimaliste.
+Style obligatoire : photographie documentaire, lumière naturelle, restaurant réel, détails opérationnels, pas de texte lisible, pas de logo, pas de visage reconnaissable au premier plan, pas de rendu 3D, pas de robot, pas de futurisme.
+
+CONTRÔLE QUALITÉ AVANT DE LIVRER
+Vérifie : 100 lignes, aucun titre dupliqué, une douleur restaurant précise par post, un bénéfice business par post, aucun chiffre inventé présenté comme fait général.
+
+LIVRABLE
+Crée le fichier XLSX dans le dossier de travail et indique son nom.
+```
+
+### small_batch
+
+```text
+Reprends les 4 premiers posts du fichier.
+Génère les 4 images associées.
+Enregistre les images dans le dossier du projet avec des noms simples et réutilisables.
+Ajoute ou mets à jour les colonnes image_file_name, image_needed et image_alt dans le classeur.
+Vérifie rapidement les dimensions et la cohérence image/post.
+```
+
+### improve_posts
+
+```text
+Améliore les 4 premiers posts.
+Objectif : les rendre plus naturels, moins répétitifs, moins "exemple simple" à chaque fois.
+Garde la même intention business, mais varie les hooks, la structure et le CTA.
+Ne change pas la logique du classeur.
+Mets à jour le fichier XLSX.
+```
+
+### connect_mcp
+
+```text
+Maintenant, connecte-toi au MCP n8n.
+Fais un nouveau workflow avec le tableur des posts et les photos associées s'il te plaît.
+```
+
+### workflow_prompt
+
+```text
+Travaille sur n8n via MCP.
+Crée un workflow qui publie automatiquement mes posts LinkedIn depuis la base de posts.
+
+Contraintes :
+- Utilise le node LinkedIn natif de n8n, pas un HTTP API call.
+- Publie sur mon organisation LinkedIn, pas sur mon profil personnel.
+- Une exécution doit publier une seule ligne.
+- Ne publie que les lignes non traitées.
+- Après publication, marque la ligne comme publiée pour éviter les doublons.
+- S'il y a une image, passe par la branche image.
+- S'il n'y a pas d'image, passe par la branche texte seul.
+- Prévois un test manuel node par node.
+
+Je veux une logique simple, lisible et modifiable.
+```
+
+### image_fix
+
+```text
+Le workflow publie bien le texte, mais l'image ne passe pas.
+Le problème vient du fait que l'image est locale sur mon ordinateur.
+n8n a besoin d'un binaire utilisable dans le workflow.
+
+Corrige le workflow :
+- transforme l'image locale en binaire exploitable ;
+- garde le champ binaire dans data ;
+- dans le node LinkedIn image, utilise Input Binary Field = data ;
+- garde linkedin_text comme variable de texte ;
+- refais un test avec la première ligne.
+```
+
+### json_import
+
+```text
+Pour réutiliser le workflow :
+1. Télécharge le fichier JSON fourni dans le support.
+2. Dans n8n, clique sur le menu du workflow.
+3. Choisis Import from File.
+4. Sélectionne le fichier .json.
+5. Remplace mes credentials, mon Organization URN et tes chemins de fichiers.
+6. Teste à vide avant de cliquer sur Publish.
+```
+
+## Transcription intégrale
+
+- **00:00:00 - 00:00:08** Bonjour à tous et à toutes, j'espère que vous allez bien, donc on se retrouve pour la séance 14 et là on va automatiser directement notre profil de LinkedIn.
+- **00:00:08 - 00:00:14** Donc on va créer sans post et du coup sans images avec un seul workflow sur NB10.
+- **00:00:14 - 00:00:22** Donc on va utiliser aussi le codex, donc vous connaissez la musique, on copie la commande, on va dans mon business, là on parle,
+- **00:00:22 - 00:00:28** réseaux sociaux, donc nouveau terminal, dossier, entrée. Donc au moins c'est fait, on a notre terminal de prêt.
+- **00:00:28 - 00:00:32** Donc je pense qu'il y a beaucoup de personnes qui se disent pourquoi ils équilisent le codex,
+- **00:00:32 - 00:00:35** alors qu'au début ils parlaient de code-code, parce qu'en fait comme je vous ai dit le
+- **00:00:35 - 00:00:41** marché change assez vite, le modèle que OpenAI a sorti, donc le 5.5, est extrêmement
+- **00:00:41 - 00:00:49** puissant, il surpasse une vitesse complète à Opus 4.7, donc sur ce mois là en tout
+- **00:00:49 - 00:00:53** cas, voire même les deux prochains mois, parce qu'en ces temps ils sortent le modèle
+- **00:00:53 - 00:01:03** 6 je serai full OpenAid. Je ne pense pas qu'Anthropic va pouvoir revenir sur OpenAid,
+- **00:01:03 - 00:01:09** à voir par la suite, mais en tout cas je vous conseille vraiment d'utiliser full OpenAid.
+- **00:01:09 - 00:01:15** Donc on a lancé notre terminal au dossier et maintenant ce qui va nous intéresser ça
+- **00:01:15 - 00:01:26** va être tout simplement de récupérer ce prompt là et de créer un xlmx avec son poste par rapport à
+- **00:01:26 - 00:01:31** l'autre secteur. C'est simple, je récupère le prompt, on va le voir un peu plus en détails
+- **00:01:31 - 00:01:48** ça prend du temps, la génération va falloir tout simplement patienter, vous allez aller
+- **00:01:48 - 00:01:58** dans SIT, vous allez redonner votre DIT, S-I-O-G-E-O. Une fois que c'est fait, on tape entrée,
+- **00:01:58 - 00:02:04** on laisse travailler, on va détailler un petit peu le prompt. Donc en gros, je vous
+- **00:02:04 - 00:02:08** dis que c'est un stratège, B2B senior, bus rider, les queues in, consultant,
+- **00:02:08 - 00:02:13** automatisation, pour restaurants, les directeurs artistiques, photos,
+- **00:02:13 - 00:02:18** documentaires, contexte, tu vas devoir, tu vas recevoir un audit stratégique, le
+- **00:02:18 - 00:02:21** site, les off, les concurrents, les avec-clients, les objections
+- **00:02:21 - 00:02:26** commerciales et les sources chiffrées. L'objectif, créer une banque, 200
+- **00:02:26 - 00:02:31** poste LinkedIn avec images pour positionner l'entreprise comme spécialiste en automatisation
+- **00:02:31 - 00:02:36** concrète pour restaurant. Très important, les postes ne doivent jamais parler de l'auditio
+- **00:02:36 - 00:02:41** et geo, de la stratégie de contenu ou de restia comme sujet principal. Ces éléments
+- **00:02:41 - 00:02:48** servent uniquement à comprendre le business. Le lecteur doit avoir des postes utiles pour
+- **00:02:48 - 00:02:51** son restaurant, pas les coulisses de l'autre acquisition. Audience, donc là je donne
+- **00:02:51 - 00:03:00** toutes les informations. Il faudra les modifier selon le secteur que vous souhaitez, et après
+- **00:03:00 - 00:03:08** vous allez glisser votre dossier SEO et JEO qu'on a fait ensemble. L'objectif à la fin c'est
+- **00:03:08 - 00:03:17** qu'on est sans poste directement. UI égale un poste avec l'image, le titre et la description.
+- **00:03:17 - 00:03:24** et que chaque poste soit totalement différent et que ça tape bien selon ma cible quoi.
+- **00:03:24 - 00:03:29** Et également pour qu'on met en place cette stratégie, parce que ça tape aussi dans le
+- **00:03:29 - 00:03:59** GEO. Par exemple, si... Non, pas, pas. Ok, voilà, Linkedin, mais c'est ça qu'on cherche.
+- **00:03:59 - 00:04:08** Encore une fois, si je vais là, on peut voir que ça tombe directement sur mon profil. Donc
+- **00:04:08 - 00:04:45** c'est pas mal aussi pour le GEO si par exemple je fais des recherches sur internet donc là regardez
+- **00:04:45 - 00:04:51** par exemple ça m'a donné une source il fait 374 commentaires c'est pas énorme on a vu avec
+- **00:04:51 - 00:04:57** Billitmonet ça peut faire bien plus mais il a été directement apporté à GPT
+- **00:04:57 - 00:05:10** oh bah top là il a sorti mon site internet là aussi c'est pas mal du tout c'est bien
+- **00:05:10 - 00:05:18** référencé. Le but c'est qu'on soit sourcés vraiment sur tout, c'est pour ça que derrière
+- **00:05:18 - 00:05:24** on va chercher à faire des postes similaires à ça. On va plus faire des postes pas des lits de
+- **00:05:24 - 00:05:28** magnètes, nous ce qu'on va faire c'est qu'on va pas publier sur notre profil personnel, on va
+- **00:05:28 - 00:05:33** vraiment stagner les deux parties donc là ça va être vraiment pour du lits magnètes,
+- **00:05:33 - 00:05:40** profil expert et ensuite autre page entreprise, ça va être plutôt pour justement des postes
+- **00:05:40 - 00:05:48** automatique, qui parle vraiment de votre secteur, enfin de ce que vous souhaitez justement à
+- **00:05:48 - 00:06:01** Tiel. Là, ça va prendre un peu de temps. Il est en train de générer les 100 posts, créer le
+- **00:06:01 - 00:06:06** cas sur XLSX, vérifier toutes les contraintes, livrer le fichier final. Une fois qu'il aura
+- **00:06:06 - 00:06:10** fini justement de nous créer tout ça, nous on passera à une autre partie, on passera à la
+- **00:06:10 - 00:06:15** la partie N8N. Donc on va utiliser cet outil là, pour moi parce qu'on l'appelle CZ,
+- **00:06:15 - 00:06:22** depuis le départ. Je trouve que c'est un outil qui reste tout de même intéressant pour
+- **00:06:22 - 00:06:30** l'aspect visuel, pour l'aspect simple qu'il peut justement nous apporter. Et encore une fois,
+- **00:06:30 - 00:06:36** il y a des clients qui peuvent demander des automatisations sur N8N. C'est toujours
+- **00:06:36 - 00:06:40** important d'avoir une expertise sur cet outil-là, montrer que Cloface allait vraiment tout faire et
+- **00:06:40 - 00:06:46** vous n'avez pas de limites. Même si derrière, par l'utiliser, Codex et créer directement
+- **00:06:46 - 00:06:52** l'automatisation en Python et le mettre sur le VPS est bien plus rapide, mais ça dépend encore
+- **00:06:52 - 00:06:57** une fois du choix du client, il faut s'adapter un maximum pour essayer de le satisfaire,
+- **00:06:57 - 00:07:04** que ensuite vous soyez vraiment son expert personnel à lui. Là on va attendre,
+- **00:07:04 - 00:07:13** ça va prendre pas mal de temps encore une fois. En gros il va nous livrer un xlmx et après
+- **00:07:13 - 00:07:32** ce qu'on va faire, on va aller sur n8n, on va faire Create, Workthrough, ensuite on va rajouter
+- **00:07:32 - 00:07:38** des nœuds bons. Et juste avant de faire ça, vu que derrière, c'est un outil qui est très
+- **00:07:38 - 00:07:42** complexe au départ, mais une fois que vous mettez des mains dedans ça va être de plus en
+- **00:07:42 - 00:07:50** plus simple. Vous avez toujours des petites solutions, des petits tips pour faciliter la tâche et aller
+- **00:07:50 - 00:07:57** beaucoup plus vite même sans forcément de compétences. Donc on va voir ça. Il faut juste qu'il se finisse
+- **00:07:57 - 00:08:06** du coup. Les 100 postes, comme ça on aura plein d'une stratégie sur une longue durée. Après vous
+- **00:08:06 - 00:08:12** pouvez encore une fois changer 100 postes ou mettre 1000, ça prendra plus de temps, ça va ou
+- **00:08:12 - 00:08:19** ou prendre énormément de tokens mais en soit c'est faisable, il n'y a pas de problème c'est
+- **00:08:19 - 00:08:24** juste qu'il ne faut pas qu'il délire, il faut qu'il reste stratégique jusqu'à la fin de la
+- **00:08:24 - 00:08:29** génération à la limite vous faites des petits packs de 100 postes par 100 postes ou même 50 par
+- **00:08:29 - 00:08:39** 50 je pense c'est pas mal 50 par 50 ça vous c'est sûr qu'il ne perd pas la tête et
+- **00:08:39 - 00:08:45** qui va vous sauver des postes très qualitatifs qui sont basés du coup sur l'auditat CIO et GEO.
+- **00:08:45 - 00:08:50** Ça, ça va être important aussi parce qu'on l'a vu tout à l'heure. On peut se positionner
+- **00:08:50 - 00:08:56** grâce à nos articles, grâce à nos publications de postes les que d'une. Mais en gros,
+- **00:08:56 - 00:09:01** nous, ce qu'on va faire, ça va être sur une vitesse à partir d'un moment, on va aller
+- **00:09:01 - 00:09:09** chercher un trigger, le trigger ça va être ça, donc je décide le trigger intervalle quand est-ce
+- **00:09:09 - 00:09:13** qu'il se déclenche mon workflow tous les jours, tous les week-ends, tous les mois ou en custom
+- **00:09:13 - 00:09:22** donc à custom si vous voulez que ça se déclenche avec une date précise etc. Moi perso je voudrais
+- **00:09:22 - 00:09:37** que tous les jours aller à la limite à quelle heure. Je ne sais pas ce qu'il fait à 4 p.m.,
+- **00:09:37 - 00:09:45** je ne sais pas ce qu'il fait à quelle heure en France. En gros, là, voilà, notre workflow
+- **00:09:45 - 00:09:51** va se déclencher tous les jours à 4 p.m. Ensuite, on va aller récupérer notre xlsx,
+- **00:09:51 - 00:10:02** qui sont notre xlsx. Juste ici, donc ça sera un mode data table. Je pense que ça va être ça
+- **00:10:02 - 00:10:16** quand il va construire GetRose. Il va regarder les lignes. Une fois qu'il a vu les lignes,
+- **00:10:16 - 00:10:20** il regarde celles qui sont pas traitées. Par exemple jour 1, pas traité. Ok, donc on
+- **00:10:20 - 00:10:37** on prend celui-là. Ensuite, on va récupérer la variable du texte plus la variable de l'image
+- **00:10:37 - 00:10:45** qu'on va mettre dans le node natif LinkedIn. Pour LinkedIn, ce n'est pas compliqué. Ce que
+- **00:10:45 - 00:10:51** vous allez faire, c'est créer vos Credentials. Donc j'utilise Nvitel en cloud parce que c'est
+- **00:10:51 - 00:10:56** c'est plus simple de connecter sur linkudin et derrière vous n'allez pas avoir la demande
+- **00:10:56 - 00:11:02** à faire directement sur linkudin business developer, vous n'êtes pas sûr d'être
+- **00:11:02 - 00:11:03** accepté.
+- **00:11:03 - 00:11:09** Donc ce que vous faites c'est que vous choisissez le node linkudin, vous faites connect to linkudin
+- **00:11:09 - 00:11:15** et là vous allez tout simplement vous connecter avec vos identifiants linkudin.
+- **00:11:15 - 00:11:22** Moi là ça m'a connecté, donc c'est top. Là je suis connecté du coup à mon
+- **00:11:22 - 00:11:41** profil personnel, plus ma page entreprise. Je vais changer, je vais mettre une
+- **00:11:41 - 00:11:50** kitchen, classifier, reconnect, on voit que ça fonctionne.
+- **00:11:50 - 00:11:55** Ok donc là il a fini le xlsx, on va aller vérifier quand même. Alors on va passer à
+- **00:11:55 - 00:12:07** à ça, hop, réseau social, donc nouveau dossier, voilà, nouveau dossier, on va le
+- **00:12:07 - 00:12:33** renommer, ligne 02, ligne que Jean, on va mettre xlsx, on ouvre, tu peux mettre
+- **00:12:33 - 00:12:45** ce title, trop agressif sur chaque facture, c'est la montagne, la pote 6.4.1, ok,
+- **00:12:45 - 00:12:52** restaurant de main group, cta à tester sur un service cette semaine, hashtag, proof,
+- **00:12:52 - 00:13:00** data source, image prompt, image alt, facture faumicheur. Je lui demandais
+- **00:13:00 - 00:13:41** s'imaginer les images. Pourquoi je lui demande à lui de générer les sens
+- **00:13:41 - 00:13:58** d'image ? Parce que tout simplement, nous vu qu'on paye en forfait ici, on va
+- **00:13:58 - 00:14:01** pouvoir utiliser notre forfait pour de la création d'image. On va pas
+- **00:14:01 - 00:14:06** passer par API, etc. Vous l'avez vu sur la partie article
+- **00:14:06 - 00:14:12** automatique on était à 15-20 centimes par image donc ça fait assez cher. Là on
+- **00:14:12 - 00:14:19** utilise un maximum du coût de notre forfait. Là je vais voir. Moi j'ai l'abonnement à
+- **00:14:19 - 00:14:24** 100 euros sur codex je crois. Donc si je vais sur codex on va voir. Dès qu'il aura
+- **00:14:24 - 00:14:27** fini je pense qu'il va buger à mon moment de licence. Ça fait beaucoup quand
+- **00:14:27 - 00:14:44** même. Je suis à 15%. On va voir, 15% juste ici avec l'abonnement à 100 euros
+- **00:14:44 - 00:14:56** encore une fois. Donc on va revenir sur la partie N8N, donc sur la partie N8N comme
+- **00:14:56 - 00:15:02** vous pouvez voir une fois que vous avez le node natif, donc soit vous faites une
+- **00:15:02 - 00:15:06** ressource en post, soit un custom appeal call, ou ce qu'on va se poster. Donc
+- **00:15:06 - 00:15:10** choisissez ça. L'opération, qu'est ce qu'on fait ? On veut créer un post
+- **00:15:10 - 00:15:14** encore une fois, donc on va utiliser custom appeal call. Ensuite post at,
+- **00:15:14 - 00:15:23** donc personne, ça serait tout simplement sur mon profil à moi, donc mon profil là
+- **00:15:23 - 00:15:27** où j'ai fait ma stratégie de ligne maniète, donc c'est pas ce que je
+- **00:15:27 - 00:15:35** souhaite pour le moment, ce que je veux c'est simplement publier du coup sur ma
+- **00:15:35 - 00:15:42** page entreprise, ma page agence, donc je choisis organisation, et là comme on te le
+- **00:15:42 - 00:15:49** organization urn, qu'est ce que c'est ? Et bien c'est cette partie là, c'est ce numéro là,
+- **00:15:49 - 00:15:57** on récupère le numéro, on retourne sur organization urn, on mentionne, là ensuite on fait l'image
+- **00:15:57 - 00:16:02** parce qu'on va en ajouter une et on choisira la partie data. Encore une fois le texte on va
+- **00:16:02 - 00:16:07** attendre parce qu'on va recevoir la variable, vous allez voir ce que c'est, c'est pas très
+- **00:16:07 - 00:16:12** complexe. On va attendre un petit peu. On va voir justement des autres modes.
+- **00:16:12 - 00:16:18** Il y a juste ça sur l'unique qu'il y a avec Kenviten en natif. On peut utiliser que de la
+- **00:16:18 - 00:16:28** création post. Donc top. Ensuite on va aller après dans settings, une fois qu'il
+- **00:16:28 - 00:16:48** aura fini les images, un petit peu de temps, même beaucoup trop de temps je crois. 70% ici,
+- **00:16:48 - 00:16:59** 15%, le plus intéressant c'est le forfait sur chaque semi, il y a bien plus de tokens
+- **00:16:59 - 00:17:04** qu'anthropic, on peut faire beaucoup plus de choses avec seulement le forfait à cendres,
+- **00:17:04 - 00:17:28** chose qu'on ne peut pas trop faire avec anthropicon limité. Il m'a fait 30 images, on va l'ouvrir
+- **00:17:28 - 00:17:37** voir ce qu'il m'a mis dedans. Ah oui ok, il a fait un compounder, il est très fort,
+- **00:17:37 - 00:18:23** Très très fort, très très fort, je fais les 100, ah oui, ok.
+- **00:18:23 - 00:18:28** Quoi de laisser travailler, ça va prendre du temps hein, parce que là on parle de génération,
+- **00:18:28 - 00:18:30** c'est maje, c'est toujours long.
+- **00:18:30 - 00:18:50** Je pense que je vais pas attendre les 100 images, parce que ça va prendre beaucoup
+- **00:18:50 - 00:18:53** trop de temps, ça va pas être très utile, pas très enrichissant pour vous.
+- **00:18:53 - 00:18:59** J'ai là, je pense que vous avez coulé pas mal d'informations, le plus début
+- **00:18:59 - 00:19:05** de l'heure de la formation, je vais attendre encore un petit peu, mais une fois que
+- **00:19:05 - 00:19:17** du coup notre dossier avec le xlmx plus du coup la partie avec l'image de texte.
+- **00:19:17 - 00:19:21** Nous on va connecter du coup n8n en mcpa codex pour qu'il nous crée lui-même le
+- **00:19:21 - 00:19:26** workflow. Là je vous ai montré un petit peu à quoi servent les nodes donc je pense qu'il va
+- **00:19:26 - 00:19:31** utiliser probablement, sûrement même si tu vas utiliser une table et la convertir
+- **00:19:31 - 00:19:39** on va voir mais du coup on va connecter l8n à connex. Pour ce faire ça
+- **00:19:39 - 00:19:43** n'est pas très compliqué, on va aller dans settings juste en bas à gauche
+- **00:19:43 - 00:19:49** même avec un compte gratuit ça fonctionne ensuite on va aller dans
+- **00:19:49 - 00:19:55** instance levels mcp, si je clique dessus on peut voir que j'arrive sur cette
+- **00:19:55 - 00:20:01** par-dessus là, et là je peux choisir personnels, ma workflow, donc moi je
+- **00:20:01 - 00:20:07** choisis my workflow, comme ça il va pouvoir tout simplement créer un workflow sur mon
+- **00:20:07 - 00:20:15** instance. En tout cas je peux édite la description, etc. Enfin bref, ça on s'en
+- **00:20:15 - 00:20:29** fout. Bah non, ça c'était pas normal, hop. Donc voilà, ça on va le supprimer,
+- **00:20:29 - 00:20:35** C'est pas ce qui nous intéresse. Et ensuite on clique sur connexion
+- **00:20:35 - 00:20:40** détail juste ici. En connexion détail, on a le lien URL.
+- **00:20:40 - 00:20:47** Là où il va pouvoir justement travailler. Codex. On a la partie access
+- **00:20:47 - 00:20:51** token juste ici. Moi je vais mettre ma clé comme ça je vais tout donner et
+- **00:20:51 - 00:20:58** ensuite après je révoque. Voilà, c'est la stratégie. 1, 2, 3, 4.
+- **00:20:58 - 00:21:22** objectif codex nous fait les postes avec les images il nous crée le xlmx ensuite
+- **00:21:22 - 00:21:30** on connecte nmi 10 à codex et codex nous génère le morpho et ensuite c'est
+- **00:21:30 - 00:21:35** C'est terminé, tout est pendant l'automatique.
+- **00:21:35 - 00:22:17** J'en fais une dernière et après c'est bon.
+- **00:22:17 - 00:22:21** Je vais échapper, normalement vous ça va continuer.
+- **00:22:21 - 00:22:25** On va voir combien j'ai consommé.
+- **00:22:25 - 00:22:46** Maintenant, connecte-toi à l'USP-NV10.
+- **00:22:46 - 00:23:05** Fais un nouveau workflow avec les tappeniers postes et les photos associées à l'STP.
+- **00:23:05 - 00:23:15** Donc là voilà, tout simple encore une fois, pas besoin de se prendre la tête, il va comprendre
+- **00:23:15 - 00:23:20** justement ma demande et ensuite ça va se connecter à partir derrière, il y a un problème sur
+- **00:23:20 - 00:23:29** l'airbag de connexion, mais je pense pas, donc on va voir comment il réfléchit, ça
+- **00:23:29 - 00:23:33** c'est vraiment impuissant, 4-5 mois je calais à créer mes workflows, quand je comprenais
+- **00:23:33 - 00:23:37** pas je faisais un screen, j'envoyais un chat, j'ai pété, je comprends, je comprenais
+- **00:23:37 - 00:23:43** j'étais obligé de bidouiller, il le fait en one shot, il n'y a rien qui bug, c'est magique.
+- **00:23:43 - 00:23:50** Maintenant, t'as eu de la chance, parce que là tout va se faire en semi-automatique le coup quand même,
+- **00:23:50 - 00:24:00** mais c'est dommage aussi pour Ennemy10, parce que je pense que ça devient compliqué pour eux.
+- **00:24:00 - 00:24:09** Sans qu'elle lui aille en dehors des 13 octobre.
+- **00:24:09 - 00:24:33** Oui, il y a personne qui parle de ça, ok, mais je pense que c'est compliqué pour eux,
+- **00:24:33 - 00:24:40** parce qu'ils ont tout mangé, les anthropiques et les codex et au pédale du coup.
+- **00:24:40 - 00:24:54** Donc on va attendre un petit peu. Parfois il faut le relancer, il bug un petit peu.
+- **00:24:54 - 00:25:26** C'est pas là si c'est le cas, je vais quand même relancer le code qui bugue, je crois qu'il bugue.
+- **00:25:26 - 00:25:32** Je vais essayer de compact. Donc si vous voyez qu'il y a cette problématique là,
+- **00:25:32 - 00:25:37** il faut soit compact, donc là c'est ce qu'on est en train de faire ou soit relancer.
+- **00:25:37 - 00:25:40** là je pense qu'il va falloir relancer parce que là il ne compagne même pas
+- **00:25:40 - 00:25:49** donc je vais relancer, c'est pas grave, je vais récupérer Codex Dangerous, les
+- **00:25:49 - 00:25:58** skips, je vais aller sur linkaging, mon dossier que j'ai créé, je vais lui
+- **00:25:58 - 00:26:13** ramener ça, tous les posts, stp, ok donc là il a mer, on sait du coup le
+- **00:26:13 - 00:26:52** système, ça fonctionne, je vais dire fais moi 4 images, ok on laisse
+- **00:26:52 - 00:26:55** travailler encore un petit peu, en train de comprendre, après on va aller demander de nous
+- **00:26:55 - 00:26:59** refaire les quatre images, parce que je pense qu'on les a perdues, on les a pas
+- **00:26:59 - 00:27:05** enregistrés, alors si, ah non, je tag avec un front, je vais me prendre la vue
+- **00:27:05 - 00:27:19** complète sur les 100 sujets, Marco jusqu'à communication,
+- **00:27:19 - 00:27:22** Cleo va nous faire les quatre premiers posts, faire les quatre premières images pour les premiers
+- **00:27:22 - 00:27:33** posts, ensuite on va le connecter en même temps. Ma chain c'est quoi déjà ?
+- **00:27:33 - 00:28:12** On va attendre encore une fois qu'il finisse justement ces quatre images-là et ensuite
+- **00:28:12 - 00:28:16** on va voir comment programmer chacun de ces postes.
+- **00:28:16 - 00:28:23** On va demander à Codex de nous faire pour qu'on puisse avoir tout simplement une publication
+- **00:28:23 - 00:28:24** toujours par jour.
+- **00:28:24 - 00:29:00** Donc si on liche l'excellente liste qu'il m'a fait, avoir au niveau des postes, c'est
+- **00:29:00 - 00:29:03** propre.
+- **00:29:03 - 00:29:44** C'est par le Workflow, pour le cas d'usage, voilà, ce qui est bien, c'est bien, j'aime beaucoup, j'aime beaucoup, j'aime beaucoup le cartier pour le cas.
+- **00:29:44 - 00:29:47** Ok, pas très intéressant ça, moi j'ai pas compris.
+- **00:29:47 - 00:30:00** Mon expertise, c'est bien, en tout cas je vois qu'il y a des bonnes petites choses, après quand il m'a analysé, il y a des choses à améliorer, etc.
+- **00:30:00 - 00:30:26** Je me fais deux images, deux restaurants, je me mets en une couche,
+- **00:30:26 - 00:30:28** je peux payer le même produit, ou peut-être deux prix différents,
+- **00:30:28 - 00:30:29** on va éteindre ça.
+- **00:30:31 - 00:30:32** Ok.
+- **00:30:39 - 00:30:42** Après, il y a quand même quelques petits points à améliorer.
+- **00:30:43 - 00:30:46** Le sujet sensible, ça c'est, il y a beaucoup d'exemples simples,
+- **00:30:47 - 00:30:49** automatisation concrète, c'est la même structure à chaque fois.
+- **00:30:51 - 00:30:53** Donc ça, on pourrait lui dire d'améliorer.
+- **00:30:56 - 00:30:59** L'autre voile, c'est de passer une bonne petite heure sur ces 100 postes-là,
+- **00:30:59 - 00:31:00** travailler un peu dessus,
+- **00:31:00 - 00:31:10** Voir ce qui peut être amélioré, moi je vais lui dire, après donc là 1, 2, 3, 4, il y a le quatrième qui va arriver
+- **00:31:10 - 00:31:54** Ok donc là il va avoir fini je pense, les 4 images sont dégénérées
+- **00:31:54 - 00:31:58** Je vais les copier dans le dossier du projet, vérifier rapidement la dimension, tac
+- **00:31:58 - 00:32:04** Là je vais lui dire de modifier les 4 premiers postes après
+- **00:32:04 - 00:32:51** Je ne sais pas où il est, je ne sais pas où il est, je vais attendre un petit peu, il fait
+- **00:32:51 - 00:32:55** s'ouvrir en carré, je vais garanger avec des noms d'isirs et ajouter des colonnes
+- **00:32:55 - 00:32:59** d'éparcés dans le casse-four, ok super, donc il va le faire lui-même, je vais préparer
+- **00:32:59 - 00:33:30** mon trône du coup, par contre, au fait, ça je vous dis de faire des loads de 20 à 30 voire
+- **00:33:30 - 00:33:34** même 50 à la limite comme ça et ne perds pas la tête si vous n'essayez pas de se
+- **00:33:34 - 00:33:40** simplifier un maximum la tâche. Plus vous faites petit, plus vous
+- **00:33:40 - 00:33:43** allez avoir des postes différents, mieux travaillés, etc.
+- **00:33:43 - 00:33:57** Ok donc là je l'envoi le compte, on va voir ces images, pas mal,
+- **00:33:57 - 00:34:11** semble d'être efficace. D'ailleurs je vais aller voir, je vais vérifier quelque chose,
+- **00:34:11 - 00:34:51** je pense que ce n'était pas lui, c'était Restofun, là il est en bouillon, me frigue
+- **00:34:51 - 00:35:07** Leur team d'aujourd'hui l'a bien été, mais comme je le voulais, on voit bien que l'automatisation continue à tourner.
+- **00:35:07 - 00:35:09** Ah non, c'était pas à part.
+- **00:35:09 - 00:35:18** Pardon, j'avais juste tombé, c'était pour la séance qu'on a vue tout à l'heure.
+- **00:35:18 - 00:35:23** Donc non, c'était pas sorti, donc il n'a pas encore été publié.
+- **00:35:23 - 00:35:25** Je pense qu'il décale à chaque fois d'une heure.
+- **00:35:25 - 00:35:36** Donc là il sera publié de l'heure 30, ok ouais il sera publié après, on a bien lu du 2k puis bon bref je voulais
+- **00:35:36 - 00:35:54** voir le temps qui finisse justement d'améliorer du coup les postes. Ok donc c'est bon il l'a fait,
+- **00:35:54 - 00:36:01** on va quand même aller vérifier dans le doute. Business, Social, Cajun, XT6.
+- **00:36:01 - 00:36:38** La structure est différente, on peut améliorer et le rendre plus naturel mais l'objectif
+- **00:36:38 - 00:36:40** c'est vraiment de voir comment automatiser ces postes.
+- **00:36:40 - 00:36:51** Donc, ok, top, maintenant, alors je vais juste regarder un truc, top,
+- **00:36:51 - 00:37:05** travailler sur un mutin, je te laisse le codité aux msp.
+- **00:37:05 - 00:37:09** Donc on l'a vu tout à l'heure comment se connecter aux msp, pas compliqué,
+- **00:37:09 - 00:37:21** paramètres, instance msp, connexion de taille, hop, hop, hop.
+- **00:37:21 - 00:37:35** Que va créer quand pour que tu oublies les postes ou les automatiques ?
+- **00:37:35 - 00:37:42** J'utilise un node natif.
+- **00:37:42 - 00:37:52** Encore une fois, pas d'une node native, parce qu'en fait on a soit EnvyTank qui propose du coup
+- **00:37:52 - 00:38:00** un node natif, le vrai connecteur de l'une que d'une, ou soit on pourrait faire en HTTP.
+- **00:38:00 - 00:38:04** Et ça, ça va être des clés API directement, c'est pas la même chose.
+- **00:38:04 - 00:38:19** Et c'est plus complexe à faire. Donc nous on va chercher la simplicité.
+- **00:38:19 - 00:38:22** Donc là on va la laisser travailler, on va nous préparer le workflow.
+- **00:38:22 - 00:38:59** On va faire des tests, des améliorations, tout simplement.
+- **00:38:59 - 00:39:08** Donc là, il est bien entré dans le serveur.
+- **00:39:08 - 00:39:12** Une fois que vous avez amené le workflow, vous réévoquez vos clés.
+- **00:39:12 - 00:39:15** Ça, il n'y a pas de problème.
+- **00:39:15 - 00:39:17** Pour de sécurité,
+- **00:39:17 - 00:39:18** vous allez aller dans
+- **00:39:18 - 00:39:22** tac-tac-tac, instance mcpi,
+- **00:39:22 - 00:39:25** remove access tout simplement.
+- **00:39:25 - 00:39:27** Juste ici.
+- **00:39:27 - 00:39:30** Après vous pouvez aussi le faire mieux qu'à vous.
+- **00:39:30 - 00:40:12** Nous on le laisse travailler le temps parce qu'il n'y a pas fini son biais de cours à prendre.
+- **00:40:12 - 00:40:14** Ah c'était sûr qu'il allait faire ça.
+- **00:40:14 - 00:40:15** En data table.
+- **00:40:15 - 00:40:18** C'est bien, il a la bonne réflexion.
+- **00:40:18 - 00:40:21** C'est fou quand même, il a une réflexion.
+- **00:40:21 - 00:40:24** Ça elle est vraiment à l'époque, il y a quatre mois ça aurait pu me prendre.
+- **00:40:24 - 00:40:28** Honnêtement, deux jours.
+- **00:40:28 - 00:40:31** À comprendre qu'il me faut une data table.
+- **00:40:31 - 00:40:37** C'est fou, c'est fou.
+- **00:40:37 - 00:40:42** Il y a une manière de réfléchir qui est assez intéressante.
+- **00:40:43 - 00:40:44** Assez intéressante.
+- **00:40:44 - 00:40:45** Et très puissante même.
+- **00:40:45 - 00:40:47** Ça fait même peur.
+- **00:40:48 - 00:40:50** Je vais écrire une table.
+- **00:40:51 - 00:40:53** C'est juste l'opca le qu'on faut faire prendre.
+- **00:40:53 - 00:40:55** Jean-Pastore est allé fier et pubile.
+- **00:40:55 - 00:40:57** La tena tu finis une cadienne puis marque qu'il a une même conne pubile.
+- **00:40:57 - 00:40:58** Ouais c'est ça.
+- **00:40:58 - 00:40:59** Exactement.
+- **00:40:59 - 00:41:00** Comment on va faire ?
+- **00:41:00 - 00:41:05** On va attendre.
+- **00:41:05 - 00:41:06** Je sais pas où il va le faire.
+- **00:41:06 - 00:41:07** Je pense qu'il va faire un nouveau workflow.
+- **00:41:07 - 00:41:08** Ah non, peut-être pas.
+- **00:41:08 - 00:41:10** Toi tu vas le faire ici, mais il est workflow.
+- **00:41:10 - 00:42:06** Je sais pas.
+- **00:42:06 - 00:42:15** Donc en gros après l'objectif ça va être quoi ? C'est que quand il va nous créer la data table, il va faire une ligne.
+- **00:42:15 - 00:42:19** Ok j'ai publié ce post, donc je marque comme terminé.
+- **00:42:19 - 00:42:26** Donc du coup le lendemain, le premier post il a déjà été publié, donc je passe la deuxième ligne.
+- **00:42:26 - 00:42:33** Est-ce que le champ au fond a été coché ? Est-ce que la publication a été faite ? Non, donc je le publie.
+- **00:42:33 - 00:42:39** à la fin du workflow, après on coche, on publie, en gros c'est ça que ça va faire l'automatisation
+- **00:42:39 - 00:42:43** là il n'y aura même pas d'intelligence artificielle à l'intérieur
+- **00:42:43 - 00:42:47** ça va être juste de la logique et de la réflexion
+- **00:42:47 - 00:42:59** je vais voir peut-être qui m'a fait à la table settings
+- **00:42:59 - 00:43:03** je ne sais plus où on va les tables, ça change tellement ce menu
+- **00:43:03 - 00:43:09** exécution mad data babel, voilà, on fait 2
+- **00:43:09 - 00:43:14** Donc là c'est tous les posts avec l'image, etc.
+- **00:43:14 - 00:43:16** Ok.
+- **00:43:16 - 00:43:18** Donc là il est bien les 100 posts.
+- **00:43:18 - 00:43:20** Il n'y a pas toutes les images.
+- **00:43:20 - 00:43:27** C'est ce que nous on avait demandé dans le générique 4.
+- **00:43:27 - 00:43:31** Il a assez finir de travailler.
+- **00:43:31 - 00:43:37** Il a fait l'hemler, tout ça.
+- **00:43:37 - 00:43:39** On va voir comment il va gérer le workflow.
+- **00:43:39 - 00:44:00** Ça m'intéresse.
+- **00:44:00 - 00:44:02** Ça va assez rude ça.
+- **00:44:02 - 00:44:04** Par contre, si votre compte commence à péter,
+- **00:44:04 - 00:44:07** vous allez à recevoir énormément de messages de prospection.
+- **00:44:07 - 00:44:16** de prospection c'est un peu la tête. Donc là j'ai une reine jazon, donc ça veut dire
+- **00:44:16 - 00:44:56** qu'elle a bientôt terminé. Est-ce qu'elle fait des tests ? Je sais pas. Ok, donc c'est top.
+- **00:44:56 - 00:45:06** Si je recharge la page, non pas encore. Moi qui pléfait dans un des deux. Non pas celui-là. Ok
+- **00:45:06 - 00:45:11** bon elle vient d'arriver. Ok donc top. Tous les jours à 9 heures. Ok c'est bien le cas. Il a
+- **00:45:11 - 00:45:19** utiliser le trigger. Le workflow va se déclencher une fois publié le coup d'un lever et ensuite tu vas
+- **00:45:19 - 00:45:25** récupérer la ligne qui n'a pas été traitée. On va voir tout ça ensemble, on détaille un petit peu plus.
+- **00:45:25 - 00:45:37** Donc là ce que vous allez faire c'est vous allez le lancer à vide. Parfois ça beugle. Donc là
+- **00:45:37 - 00:45:41** vous cliquez sur le deuxième node pardon, parce que sinon ça va rien faire au niveau de cette
+- **00:45:41 - 00:45:47** partie, vous quittez sur celui là le deuxième node. Et là comme vous
+- **00:45:47 - 00:45:51** pouvez voir c'est des informations. Vous avez là où vous pouvez voir le résultat.
+- **00:45:51 - 00:45:58** Donc on a un item, donc l'item c'est une ligne qu'on a récupérée si on va dans
+- **00:45:58 - 00:46:06** le table, la ligne 1 avec la DAC, le statut, le titre, le link-coding-text,
+- **00:46:06 - 00:46:12** l'image URL, l'image, le binary fields data, etc.
+- **00:46:12 - 00:46:15** Là on a récupéré toutes les informations pour notre poste.
+- **00:46:15 - 00:46:19** Donc nous encore une fois, ce qu'on souhaite, comme on l'a vu,
+- **00:46:19 - 00:46:23** c'est qu'on veut poster sur l'autre organisation, donc il nous faut l'URN.
+- **00:46:23 - 00:46:25** L'URN on le recopie.
+- **00:46:25 - 00:46:47** Donc là je récupère la variable, donc la variable c'est quoi ? C'est que tous les
+- **00:46:47 - 00:46:52** jours en fait, on aura cette variable-là, il n'y a que d'une texte avec un texte différent.
+- **00:46:52 - 00:47:01** Donc on récupère la variable, on la met juste ici et aujourd'hui du coup le texte de la variable
+- **00:47:01 - 00:47:11** c'est ce poste là. Donc c'est top. Ensuite pour la partie images, on va aller dans le data et là
+- **00:47:11 - 00:47:19** ce qu'on peut faire c'est publier. Donc là c'est au niveau de la partie images où on a un
+- **00:47:19 - 00:47:25** problème que sur menu URL ça n'a pas marché. Donc là ce qu'il faut faire c'est
+- **00:47:25 - 00:47:32** demander simplement à Codex s'il y aura tout simplement une mauvaise partie au
+- **00:47:32 - 00:47:36** niveau de PNG. Pourquoi ? Parce que comment il peut récupérer quelque chose
+- **00:47:36 - 00:47:40** sur notre ordinateur qui n'a pas accès ? Donc il faut changer le système mais
+- **00:47:40 - 00:47:48** si j'enlève du coup la partie de mage, là je pubie on voit que derrière
+- **00:47:48 - 00:47:58** node exécuté. Donc si je vais sur mon profil, je recharge, je vais dans poste de la
+- **00:47:58 - 00:48:11** page. Là on a bien mon poste qui a été publié. Je vais supprimer. Et là je vais
+- **00:48:11 - 00:48:30** expliquer à Codex le problème. Donc tac, tac, on va lui envoyer directement le
+- **00:48:30 - 00:48:39** problème, je vous invite à faire ça, parfois c'est plus simple que d'attendre, même de me
+- **00:48:39 - 00:49:24** demander quand même sur dislike pour récupérer les logs, s'expliquer la problématique, je sais pas
+- **00:49:24 - 00:49:30** ce qui lui arrive là, il me gagne un petit peu l'ordre, il me fait plus le coup de temps,
+- **00:49:30 - 00:49:37** on va quand même continuer, on va voir, il y a des modifications, c'est important,
+- **00:49:37 - 00:50:10** et on va faire le même problème par exemple que je vais couper je vais le
+- **00:50:10 - 00:50:24** renforcer. Je sais pas si j'ai bien mes images ou pas, je sais pas si je peux
+- **00:50:24 - 00:50:45** renforcer. Terminal. Ah non c'est bon. Donc là on va
+- **00:50:45 - 00:50:50** modifier. Voilà encore une fois c'était un problème de format. Mediabeneur
+- **00:50:50 - 00:50:57** Alors il y a l'image data, nous on a une image locale sur notre PC, il me faut du binarit,
+- **00:50:57 - 00:51:10** cette recode de l'image, il laisse travailler, il va le faire en autre place, une fois que
+- **00:51:10 - 00:52:05** ce sera terminé, il va refaire un test pour voir si tout fonctionne bien, il va refaire
+- **00:52:05 - 00:52:59** un nouveau workflow, différent, donc il a conclu il y a problématique, dans une fois le parcours
+- **00:52:59 - 00:53:09** il n'est pas très compliqué. On repart de notre audit SEO-GEO. Une fois qu'on est parti de
+- **00:53:09 - 00:53:16** cette audit SEO-GEO, on lui demande de nous rédiger des posts en coding, donc 100 ou 200.
+- **00:53:16 - 00:53:24** Ensuite on lui dit de nous faire un XLNX qui derrière va nous permettre de
+- **00:53:24 - 00:53:31** convertir ça en database sur une huitaine. Donc on connecte Codex à une huitaine
+- **00:53:31 - 00:53:36** une fois qu'il nous a fait les postes et après on crée le workflow de l'automatisation.
+- **00:53:36 - 00:53:41** Donc je vais tout vous détailler directement sur le support technique,
+- **00:53:41 - 00:53:45** malgré tout être compréhensible que ça vous allez pouvoir faire d'après-temps.
+- **00:53:45 - 00:53:57** Ok donc là il a fait une nouvelle base, on va coller le FISA.
+- **00:53:57 - 00:54:14** Ok donc il a bien fait vu que là on ne peut pas cliquer dessus,
+- **00:54:14 - 00:54:22** que pas en fait, pas 64, c'est énormément de chiffres, c'est très long, mais énormément de
+- **00:54:22 - 00:54:36** place. Là je pense qu'il est en train de m'enfermer vos jasons. Je vais l'archiver, là aussi,
+- **00:54:36 - 00:54:51** on va attendre qu'il finisse. Il ne faudra pas oublier d'appuyer Publish, fois que vous voulez
+- **00:54:51 - 00:55:28** que le workflow tourne tous les jours, c'est bon ça va, après ça vous fera jamais. Ok donc
+- **00:55:28 - 00:55:38** Donc le workflow a bien changé. Donc là on a deux parcours, qu'on a une branche false et une branche true.
+- **00:55:38 - 00:55:43** Donc la branche true c'est pour la partie image, la branche false c'est pour la partie sans image.
+- **00:55:43 - 00:55:47** S'il n'y a pas d'image sur le poste, donc à partir du cinquième poste,
+- **00:55:47 - 00:55:50** on n'a pas mis d'image, et bien ça va passer.
+- **00:55:50 - 00:55:52** Là les quatre premiers vont passer.
+- **00:55:52 - 00:55:57** Là on peut se faire un test, si derrière je vois qu'il y a encore une fausse sur lui.
+- **00:55:57 - 00:56:04** on se récupère de la première ligne, hop, donc là regardez, vu qu'il y a une image ça passe sur
+- **00:56:04 - 00:56:11** trou, là on va convertir l'image, donc on a un data, si je fais view juste ici, on voit notre image
+- **00:56:11 - 00:56:23** en question, ensuite du coup maintenant, là on va changer la variable texte, ah merde il a changé, il
+- **00:56:23 - 00:56:25** est en train de changer quelque chose en même temps.
+- **00:56:27 - 00:56:28** Ah, c'est pas bon ça.
+- **00:56:28 - 00:56:37** Donc du coup, nous on va récupérer la variable au niveau de LinkedIn text
+- **00:56:37 - 00:56:40** parce que c'est là où il y a tout le texte de l'application.
+- **00:56:40 - 00:56:44** Et ensuite ça, on va rester dans le data.
+- **00:56:46 - 00:57:04** Bah même si c'est magnifique en même temps, c'est pas mal ça.
+- **00:57:04 - 00:57:19** Je vois qu'il a un peu...
+- **00:57:19 - 00:57:21** Je vais expliquer encore une fois
+- **00:57:21 - 00:57:25** que l'on a un problème au niveau des images.
+- **00:57:25 - 00:57:33** Donc, pourtant, on a les dernières images.
+- **00:57:33 - 00:57:36** Et si je ne peux pas fit names,
+- **00:57:36 - 00:57:39** peut-être dans le data, peut-être.
+- **00:57:39 - 00:57:48** Peut-être que je mets le data.
+- **00:57:48 - 00:57:50** Mais je ne peux pas procéder, je crois.
+- **00:57:50 - 00:58:13** Je pense que le fait qu'il y avait tout modifié en même temps que moi,
+- **00:58:13 - 00:58:18** ça a cassé le workflow.
+- **00:58:18 - 00:58:19** On va le refaire.
+- **00:58:19 - 00:58:32** C'est bien d'indiquer qu'il faut juste mettre le data,
+- **00:58:32 - 00:58:34** mais ce que j'avais fait, le laisser travailler.
+- **00:58:34 - 00:58:36** On va faire un test archéal pour live.
+- **00:58:36 - 00:58:58** on va réessayer sûrement ce workflow, mais on s'en fait toujours la même chose
+- **00:58:58 - 00:59:04** parce que là déjà d'une part il met pas la bonne variable, ça risque pas de marcher
+- **00:59:04 - 00:59:18** je vais chercher un title, ok donc top là ça a marché
+- **00:59:18 - 00:59:26** donc si je vais juste ici, je vais charger, là on a bien l'image
+- **00:59:26 - 00:59:32** avec toutes les informations, c'est top
+- **00:59:32 - 00:59:38** ok ça marche bien, donc si par exemple là maintenant je clique ici
+- **00:59:38 - 00:59:45** Donc là ça va bien traiter comme terminé cette ligne là.
+- **00:59:45 - 00:59:51** Donc maintenant si tu lances une nouvelle fois, c'est un peu billé du coup le deuxième poste.
+- **00:59:51 - 01:00:02** Ok top, ça va mal.
+- **01:00:04 - 01:00:21** Là si je relance, ok top ça marche bien.
+- **01:00:21 - 01:00:27** C'est normal au niveau des images ça fait ça.
+- **01:00:27 - 01:00:35** Non non je vais supprimer, supprimer, tac.
+- **01:00:35 - 01:00:42** Donc de toute manière, moi je vais vous donner le workflow directement sur la partie
+- **01:00:42 - 01:00:49** Juku support technique, donc le workflow c'est le jazon, donc le jazon c'est ça, c'est ce code là
+- **01:00:49 - 01:00:54** qui derrière va vous permettre d'avoir exactement la même chose que moi.
+- **01:00:54 - 01:01:00** Après vous allez pouvoir demander la codex comme je voulais entrer tout de suite
+- **01:01:00 - 01:01:11** Mais pour l'importer à moins un jazon, vous allez cliquer ici, import from field, vous allez sélectionner le point jazon, vous téléchargez le support technique et ensuite vous l'importez.
+- **01:01:11 - 01:01:17** J'espère que cette séance elle vous a plu et que derrière vous l'avez trouvé intéressante.
+- **01:01:17 - 01:01:23** Je vous remercie, du coup on passe à la suite de la forme à suivre. A tout de suite !

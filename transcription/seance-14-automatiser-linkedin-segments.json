@@ -1,0 +1,3210 @@
+[
+  {
+    "id": 1,
+    "start": 0.21,
+    "end": 8.21,
+    "start_hms": "00:00:00",
+    "end_hms": "00:00:08",
+    "text": "Bonjour à tous et à toutes, j'espère que vous allez bien, donc on se retrouve pour la séance 14 et là on va automatiser directement notre profil de LinkedIn."
+  },
+  {
+    "id": 2,
+    "start": 8.21,
+    "end": 14.21,
+    "start_hms": "00:00:08",
+    "end_hms": "00:00:14",
+    "text": "Donc on va créer sans post et du coup sans images avec un seul workflow sur NB10."
+  },
+  {
+    "id": 3,
+    "start": 14.21,
+    "end": 22.21,
+    "start_hms": "00:00:14",
+    "end_hms": "00:00:22",
+    "text": "Donc on va utiliser aussi le codex, donc vous connaissez la musique, on copie la commande, on va dans mon business, là on parle,"
+  },
+  {
+    "id": 4,
+    "start": 22.21,
+    "end": 28.21,
+    "start_hms": "00:00:22",
+    "end_hms": "00:00:28",
+    "text": "réseaux sociaux, donc nouveau terminal, dossier, entrée. Donc au moins c'est fait, on a notre terminal de prêt."
+  },
+  {
+    "id": 5,
+    "start": 28.21,
+    "end": 32.27,
+    "start_hms": "00:00:28",
+    "end_hms": "00:00:32",
+    "text": "Donc je pense qu'il y a beaucoup de personnes qui se disent pourquoi ils équilisent le codex,"
+  },
+  {
+    "id": 6,
+    "start": 32.27,
+    "end": 35.43,
+    "start_hms": "00:00:32",
+    "end_hms": "00:00:35",
+    "text": "alors qu'au début ils parlaient de code-code, parce qu'en fait comme je vous ai dit le"
+  },
+  {
+    "id": 7,
+    "start": 35.43,
+    "end": 41.87,
+    "start_hms": "00:00:35",
+    "end_hms": "00:00:41",
+    "text": "marché change assez vite, le modèle que OpenAI a sorti, donc le 5.5, est extrêmement"
+  },
+  {
+    "id": 8,
+    "start": 41.87,
+    "end": 49.73,
+    "start_hms": "00:00:41",
+    "end_hms": "00:00:49",
+    "text": "puissant, il surpasse une vitesse complète à Opus 4.7, donc sur ce mois là en tout"
+  },
+  {
+    "id": 9,
+    "start": 49.73,
+    "end": 53.91,
+    "start_hms": "00:00:49",
+    "end_hms": "00:00:53",
+    "text": "cas, voire même les deux prochains mois, parce qu'en ces temps ils sortent le modèle"
+  },
+  {
+    "id": 10,
+    "start": 53.91,
+    "end": 63.83,
+    "start_hms": "00:00:53",
+    "end_hms": "00:01:03",
+    "text": "6 je serai full OpenAid. Je ne pense pas qu'Anthropic va pouvoir revenir sur OpenAid,"
+  },
+  {
+    "id": 11,
+    "start": 63.83,
+    "end": 69.75,
+    "start_hms": "00:01:03",
+    "end_hms": "00:01:09",
+    "text": "à voir par la suite, mais en tout cas je vous conseille vraiment d'utiliser full OpenAid."
+  },
+  {
+    "id": 12,
+    "start": 69.75,
+    "end": 75.47,
+    "start_hms": "00:01:09",
+    "end_hms": "00:01:15",
+    "text": "Donc on a lancé notre terminal au dossier et maintenant ce qui va nous intéresser ça"
+  },
+  {
+    "id": 13,
+    "start": 75.47,
+    "end": 86.87,
+    "start_hms": "00:01:15",
+    "end_hms": "00:01:26",
+    "text": "va être tout simplement de récupérer ce prompt là et de créer un xlmx avec son poste par rapport à"
+  },
+  {
+    "id": 14,
+    "start": 86.87,
+    "end": 91.99,
+    "start_hms": "00:01:26",
+    "end_hms": "00:01:31",
+    "text": "l'autre secteur. C'est simple, je récupère le prompt, on va le voir un peu plus en détails"
+  },
+  {
+    "id": 15,
+    "start": 91.99,
+    "end": 108.53,
+    "start_hms": "00:01:31",
+    "end_hms": "00:01:48",
+    "text": "ça prend du temps, la génération va falloir tout simplement patienter, vous allez aller"
+  },
+  {
+    "id": 16,
+    "start": 108.53,
+    "end": 118.65,
+    "start_hms": "00:01:48",
+    "end_hms": "00:01:58",
+    "text": "dans SIT, vous allez redonner votre DIT, S-I-O-G-E-O. Une fois que c'est fait, on tape entrée,"
+  },
+  {
+    "id": 17,
+    "start": 118.65,
+    "end": 124.59,
+    "start_hms": "00:01:58",
+    "end_hms": "00:02:04",
+    "text": "on laisse travailler, on va détailler un petit peu le prompt. Donc en gros, je vous"
+  },
+  {
+    "id": 18,
+    "start": 124.59,
+    "end": 128.67,
+    "start_hms": "00:02:04",
+    "end_hms": "00:02:08",
+    "text": "dis que c'est un stratège, B2B senior, bus rider, les queues in, consultant,"
+  },
+  {
+    "id": 19,
+    "start": 128.67,
+    "end": 133.43,
+    "start_hms": "00:02:08",
+    "end_hms": "00:02:13",
+    "text": "automatisation, pour restaurants, les directeurs artistiques, photos,"
+  },
+  {
+    "id": 20,
+    "start": 133.43,
+    "end": 138.59,
+    "start_hms": "00:02:13",
+    "end_hms": "00:02:18",
+    "text": "documentaires, contexte, tu vas devoir, tu vas recevoir un audit stratégique, le"
+  },
+  {
+    "id": 21,
+    "start": 138.59,
+    "end": 141.39,
+    "start_hms": "00:02:18",
+    "end_hms": "00:02:21",
+    "text": "site, les off, les concurrents, les avec-clients, les objections"
+  },
+  {
+    "id": 22,
+    "start": 141.39,
+    "end": 146.07,
+    "start_hms": "00:02:21",
+    "end_hms": "00:02:26",
+    "text": "commerciales et les sources chiffrées. L'objectif, créer une banque, 200"
+  },
+  {
+    "id": 23,
+    "start": 146.07,
+    "end": 151.69,
+    "start_hms": "00:02:26",
+    "end_hms": "00:02:31",
+    "text": "poste LinkedIn avec images pour positionner l'entreprise comme spécialiste en automatisation"
+  },
+  {
+    "id": 24,
+    "start": 151.69,
+    "end": 156.39,
+    "start_hms": "00:02:31",
+    "end_hms": "00:02:36",
+    "text": "concrète pour restaurant. Très important, les postes ne doivent jamais parler de l'auditio"
+  },
+  {
+    "id": 25,
+    "start": 156.39,
+    "end": 161.79,
+    "start_hms": "00:02:36",
+    "end_hms": "00:02:41",
+    "text": "et geo, de la stratégie de contenu ou de restia comme sujet principal. Ces éléments"
+  },
+  {
+    "id": 26,
+    "start": 161.79,
+    "end": 168.07,
+    "start_hms": "00:02:41",
+    "end_hms": "00:02:48",
+    "text": "servent uniquement à comprendre le business. Le lecteur doit avoir des postes utiles pour"
+  },
+  {
+    "id": 27,
+    "start": 168.07,
+    "end": 171.79,
+    "start_hms": "00:02:48",
+    "end_hms": "00:02:51",
+    "text": "son restaurant, pas les coulisses de l'autre acquisition. Audience, donc là je donne"
+  },
+  {
+    "id": 28,
+    "start": 171.79,
+    "end": 180.87,
+    "start_hms": "00:02:51",
+    "end_hms": "00:03:00",
+    "text": "toutes les informations. Il faudra les modifier selon le secteur que vous souhaitez, et après"
+  },
+  {
+    "id": 29,
+    "start": 180.87,
+    "end": 188.79,
+    "start_hms": "00:03:00",
+    "end_hms": "00:03:08",
+    "text": "vous allez glisser votre dossier SEO et JEO qu'on a fait ensemble. L'objectif à la fin c'est"
+  },
+  {
+    "id": 30,
+    "start": 188.79,
+    "end": 197.95,
+    "start_hms": "00:03:08",
+    "end_hms": "00:03:17",
+    "text": "qu'on est sans poste directement. UI égale un poste avec l'image, le titre et la description."
+  },
+  {
+    "id": 31,
+    "start": 197.95,
+    "end": 204.43,
+    "start_hms": "00:03:17",
+    "end_hms": "00:03:24",
+    "text": "et que chaque poste soit totalement différent et que ça tape bien selon ma cible quoi."
+  },
+  {
+    "id": 32,
+    "start": 204.43,
+    "end": 209.83,
+    "start_hms": "00:03:24",
+    "end_hms": "00:03:29",
+    "text": "Et également pour qu'on met en place cette stratégie, parce que ça tape aussi dans le"
+  },
+  {
+    "id": 33,
+    "start": 209.83,
+    "end": 239.98,
+    "start_hms": "00:03:29",
+    "end_hms": "00:03:59",
+    "text": "GEO. Par exemple, si... Non, pas, pas. Ok, voilà, Linkedin, mais c'est ça qu'on cherche."
+  },
+  {
+    "id": 34,
+    "start": 239.98,
+    "end": 248.18,
+    "start_hms": "00:03:59",
+    "end_hms": "00:04:08",
+    "text": "Encore une fois, si je vais là, on peut voir que ça tombe directement sur mon profil. Donc"
+  },
+  {
+    "id": 35,
+    "start": 248.18,
+    "end": 285.01,
+    "start_hms": "00:04:08",
+    "end_hms": "00:04:45",
+    "text": "c'est pas mal aussi pour le GEO si par exemple je fais des recherches sur internet donc là regardez"
+  },
+  {
+    "id": 36,
+    "start": 285.01,
+    "end": 291.78,
+    "start_hms": "00:04:45",
+    "end_hms": "00:04:51",
+    "text": "par exemple ça m'a donné une source il fait 374 commentaires c'est pas énorme on a vu avec"
+  },
+  {
+    "id": 37,
+    "start": 291.78,
+    "end": 297.62,
+    "start_hms": "00:04:51",
+    "end_hms": "00:04:57",
+    "text": "Billitmonet ça peut faire bien plus mais il a été directement apporté à GPT"
+  },
+  {
+    "id": 38,
+    "start": 297.62,
+    "end": 310.45,
+    "start_hms": "00:04:57",
+    "end_hms": "00:05:10",
+    "text": "oh bah top là il a sorti mon site internet là aussi c'est pas mal du tout c'est bien"
+  },
+  {
+    "id": 39,
+    "start": 310.45,
+    "end": 318.58,
+    "start_hms": "00:05:10",
+    "end_hms": "00:05:18",
+    "text": "référencé. Le but c'est qu'on soit sourcés vraiment sur tout, c'est pour ça que derrière"
+  },
+  {
+    "id": 40,
+    "start": 318.58,
+    "end": 324.6,
+    "start_hms": "00:05:18",
+    "end_hms": "00:05:24",
+    "text": "on va chercher à faire des postes similaires à ça. On va plus faire des postes pas des lits de"
+  },
+  {
+    "id": 41,
+    "start": 324.6,
+    "end": 328.96,
+    "start_hms": "00:05:24",
+    "end_hms": "00:05:28",
+    "text": "magnètes, nous ce qu'on va faire c'est qu'on va pas publier sur notre profil personnel, on va"
+  },
+  {
+    "id": 42,
+    "start": 328.96,
+    "end": 333.42,
+    "start_hms": "00:05:28",
+    "end_hms": "00:05:33",
+    "text": "vraiment stagner les deux parties donc là ça va être vraiment pour du lits magnètes,"
+  },
+  {
+    "id": 43,
+    "start": 333.42,
+    "end": 340.78,
+    "start_hms": "00:05:33",
+    "end_hms": "00:05:40",
+    "text": "profil expert et ensuite autre page entreprise, ça va être plutôt pour justement des postes"
+  },
+  {
+    "id": 44,
+    "start": 340.78,
+    "end": 348.04,
+    "start_hms": "00:05:40",
+    "end_hms": "00:05:48",
+    "text": "automatique, qui parle vraiment de votre secteur, enfin de ce que vous souhaitez justement à"
+  },
+  {
+    "id": 45,
+    "start": 348.04,
+    "end": 361.06,
+    "start_hms": "00:05:48",
+    "end_hms": "00:06:01",
+    "text": "Tiel. Là, ça va prendre un peu de temps. Il est en train de générer les 100 posts, créer le"
+  },
+  {
+    "id": 46,
+    "start": 361.06,
+    "end": 366.26,
+    "start_hms": "00:06:01",
+    "end_hms": "00:06:06",
+    "text": "cas sur XLSX, vérifier toutes les contraintes, livrer le fichier final. Une fois qu'il aura"
+  },
+  {
+    "id": 47,
+    "start": 366.26,
+    "end": 370.1,
+    "start_hms": "00:06:06",
+    "end_hms": "00:06:10",
+    "text": "fini justement de nous créer tout ça, nous on passera à une autre partie, on passera à la"
+  },
+  {
+    "id": 48,
+    "start": 370.1,
+    "end": 375.5,
+    "start_hms": "00:06:10",
+    "end_hms": "00:06:15",
+    "text": "la partie N8N. Donc on va utiliser cet outil là, pour moi parce qu'on l'appelle CZ,"
+  },
+  {
+    "id": 49,
+    "start": 375.5,
+    "end": 382.34,
+    "start_hms": "00:06:15",
+    "end_hms": "00:06:22",
+    "text": "depuis le départ. Je trouve que c'est un outil qui reste tout de même intéressant pour"
+  },
+  {
+    "id": 50,
+    "start": 382.34,
+    "end": 390.58,
+    "start_hms": "00:06:22",
+    "end_hms": "00:06:30",
+    "text": "l'aspect visuel, pour l'aspect simple qu'il peut justement nous apporter. Et encore une fois,"
+  },
+  {
+    "id": 51,
+    "start": 390.58,
+    "end": 396.02,
+    "start_hms": "00:06:30",
+    "end_hms": "00:06:36",
+    "text": "il y a des clients qui peuvent demander des automatisations sur N8N. C'est toujours"
+  },
+  {
+    "id": 52,
+    "start": 396.02,
+    "end": 400.46,
+    "start_hms": "00:06:36",
+    "end_hms": "00:06:40",
+    "text": "important d'avoir une expertise sur cet outil-là, montrer que Cloface allait vraiment tout faire et"
+  },
+  {
+    "id": 53,
+    "start": 400.46,
+    "end": 406.58,
+    "start_hms": "00:06:40",
+    "end_hms": "00:06:46",
+    "text": "vous n'avez pas de limites. Même si derrière, par l'utiliser, Codex et créer directement"
+  },
+  {
+    "id": 54,
+    "start": 406.58,
+    "end": 412.1,
+    "start_hms": "00:06:46",
+    "end_hms": "00:06:52",
+    "text": "l'automatisation en Python et le mettre sur le VPS est bien plus rapide, mais ça dépend encore"
+  },
+  {
+    "id": 55,
+    "start": 412.1,
+    "end": 417.14,
+    "start_hms": "00:06:52",
+    "end_hms": "00:06:57",
+    "text": "une fois du choix du client, il faut s'adapter un maximum pour essayer de le satisfaire,"
+  },
+  {
+    "id": 56,
+    "start": 417.14,
+    "end": 424.1,
+    "start_hms": "00:06:57",
+    "end_hms": "00:07:04",
+    "text": "que ensuite vous soyez vraiment son expert personnel à lui. Là on va attendre,"
+  },
+  {
+    "id": 57,
+    "start": 424.1,
+    "end": 433.46,
+    "start_hms": "00:07:04",
+    "end_hms": "00:07:13",
+    "text": "ça va prendre pas mal de temps encore une fois. En gros il va nous livrer un xlmx et après"
+  },
+  {
+    "id": 58,
+    "start": 433.46,
+    "end": 452.27,
+    "start_hms": "00:07:13",
+    "end_hms": "00:07:32",
+    "text": "ce qu'on va faire, on va aller sur n8n, on va faire Create, Workthrough, ensuite on va rajouter"
+  },
+  {
+    "id": 59,
+    "start": 452.27,
+    "end": 458.27,
+    "start_hms": "00:07:32",
+    "end_hms": "00:07:38",
+    "text": "des nœuds bons. Et juste avant de faire ça, vu que derrière, c'est un outil qui est très"
+  },
+  {
+    "id": 60,
+    "start": 458.27,
+    "end": 462.75,
+    "start_hms": "00:07:38",
+    "end_hms": "00:07:42",
+    "text": "complexe au départ, mais une fois que vous mettez des mains dedans ça va être de plus en"
+  },
+  {
+    "id": 61,
+    "start": 462.75,
+    "end": 470.27,
+    "start_hms": "00:07:42",
+    "end_hms": "00:07:50",
+    "text": "plus simple. Vous avez toujours des petites solutions, des petits tips pour faciliter la tâche et aller"
+  },
+  {
+    "id": 62,
+    "start": 470.27,
+    "end": 477.87,
+    "start_hms": "00:07:50",
+    "end_hms": "00:07:57",
+    "text": "beaucoup plus vite même sans forcément de compétences. Donc on va voir ça. Il faut juste qu'il se finisse"
+  },
+  {
+    "id": 63,
+    "start": 477.87,
+    "end": 486.54,
+    "start_hms": "00:07:57",
+    "end_hms": "00:08:06",
+    "text": "du coup. Les 100 postes, comme ça on aura plein d'une stratégie sur une longue durée. Après vous"
+  },
+  {
+    "id": 64,
+    "start": 486.54,
+    "end": 492.02,
+    "start_hms": "00:08:06",
+    "end_hms": "00:08:12",
+    "text": "pouvez encore une fois changer 100 postes ou mettre 1000, ça prendra plus de temps, ça va ou"
+  },
+  {
+    "id": 65,
+    "start": 492.02,
+    "end": 499.1,
+    "start_hms": "00:08:12",
+    "end_hms": "00:08:19",
+    "text": "ou prendre énormément de tokens mais en soit c'est faisable, il n'y a pas de problème c'est"
+  },
+  {
+    "id": 66,
+    "start": 499.1,
+    "end": 504.34,
+    "start_hms": "00:08:19",
+    "end_hms": "00:08:24",
+    "text": "juste qu'il ne faut pas qu'il délire, il faut qu'il reste stratégique jusqu'à la fin de la"
+  },
+  {
+    "id": 67,
+    "start": 504.34,
+    "end": 509.58,
+    "start_hms": "00:08:24",
+    "end_hms": "00:08:29",
+    "text": "génération à la limite vous faites des petits packs de 100 postes par 100 postes ou même 50 par"
+  },
+  {
+    "id": 68,
+    "start": 509.58,
+    "end": 519.28,
+    "start_hms": "00:08:29",
+    "end_hms": "00:08:39",
+    "text": "50 je pense c'est pas mal 50 par 50 ça vous c'est sûr qu'il ne perd pas la tête et"
+  },
+  {
+    "id": 69,
+    "start": 519.28,
+    "end": 525.64,
+    "start_hms": "00:08:39",
+    "end_hms": "00:08:45",
+    "text": "qui va vous sauver des postes très qualitatifs qui sont basés du coup sur l'auditat CIO et GEO."
+  },
+  {
+    "id": 70,
+    "start": 525.64,
+    "end": 530.36,
+    "start_hms": "00:08:45",
+    "end_hms": "00:08:50",
+    "text": "Ça, ça va être important aussi parce qu'on l'a vu tout à l'heure. On peut se positionner"
+  },
+  {
+    "id": 71,
+    "start": 530.36,
+    "end": 536.68,
+    "start_hms": "00:08:50",
+    "end_hms": "00:08:56",
+    "text": "grâce à nos articles, grâce à nos publications de postes les que d'une. Mais en gros,"
+  },
+  {
+    "id": 72,
+    "start": 536.68,
+    "end": 541.0,
+    "start_hms": "00:08:56",
+    "end_hms": "00:09:01",
+    "text": "nous, ce qu'on va faire, ça va être sur une vitesse à partir d'un moment, on va aller"
+  },
+  {
+    "id": 73,
+    "start": 541.0,
+    "end": 549.46,
+    "start_hms": "00:09:01",
+    "end_hms": "00:09:09",
+    "text": "chercher un trigger, le trigger ça va être ça, donc je décide le trigger intervalle quand est-ce"
+  },
+  {
+    "id": 74,
+    "start": 549.46,
+    "end": 553.66,
+    "start_hms": "00:09:09",
+    "end_hms": "00:09:13",
+    "text": "qu'il se déclenche mon workflow tous les jours, tous les week-ends, tous les mois ou en custom"
+  },
+  {
+    "id": 75,
+    "start": 553.66,
+    "end": 562.08,
+    "start_hms": "00:09:13",
+    "end_hms": "00:09:22",
+    "text": "donc à custom si vous voulez que ça se déclenche avec une date précise etc. Moi perso je voudrais"
+  },
+  {
+    "id": 76,
+    "start": 562.08,
+    "end": 577.39,
+    "start_hms": "00:09:22",
+    "end_hms": "00:09:37",
+    "text": "que tous les jours aller à la limite à quelle heure. Je ne sais pas ce qu'il fait à 4 p.m.,"
+  },
+  {
+    "id": 77,
+    "start": 577.39,
+    "end": 585.39,
+    "start_hms": "00:09:37",
+    "end_hms": "00:09:45",
+    "text": "je ne sais pas ce qu'il fait à quelle heure en France. En gros, là, voilà, notre workflow"
+  },
+  {
+    "id": 78,
+    "start": 585.39,
+    "end": 591.91,
+    "start_hms": "00:09:45",
+    "end_hms": "00:09:51",
+    "text": "va se déclencher tous les jours à 4 p.m. Ensuite, on va aller récupérer notre xlsx,"
+  },
+  {
+    "id": 79,
+    "start": 591.91,
+    "end": 602.11,
+    "start_hms": "00:09:51",
+    "end_hms": "00:10:02",
+    "text": "qui sont notre xlsx. Juste ici, donc ça sera un mode data table. Je pense que ça va être ça"
+  },
+  {
+    "id": 80,
+    "start": 602.11,
+    "end": 616.28,
+    "start_hms": "00:10:02",
+    "end_hms": "00:10:16",
+    "text": "quand il va construire GetRose. Il va regarder les lignes. Une fois qu'il a vu les lignes,"
+  },
+  {
+    "id": 81,
+    "start": 616.28,
+    "end": 620.56,
+    "start_hms": "00:10:16",
+    "end_hms": "00:10:20",
+    "text": "il regarde celles qui sont pas traitées. Par exemple jour 1, pas traité. Ok, donc on"
+  },
+  {
+    "id": 82,
+    "start": 620.56,
+    "end": 637.51,
+    "start_hms": "00:10:20",
+    "end_hms": "00:10:37",
+    "text": "on prend celui-là. Ensuite, on va récupérer la variable du texte plus la variable de l'image"
+  },
+  {
+    "id": 83,
+    "start": 637.51,
+    "end": 645.87,
+    "start_hms": "00:10:37",
+    "end_hms": "00:10:45",
+    "text": "qu'on va mettre dans le node natif LinkedIn. Pour LinkedIn, ce n'est pas compliqué. Ce que"
+  },
+  {
+    "id": 84,
+    "start": 645.87,
+    "end": 651.63,
+    "start_hms": "00:10:45",
+    "end_hms": "00:10:51",
+    "text": "vous allez faire, c'est créer vos Credentials. Donc j'utilise Nvitel en cloud parce que c'est"
+  },
+  {
+    "id": 85,
+    "start": 651.63,
+    "end": 656.23,
+    "start_hms": "00:10:51",
+    "end_hms": "00:10:56",
+    "text": "c'est plus simple de connecter sur linkudin et derrière vous n'allez pas avoir la demande"
+  },
+  {
+    "id": 86,
+    "start": 656.23,
+    "end": 662.31,
+    "start_hms": "00:10:56",
+    "end_hms": "00:11:02",
+    "text": "à faire directement sur linkudin business developer, vous n'êtes pas sûr d'être"
+  },
+  {
+    "id": 87,
+    "start": 662.31,
+    "end": 663.31,
+    "start_hms": "00:11:02",
+    "end_hms": "00:11:03",
+    "text": "accepté."
+  },
+  {
+    "id": 88,
+    "start": 663.31,
+    "end": 669.95,
+    "start_hms": "00:11:03",
+    "end_hms": "00:11:09",
+    "text": "Donc ce que vous faites c'est que vous choisissez le node linkudin, vous faites connect to linkudin"
+  },
+  {
+    "id": 89,
+    "start": 669.95,
+    "end": 675.23,
+    "start_hms": "00:11:09",
+    "end_hms": "00:11:15",
+    "text": "et là vous allez tout simplement vous connecter avec vos identifiants linkudin."
+  },
+  {
+    "id": 90,
+    "start": 675.23,
+    "end": 682.72,
+    "start_hms": "00:11:15",
+    "end_hms": "00:11:22",
+    "text": "Moi là ça m'a connecté, donc c'est top. Là je suis connecté du coup à mon"
+  },
+  {
+    "id": 91,
+    "start": 682.72,
+    "end": 701.25,
+    "start_hms": "00:11:22",
+    "end_hms": "00:11:41",
+    "text": "profil personnel, plus ma page entreprise. Je vais changer, je vais mettre une"
+  },
+  {
+    "id": 92,
+    "start": 701.25,
+    "end": 710.24,
+    "start_hms": "00:11:41",
+    "end_hms": "00:11:50",
+    "text": "kitchen, classifier, reconnect, on voit que ça fonctionne."
+  },
+  {
+    "id": 93,
+    "start": 710.24,
+    "end": 715.04,
+    "start_hms": "00:11:50",
+    "end_hms": "00:11:55",
+    "text": "Ok donc là il a fini le xlsx, on va aller vérifier quand même. Alors on va passer à"
+  },
+  {
+    "id": 94,
+    "start": 715.04,
+    "end": 727.7,
+    "start_hms": "00:11:55",
+    "end_hms": "00:12:07",
+    "text": "à ça, hop, réseau social, donc nouveau dossier, voilà, nouveau dossier, on va le"
+  },
+  {
+    "id": 95,
+    "start": 727.7,
+    "end": 753.39,
+    "start_hms": "00:12:07",
+    "end_hms": "00:12:33",
+    "text": "renommer, ligne 02, ligne que Jean, on va mettre xlsx, on ouvre, tu peux mettre"
+  },
+  {
+    "id": 96,
+    "start": 753.39,
+    "end": 765.02,
+    "start_hms": "00:12:33",
+    "end_hms": "00:12:45",
+    "text": "ce title, trop agressif sur chaque facture, c'est la montagne, la pote 6.4.1, ok,"
+  },
+  {
+    "id": 97,
+    "start": 765.02,
+    "end": 772.34,
+    "start_hms": "00:12:45",
+    "end_hms": "00:12:52",
+    "text": "restaurant de main group, cta à tester sur un service cette semaine, hashtag, proof,"
+  },
+  {
+    "id": 98,
+    "start": 772.34,
+    "end": 780.62,
+    "start_hms": "00:12:52",
+    "end_hms": "00:13:00",
+    "text": "data source, image prompt, image alt, facture faumicheur. Je lui demandais"
+  },
+  {
+    "id": 99,
+    "start": 780.62,
+    "end": 821.41,
+    "start_hms": "00:13:00",
+    "end_hms": "00:13:41",
+    "text": "s'imaginer les images. Pourquoi je lui demande à lui de générer les sens"
+  },
+  {
+    "id": 100,
+    "start": 821.41,
+    "end": 838.37,
+    "start_hms": "00:13:41",
+    "end_hms": "00:13:58",
+    "text": "d'image ? Parce que tout simplement, nous vu qu'on paye en forfait ici, on va"
+  },
+  {
+    "id": 101,
+    "start": 838.37,
+    "end": 841.77,
+    "start_hms": "00:13:58",
+    "end_hms": "00:14:01",
+    "text": "pouvoir utiliser notre forfait pour de la création d'image. On va pas"
+  },
+  {
+    "id": 102,
+    "start": 841.77,
+    "end": 846.33,
+    "start_hms": "00:14:01",
+    "end_hms": "00:14:06",
+    "text": "passer par API, etc. Vous l'avez vu sur la partie article"
+  },
+  {
+    "id": 103,
+    "start": 846.33,
+    "end": 852.81,
+    "start_hms": "00:14:06",
+    "end_hms": "00:14:12",
+    "text": "automatique on était à 15-20 centimes par image donc ça fait assez cher. Là on"
+  },
+  {
+    "id": 104,
+    "start": 852.81,
+    "end": 859.72,
+    "start_hms": "00:14:12",
+    "end_hms": "00:14:19",
+    "text": "utilise un maximum du coût de notre forfait. Là je vais voir. Moi j'ai l'abonnement à"
+  },
+  {
+    "id": 105,
+    "start": 859.72,
+    "end": 864.84,
+    "start_hms": "00:14:19",
+    "end_hms": "00:14:24",
+    "text": "100 euros sur codex je crois. Donc si je vais sur codex on va voir. Dès qu'il aura"
+  },
+  {
+    "id": 106,
+    "start": 864.84,
+    "end": 867.52,
+    "start_hms": "00:14:24",
+    "end_hms": "00:14:27",
+    "text": "fini je pense qu'il va buger à mon moment de licence. Ça fait beaucoup quand"
+  },
+  {
+    "id": 107,
+    "start": 867.52,
+    "end": 884.85,
+    "start_hms": "00:14:27",
+    "end_hms": "00:14:44",
+    "text": "même. Je suis à 15%. On va voir, 15% juste ici avec l'abonnement à 100 euros"
+  },
+  {
+    "id": 108,
+    "start": 884.85,
+    "end": 896.14,
+    "start_hms": "00:14:44",
+    "end_hms": "00:14:56",
+    "text": "encore une fois. Donc on va revenir sur la partie N8N, donc sur la partie N8N comme"
+  },
+  {
+    "id": 109,
+    "start": 896.14,
+    "end": 902.46,
+    "start_hms": "00:14:56",
+    "end_hms": "00:15:02",
+    "text": "vous pouvez voir une fois que vous avez le node natif, donc soit vous faites une"
+  },
+  {
+    "id": 110,
+    "start": 902.46,
+    "end": 906.62,
+    "start_hms": "00:15:02",
+    "end_hms": "00:15:06",
+    "text": "ressource en post, soit un custom appeal call, ou ce qu'on va se poster. Donc"
+  },
+  {
+    "id": 111,
+    "start": 906.62,
+    "end": 910.02,
+    "start_hms": "00:15:06",
+    "end_hms": "00:15:10",
+    "text": "choisissez ça. L'opération, qu'est ce qu'on fait ? On veut créer un post"
+  },
+  {
+    "id": 112,
+    "start": 910.02,
+    "end": 914.42,
+    "start_hms": "00:15:10",
+    "end_hms": "00:15:14",
+    "text": "encore une fois, donc on va utiliser custom appeal call. Ensuite post at,"
+  },
+  {
+    "id": 113,
+    "start": 914.42,
+    "end": 923.66,
+    "start_hms": "00:15:14",
+    "end_hms": "00:15:23",
+    "text": "donc personne, ça serait tout simplement sur mon profil à moi, donc mon profil là"
+  },
+  {
+    "id": 114,
+    "start": 923.66,
+    "end": 927.04,
+    "start_hms": "00:15:23",
+    "end_hms": "00:15:27",
+    "text": "où j'ai fait ma stratégie de ligne maniète, donc c'est pas ce que je"
+  },
+  {
+    "id": 115,
+    "start": 927.04,
+    "end": 935.38,
+    "start_hms": "00:15:27",
+    "end_hms": "00:15:35",
+    "text": "souhaite pour le moment, ce que je veux c'est simplement publier du coup sur ma"
+  },
+  {
+    "id": 116,
+    "start": 935.38,
+    "end": 942.1,
+    "start_hms": "00:15:35",
+    "end_hms": "00:15:42",
+    "text": "page entreprise, ma page agence, donc je choisis organisation, et là comme on te le"
+  },
+  {
+    "id": 117,
+    "start": 942.1,
+    "end": 949.38,
+    "start_hms": "00:15:42",
+    "end_hms": "00:15:49",
+    "text": "organization urn, qu'est ce que c'est ? Et bien c'est cette partie là, c'est ce numéro là,"
+  },
+  {
+    "id": 118,
+    "start": 949.38,
+    "end": 957.46,
+    "start_hms": "00:15:49",
+    "end_hms": "00:15:57",
+    "text": "on récupère le numéro, on retourne sur organization urn, on mentionne, là ensuite on fait l'image"
+  },
+  {
+    "id": 119,
+    "start": 957.46,
+    "end": 962.18,
+    "start_hms": "00:15:57",
+    "end_hms": "00:16:02",
+    "text": "parce qu'on va en ajouter une et on choisira la partie data. Encore une fois le texte on va"
+  },
+  {
+    "id": 120,
+    "start": 962.18,
+    "end": 967.02,
+    "start_hms": "00:16:02",
+    "end_hms": "00:16:07",
+    "text": "attendre parce qu'on va recevoir la variable, vous allez voir ce que c'est, c'est pas très"
+  },
+  {
+    "id": 121,
+    "start": 967.02,
+    "end": 972.3,
+    "start_hms": "00:16:07",
+    "end_hms": "00:16:12",
+    "text": "complexe. On va attendre un petit peu. On va voir justement des autres modes."
+  },
+  {
+    "id": 122,
+    "start": 972.3,
+    "end": 978.46,
+    "start_hms": "00:16:12",
+    "end_hms": "00:16:18",
+    "text": "Il y a juste ça sur l'unique qu'il y a avec Kenviten en natif. On peut utiliser que de la"
+  },
+  {
+    "id": 123,
+    "start": 978.46,
+    "end": 988.25,
+    "start_hms": "00:16:18",
+    "end_hms": "00:16:28",
+    "text": "création post. Donc top. Ensuite on va aller après dans settings, une fois qu'il"
+  },
+  {
+    "id": 124,
+    "start": 988.25,
+    "end": 1008.43,
+    "start_hms": "00:16:28",
+    "end_hms": "00:16:48",
+    "text": "aura fini les images, un petit peu de temps, même beaucoup trop de temps je crois. 70% ici,"
+  },
+  {
+    "id": 125,
+    "start": 1008.43,
+    "end": 1019.03,
+    "start_hms": "00:16:48",
+    "end_hms": "00:16:59",
+    "text": "15%, le plus intéressant c'est le forfait sur chaque semi, il y a bien plus de tokens"
+  },
+  {
+    "id": 126,
+    "start": 1019.03,
+    "end": 1024.67,
+    "start_hms": "00:16:59",
+    "end_hms": "00:17:04",
+    "text": "qu'anthropic, on peut faire beaucoup plus de choses avec seulement le forfait à cendres,"
+  },
+  {
+    "id": 127,
+    "start": 1024.67,
+    "end": 1048.38,
+    "start_hms": "00:17:04",
+    "end_hms": "00:17:28",
+    "text": "chose qu'on ne peut pas trop faire avec anthropicon limité. Il m'a fait 30 images, on va l'ouvrir"
+  },
+  {
+    "id": 128,
+    "start": 1048.38,
+    "end": 1057.54,
+    "start_hms": "00:17:28",
+    "end_hms": "00:17:37",
+    "text": "voir ce qu'il m'a mis dedans. Ah oui ok, il a fait un compounder, il est très fort,"
+  },
+  {
+    "id": 129,
+    "start": 1057.54,
+    "end": 1103.96,
+    "start_hms": "00:17:37",
+    "end_hms": "00:18:23",
+    "text": "Très très fort, très très fort, je fais les 100, ah oui, ok."
+  },
+  {
+    "id": 130,
+    "start": 1103.96,
+    "end": 1108.4,
+    "start_hms": "00:18:23",
+    "end_hms": "00:18:28",
+    "text": "Quoi de laisser travailler, ça va prendre du temps hein, parce que là on parle de génération,"
+  },
+  {
+    "id": 131,
+    "start": 1108.4,
+    "end": 1110.44,
+    "start_hms": "00:18:28",
+    "end_hms": "00:18:30",
+    "text": "c'est maje, c'est toujours long."
+  },
+  {
+    "id": 132,
+    "start": 1110.44,
+    "end": 1130.22,
+    "start_hms": "00:18:30",
+    "end_hms": "00:18:50",
+    "text": "Je pense que je vais pas attendre les 100 images, parce que ça va prendre beaucoup"
+  },
+  {
+    "id": 133,
+    "start": 1130.22,
+    "end": 1133.74,
+    "start_hms": "00:18:50",
+    "end_hms": "00:18:53",
+    "text": "trop de temps, ça va pas être très utile, pas très enrichissant pour vous."
+  },
+  {
+    "id": 134,
+    "start": 1133.74,
+    "end": 1139.14,
+    "start_hms": "00:18:53",
+    "end_hms": "00:18:59",
+    "text": "J'ai là, je pense que vous avez coulé pas mal d'informations, le plus début"
+  },
+  {
+    "id": 135,
+    "start": 1139.14,
+    "end": 1145.98,
+    "start_hms": "00:18:59",
+    "end_hms": "00:19:05",
+    "text": "de l'heure de la formation, je vais attendre encore un petit peu, mais une fois que"
+  },
+  {
+    "id": 136,
+    "start": 1145.98,
+    "end": 1157.16,
+    "start_hms": "00:19:05",
+    "end_hms": "00:19:17",
+    "text": "du coup notre dossier avec le xlmx plus du coup la partie avec l'image de texte."
+  },
+  {
+    "id": 137,
+    "start": 1157.16,
+    "end": 1161.64,
+    "start_hms": "00:19:17",
+    "end_hms": "00:19:21",
+    "text": "Nous on va connecter du coup n8n en mcpa codex pour qu'il nous crée lui-même le"
+  },
+  {
+    "id": 138,
+    "start": 1161.64,
+    "end": 1166.16,
+    "start_hms": "00:19:21",
+    "end_hms": "00:19:26",
+    "text": "workflow. Là je vous ai montré un petit peu à quoi servent les nodes donc je pense qu'il va"
+  },
+  {
+    "id": 139,
+    "start": 1166.16,
+    "end": 1171.08,
+    "start_hms": "00:19:26",
+    "end_hms": "00:19:31",
+    "text": "utiliser probablement, sûrement même si tu vas utiliser une table et la convertir"
+  },
+  {
+    "id": 140,
+    "start": 1171.08,
+    "end": 1179.96,
+    "start_hms": "00:19:31",
+    "end_hms": "00:19:39",
+    "text": "on va voir mais du coup on va connecter l8n à connex. Pour ce faire ça"
+  },
+  {
+    "id": 141,
+    "start": 1179.96,
+    "end": 1183.4,
+    "start_hms": "00:19:39",
+    "end_hms": "00:19:43",
+    "text": "n'est pas très compliqué, on va aller dans settings juste en bas à gauche"
+  },
+  {
+    "id": 142,
+    "start": 1183.4,
+    "end": 1189.4,
+    "start_hms": "00:19:43",
+    "end_hms": "00:19:49",
+    "text": "même avec un compte gratuit ça fonctionne ensuite on va aller dans"
+  },
+  {
+    "id": 143,
+    "start": 1189.4,
+    "end": 1195.56,
+    "start_hms": "00:19:49",
+    "end_hms": "00:19:55",
+    "text": "instance levels mcp, si je clique dessus on peut voir que j'arrive sur cette"
+  },
+  {
+    "id": 144,
+    "start": 1195.56,
+    "end": 1201.6,
+    "start_hms": "00:19:55",
+    "end_hms": "00:20:01",
+    "text": "par-dessus là, et là je peux choisir personnels, ma workflow, donc moi je"
+  },
+  {
+    "id": 145,
+    "start": 1201.6,
+    "end": 1207.88,
+    "start_hms": "00:20:01",
+    "end_hms": "00:20:07",
+    "text": "choisis my workflow, comme ça il va pouvoir tout simplement créer un workflow sur mon"
+  },
+  {
+    "id": 146,
+    "start": 1207.88,
+    "end": 1215.55,
+    "start_hms": "00:20:07",
+    "end_hms": "00:20:15",
+    "text": "instance. En tout cas je peux édite la description, etc. Enfin bref, ça on s'en"
+  },
+  {
+    "id": 147,
+    "start": 1215.55,
+    "end": 1229.42,
+    "start_hms": "00:20:15",
+    "end_hms": "00:20:29",
+    "text": "fout. Bah non, ça c'était pas normal, hop. Donc voilà, ça on va le supprimer,"
+  },
+  {
+    "id": 148,
+    "start": 1229.42,
+    "end": 1235.06,
+    "start_hms": "00:20:29",
+    "end_hms": "00:20:35",
+    "text": "C'est pas ce qui nous intéresse. Et ensuite on clique sur connexion"
+  },
+  {
+    "id": 149,
+    "start": 1235.06,
+    "end": 1240.66,
+    "start_hms": "00:20:35",
+    "end_hms": "00:20:40",
+    "text": "détail juste ici. En connexion détail, on a le lien URL."
+  },
+  {
+    "id": 150,
+    "start": 1240.66,
+    "end": 1247.38,
+    "start_hms": "00:20:40",
+    "end_hms": "00:20:47",
+    "text": "Là où il va pouvoir justement travailler. Codex. On a la partie access"
+  },
+  {
+    "id": 151,
+    "start": 1247.38,
+    "end": 1251.82,
+    "start_hms": "00:20:47",
+    "end_hms": "00:20:51",
+    "text": "token juste ici. Moi je vais mettre ma clé comme ça je vais tout donner et"
+  },
+  {
+    "id": 152,
+    "start": 1251.82,
+    "end": 1258.78,
+    "start_hms": "00:20:51",
+    "end_hms": "00:20:58",
+    "text": "ensuite après je révoque. Voilà, c'est la stratégie. 1, 2, 3, 4."
+  },
+  {
+    "id": 153,
+    "start": 1258.78,
+    "end": 1282.19,
+    "start_hms": "00:20:58",
+    "end_hms": "00:21:22",
+    "text": "objectif codex nous fait les postes avec les images il nous crée le xlmx ensuite"
+  },
+  {
+    "id": 154,
+    "start": 1282.19,
+    "end": 1290.91,
+    "start_hms": "00:21:22",
+    "end_hms": "00:21:30",
+    "text": "on connecte nmi 10 à codex et codex nous génère le morpho et ensuite c'est"
+  },
+  {
+    "id": 155,
+    "start": 1290.91,
+    "end": 1295.91,
+    "start_hms": "00:21:30",
+    "end_hms": "00:21:35",
+    "text": "C'est terminé, tout est pendant l'automatique."
+  },
+  {
+    "id": 156,
+    "start": 1295.91,
+    "end": 1337.8,
+    "start_hms": "00:21:35",
+    "end_hms": "00:22:17",
+    "text": "J'en fais une dernière et après c'est bon."
+  },
+  {
+    "id": 157,
+    "start": 1337.8,
+    "end": 1341.8,
+    "start_hms": "00:22:17",
+    "end_hms": "00:22:21",
+    "text": "Je vais échapper, normalement vous ça va continuer."
+  },
+  {
+    "id": 158,
+    "start": 1341.8,
+    "end": 1345.8,
+    "start_hms": "00:22:21",
+    "end_hms": "00:22:25",
+    "text": "On va voir combien j'ai consommé."
+  },
+  {
+    "id": 159,
+    "start": 1345.8,
+    "end": 1366.06,
+    "start_hms": "00:22:25",
+    "end_hms": "00:22:46",
+    "text": "Maintenant, connecte-toi à l'USP-NV10."
+  },
+  {
+    "id": 160,
+    "start": 1366.06,
+    "end": 1385.05,
+    "start_hms": "00:22:46",
+    "end_hms": "00:23:05",
+    "text": "Fais un nouveau workflow avec les tappeniers postes et les photos associées à l'STP."
+  },
+  {
+    "id": 161,
+    "start": 1385.05,
+    "end": 1395.35,
+    "start_hms": "00:23:05",
+    "end_hms": "00:23:15",
+    "text": "Donc là voilà, tout simple encore une fois, pas besoin de se prendre la tête, il va comprendre"
+  },
+  {
+    "id": 162,
+    "start": 1395.35,
+    "end": 1400.83,
+    "start_hms": "00:23:15",
+    "end_hms": "00:23:20",
+    "text": "justement ma demande et ensuite ça va se connecter à partir derrière, il y a un problème sur"
+  },
+  {
+    "id": 163,
+    "start": 1400.83,
+    "end": 1409.34,
+    "start_hms": "00:23:20",
+    "end_hms": "00:23:29",
+    "text": "l'airbag de connexion, mais je pense pas, donc on va voir comment il réfléchit, ça"
+  },
+  {
+    "id": 164,
+    "start": 1409.34,
+    "end": 1413.98,
+    "start_hms": "00:23:29",
+    "end_hms": "00:23:33",
+    "text": "c'est vraiment impuissant, 4-5 mois je calais à créer mes workflows, quand je comprenais"
+  },
+  {
+    "id": 165,
+    "start": 1413.98,
+    "end": 1417.94,
+    "start_hms": "00:23:33",
+    "end_hms": "00:23:37",
+    "text": "pas je faisais un screen, j'envoyais un chat, j'ai pété, je comprends, je comprenais"
+  },
+  {
+    "id": 166,
+    "start": 1417.94,
+    "end": 1423.3,
+    "start_hms": "00:23:37",
+    "end_hms": "00:23:43",
+    "text": "j'étais obligé de bidouiller, il le fait en one shot, il n'y a rien qui bug, c'est magique."
+  },
+  {
+    "id": 167,
+    "start": 1423.3,
+    "end": 1430.26,
+    "start_hms": "00:23:43",
+    "end_hms": "00:23:50",
+    "text": "Maintenant, t'as eu de la chance, parce que là tout va se faire en semi-automatique le coup quand même,"
+  },
+  {
+    "id": 168,
+    "start": 1430.26,
+    "end": 1440.62,
+    "start_hms": "00:23:50",
+    "end_hms": "00:24:00",
+    "text": "mais c'est dommage aussi pour Ennemy10, parce que je pense que ça devient compliqué pour eux."
+  },
+  {
+    "id": 169,
+    "start": 1440.62,
+    "end": 1449.5,
+    "start_hms": "00:24:00",
+    "end_hms": "00:24:09",
+    "text": "Sans qu'elle lui aille en dehors des 13 octobre."
+  },
+  {
+    "id": 170,
+    "start": 1449.5,
+    "end": 1473.57,
+    "start_hms": "00:24:09",
+    "end_hms": "00:24:33",
+    "text": "Oui, il y a personne qui parle de ça, ok, mais je pense que c'est compliqué pour eux,"
+  },
+  {
+    "id": 171,
+    "start": 1473.57,
+    "end": 1480.53,
+    "start_hms": "00:24:33",
+    "end_hms": "00:24:40",
+    "text": "parce qu'ils ont tout mangé, les anthropiques et les codex et au pédale du coup."
+  },
+  {
+    "id": 172,
+    "start": 1480.53,
+    "end": 1494.47,
+    "start_hms": "00:24:40",
+    "end_hms": "00:24:54",
+    "text": "Donc on va attendre un petit peu. Parfois il faut le relancer, il bug un petit peu."
+  },
+  {
+    "id": 173,
+    "start": 1494.47,
+    "end": 1526.33,
+    "start_hms": "00:24:54",
+    "end_hms": "00:25:26",
+    "text": "C'est pas là si c'est le cas, je vais quand même relancer le code qui bugue, je crois qu'il bugue."
+  },
+  {
+    "id": 174,
+    "start": 1526.33,
+    "end": 1532.33,
+    "start_hms": "00:25:26",
+    "end_hms": "00:25:32",
+    "text": "Je vais essayer de compact. Donc si vous voyez qu'il y a cette problématique là,"
+  },
+  {
+    "id": 175,
+    "start": 1532.33,
+    "end": 1537.25,
+    "start_hms": "00:25:32",
+    "end_hms": "00:25:37",
+    "text": "il faut soit compact, donc là c'est ce qu'on est en train de faire ou soit relancer."
+  },
+  {
+    "id": 176,
+    "start": 1537.25,
+    "end": 1540.49,
+    "start_hms": "00:25:37",
+    "end_hms": "00:25:40",
+    "text": "là je pense qu'il va falloir relancer parce que là il ne compagne même pas"
+  },
+  {
+    "id": 177,
+    "start": 1540.49,
+    "end": 1549.57,
+    "start_hms": "00:25:40",
+    "end_hms": "00:25:49",
+    "text": "donc je vais relancer, c'est pas grave, je vais récupérer Codex Dangerous, les"
+  },
+  {
+    "id": 178,
+    "start": 1549.57,
+    "end": 1558.39,
+    "start_hms": "00:25:49",
+    "end_hms": "00:25:58",
+    "text": "skips, je vais aller sur linkaging, mon dossier que j'ai créé, je vais lui"
+  },
+  {
+    "id": 179,
+    "start": 1558.39,
+    "end": 1573.04,
+    "start_hms": "00:25:58",
+    "end_hms": "00:26:13",
+    "text": "ramener ça, tous les posts, stp, ok donc là il a mer, on sait du coup le"
+  },
+  {
+    "id": 180,
+    "start": 1573.04,
+    "end": 1612.36,
+    "start_hms": "00:26:13",
+    "end_hms": "00:26:52",
+    "text": "système, ça fonctionne, je vais dire fais moi 4 images, ok on laisse"
+  },
+  {
+    "id": 181,
+    "start": 1612.36,
+    "end": 1615.68,
+    "start_hms": "00:26:52",
+    "end_hms": "00:26:55",
+    "text": "travailler encore un petit peu, en train de comprendre, après on va aller demander de nous"
+  },
+  {
+    "id": 182,
+    "start": 1615.68,
+    "end": 1619.32,
+    "start_hms": "00:26:55",
+    "end_hms": "00:26:59",
+    "text": "refaire les quatre images, parce que je pense qu'on les a perdues, on les a pas"
+  },
+  {
+    "id": 183,
+    "start": 1619.32,
+    "end": 1625.28,
+    "start_hms": "00:26:59",
+    "end_hms": "00:27:05",
+    "text": "enregistrés, alors si, ah non, je tag avec un front, je vais me prendre la vue"
+  },
+  {
+    "id": 184,
+    "start": 1625.28,
+    "end": 1639.13,
+    "start_hms": "00:27:05",
+    "end_hms": "00:27:19",
+    "text": "complète sur les 100 sujets, Marco jusqu'à communication,"
+  },
+  {
+    "id": 185,
+    "start": 1639.13,
+    "end": 1642.77,
+    "start_hms": "00:27:19",
+    "end_hms": "00:27:22",
+    "text": "Cleo va nous faire les quatre premiers posts, faire les quatre premières images pour les premiers"
+  },
+  {
+    "id": 186,
+    "start": 1642.77,
+    "end": 1653.29,
+    "start_hms": "00:27:22",
+    "end_hms": "00:27:33",
+    "text": "posts, ensuite on va le connecter en même temps. Ma chain c'est quoi déjà ?"
+  },
+  {
+    "id": 187,
+    "start": 1653.29,
+    "end": 1692.96,
+    "start_hms": "00:27:33",
+    "end_hms": "00:28:12",
+    "text": "On va attendre encore une fois qu'il finisse justement ces quatre images-là et ensuite"
+  },
+  {
+    "id": 188,
+    "start": 1692.96,
+    "end": 1696.44,
+    "start_hms": "00:28:12",
+    "end_hms": "00:28:16",
+    "text": "on va voir comment programmer chacun de ces postes."
+  },
+  {
+    "id": 189,
+    "start": 1696.44,
+    "end": 1703.68,
+    "start_hms": "00:28:16",
+    "end_hms": "00:28:23",
+    "text": "On va demander à Codex de nous faire pour qu'on puisse avoir tout simplement une publication"
+  },
+  {
+    "id": 190,
+    "start": 1703.68,
+    "end": 1704.68,
+    "start_hms": "00:28:23",
+    "end_hms": "00:28:24",
+    "text": "toujours par jour."
+  },
+  {
+    "id": 191,
+    "start": 1704.68,
+    "end": 1740.32,
+    "start_hms": "00:28:24",
+    "end_hms": "00:29:00",
+    "text": "Donc si on liche l'excellente liste qu'il m'a fait, avoir au niveau des postes, c'est"
+  },
+  {
+    "id": 192,
+    "start": 1740.32,
+    "end": 1743.88,
+    "start_hms": "00:29:00",
+    "end_hms": "00:29:03",
+    "text": "propre."
+  },
+  {
+    "id": 193,
+    "start": 1743.88,
+    "end": 1784.55,
+    "start_hms": "00:29:03",
+    "end_hms": "00:29:44",
+    "text": "C'est par le Workflow, pour le cas d'usage, voilà, ce qui est bien, c'est bien, j'aime beaucoup, j'aime beaucoup, j'aime beaucoup le cartier pour le cas."
+  },
+  {
+    "id": 194,
+    "start": 1784.55,
+    "end": 1787.55,
+    "start_hms": "00:29:44",
+    "end_hms": "00:29:47",
+    "text": "Ok, pas très intéressant ça, moi j'ai pas compris."
+  },
+  {
+    "id": 195,
+    "start": 1787.55,
+    "end": 1800.31,
+    "start_hms": "00:29:47",
+    "end_hms": "00:30:00",
+    "text": "Mon expertise, c'est bien, en tout cas je vois qu'il y a des bonnes petites choses, après quand il m'a analysé, il y a des choses à améliorer, etc."
+  },
+  {
+    "id": 196,
+    "start": 1800.31,
+    "end": 1826.88,
+    "start_hms": "00:30:00",
+    "end_hms": "00:30:26",
+    "text": "Je me fais deux images, deux restaurants, je me mets en une couche,"
+  },
+  {
+    "id": 197,
+    "start": 1826.88,
+    "end": 1828.76,
+    "start_hms": "00:30:26",
+    "end_hms": "00:30:28",
+    "text": "je peux payer le même produit, ou peut-être deux prix différents,"
+  },
+  {
+    "id": 198,
+    "start": 1828.76,
+    "end": 1829.76,
+    "start_hms": "00:30:28",
+    "end_hms": "00:30:29",
+    "text": "on va éteindre ça."
+  },
+  {
+    "id": 199,
+    "start": 1831.28,
+    "end": 1832.28,
+    "start_hms": "00:30:31",
+    "end_hms": "00:30:32",
+    "text": "Ok."
+  },
+  {
+    "id": 200,
+    "start": 1839.6,
+    "end": 1842.2,
+    "start_hms": "00:30:39",
+    "end_hms": "00:30:42",
+    "text": "Après, il y a quand même quelques petits points à améliorer."
+  },
+  {
+    "id": 201,
+    "start": 1843.24,
+    "end": 1846.24,
+    "start_hms": "00:30:43",
+    "end_hms": "00:30:46",
+    "text": "Le sujet sensible, ça c'est, il y a beaucoup d'exemples simples,"
+  },
+  {
+    "id": 202,
+    "start": 1847.12,
+    "end": 1849.92,
+    "start_hms": "00:30:47",
+    "end_hms": "00:30:49",
+    "text": "automatisation concrète, c'est la même structure à chaque fois."
+  },
+  {
+    "id": 203,
+    "start": 1851.84,
+    "end": 1853.52,
+    "start_hms": "00:30:51",
+    "end_hms": "00:30:53",
+    "text": "Donc ça, on pourrait lui dire d'améliorer."
+  },
+  {
+    "id": 204,
+    "start": 1856.8,
+    "end": 1859.56,
+    "start_hms": "00:30:56",
+    "end_hms": "00:30:59",
+    "text": "L'autre voile, c'est de passer une bonne petite heure sur ces 100 postes-là,"
+  },
+  {
+    "id": 205,
+    "start": 1859.56,
+    "end": 1860.84,
+    "start_hms": "00:30:59",
+    "end_hms": "00:31:00",
+    "text": "travailler un peu dessus,"
+  },
+  {
+    "id": 206,
+    "start": 1860.84,
+    "end": 1870.95,
+    "start_hms": "00:31:00",
+    "end_hms": "00:31:10",
+    "text": "Voir ce qui peut être amélioré, moi je vais lui dire, après donc là 1, 2, 3, 4, il y a le quatrième qui va arriver"
+  },
+  {
+    "id": 207,
+    "start": 1870.95,
+    "end": 1914.05,
+    "start_hms": "00:31:10",
+    "end_hms": "00:31:54",
+    "text": "Ok donc là il va avoir fini je pense, les 4 images sont dégénérées"
+  },
+  {
+    "id": 208,
+    "start": 1914.05,
+    "end": 1918.05,
+    "start_hms": "00:31:54",
+    "end_hms": "00:31:58",
+    "text": "Je vais les copier dans le dossier du projet, vérifier rapidement la dimension, tac"
+  },
+  {
+    "id": 209,
+    "start": 1918.05,
+    "end": 1924.71,
+    "start_hms": "00:31:58",
+    "end_hms": "00:32:04",
+    "text": "Là je vais lui dire de modifier les 4 premiers postes après"
+  },
+  {
+    "id": 210,
+    "start": 1924.71,
+    "end": 1971.52,
+    "start_hms": "00:32:04",
+    "end_hms": "00:32:51",
+    "text": "Je ne sais pas où il est, je ne sais pas où il est, je vais attendre un petit peu, il fait"
+  },
+  {
+    "id": 211,
+    "start": 1971.52,
+    "end": 1975.0,
+    "start_hms": "00:32:51",
+    "end_hms": "00:32:55",
+    "text": "s'ouvrir en carré, je vais garanger avec des noms d'isirs et ajouter des colonnes"
+  },
+  {
+    "id": 212,
+    "start": 1975.0,
+    "end": 1979.08,
+    "start_hms": "00:32:55",
+    "end_hms": "00:32:59",
+    "text": "d'éparcés dans le casse-four, ok super, donc il va le faire lui-même, je vais préparer"
+  },
+  {
+    "id": 213,
+    "start": 1979.08,
+    "end": 2010.63,
+    "start_hms": "00:32:59",
+    "end_hms": "00:33:30",
+    "text": "mon trône du coup, par contre, au fait, ça je vous dis de faire des loads de 20 à 30 voire"
+  },
+  {
+    "id": 214,
+    "start": 2010.63,
+    "end": 2014.43,
+    "start_hms": "00:33:30",
+    "end_hms": "00:33:34",
+    "text": "même 50 à la limite comme ça et ne perds pas la tête si vous n'essayez pas de se"
+  },
+  {
+    "id": 215,
+    "start": 2014.43,
+    "end": 2020.31,
+    "start_hms": "00:33:34",
+    "end_hms": "00:33:40",
+    "text": "simplifier un maximum la tâche. Plus vous faites petit, plus vous"
+  },
+  {
+    "id": 216,
+    "start": 2020.31,
+    "end": 2023.73,
+    "start_hms": "00:33:40",
+    "end_hms": "00:33:43",
+    "text": "allez avoir des postes différents, mieux travaillés, etc."
+  },
+  {
+    "id": 217,
+    "start": 2023.73,
+    "end": 2037.46,
+    "start_hms": "00:33:43",
+    "end_hms": "00:33:57",
+    "text": "Ok donc là je l'envoi le compte, on va voir ces images, pas mal,"
+  },
+  {
+    "id": 218,
+    "start": 2037.46,
+    "end": 2051.0,
+    "start_hms": "00:33:57",
+    "end_hms": "00:34:11",
+    "text": "semble d'être efficace. D'ailleurs je vais aller voir, je vais vérifier quelque chose,"
+  },
+  {
+    "id": 219,
+    "start": 2051.0,
+    "end": 2091.93,
+    "start_hms": "00:34:11",
+    "end_hms": "00:34:51",
+    "text": "je pense que ce n'était pas lui, c'était Restofun, là il est en bouillon, me frigue"
+  },
+  {
+    "id": 220,
+    "start": 2091.93,
+    "end": 2107.75,
+    "start_hms": "00:34:51",
+    "end_hms": "00:35:07",
+    "text": "Leur team d'aujourd'hui l'a bien été, mais comme je le voulais, on voit bien que l'automatisation continue à tourner."
+  },
+  {
+    "id": 221,
+    "start": 2107.75,
+    "end": 2109.75,
+    "start_hms": "00:35:07",
+    "end_hms": "00:35:09",
+    "text": "Ah non, c'était pas à part."
+  },
+  {
+    "id": 222,
+    "start": 2109.75,
+    "end": 2118.67,
+    "start_hms": "00:35:09",
+    "end_hms": "00:35:18",
+    "text": "Pardon, j'avais juste tombé, c'était pour la séance qu'on a vue tout à l'heure."
+  },
+  {
+    "id": 223,
+    "start": 2118.67,
+    "end": 2123.67,
+    "start_hms": "00:35:18",
+    "end_hms": "00:35:23",
+    "text": "Donc non, c'était pas sorti, donc il n'a pas encore été publié."
+  },
+  {
+    "id": 224,
+    "start": 2123.67,
+    "end": 2125.67,
+    "start_hms": "00:35:23",
+    "end_hms": "00:35:25",
+    "text": "Je pense qu'il décale à chaque fois d'une heure."
+  },
+  {
+    "id": 225,
+    "start": 2125.67,
+    "end": 2136.11,
+    "start_hms": "00:35:25",
+    "end_hms": "00:35:36",
+    "text": "Donc là il sera publié de l'heure 30, ok ouais il sera publié après, on a bien lu du 2k puis bon bref je voulais"
+  },
+  {
+    "id": 226,
+    "start": 2136.11,
+    "end": 2154.02,
+    "start_hms": "00:35:36",
+    "end_hms": "00:35:54",
+    "text": "voir le temps qui finisse justement d'améliorer du coup les postes. Ok donc c'est bon il l'a fait,"
+  },
+  {
+    "id": 227,
+    "start": 2154.02,
+    "end": 2161.93,
+    "start_hms": "00:35:54",
+    "end_hms": "00:36:01",
+    "text": "on va quand même aller vérifier dans le doute. Business, Social, Cajun, XT6."
+  },
+  {
+    "id": 228,
+    "start": 2161.93,
+    "end": 2198.22,
+    "start_hms": "00:36:01",
+    "end_hms": "00:36:38",
+    "text": "La structure est différente, on peut améliorer et le rendre plus naturel mais l'objectif"
+  },
+  {
+    "id": 229,
+    "start": 2198.22,
+    "end": 2200.3,
+    "start_hms": "00:36:38",
+    "end_hms": "00:36:40",
+    "text": "c'est vraiment de voir comment automatiser ces postes."
+  },
+  {
+    "id": 230,
+    "start": 2200.3,
+    "end": 2211.34,
+    "start_hms": "00:36:40",
+    "end_hms": "00:36:51",
+    "text": "Donc, ok, top, maintenant, alors je vais juste regarder un truc, top,"
+  },
+  {
+    "id": 231,
+    "start": 2211.34,
+    "end": 2225.9,
+    "start_hms": "00:36:51",
+    "end_hms": "00:37:05",
+    "text": "travailler sur un mutin, je te laisse le codité aux msp."
+  },
+  {
+    "id": 232,
+    "start": 2225.9,
+    "end": 2229.74,
+    "start_hms": "00:37:05",
+    "end_hms": "00:37:09",
+    "text": "Donc on l'a vu tout à l'heure comment se connecter aux msp, pas compliqué,"
+  },
+  {
+    "id": 233,
+    "start": 2229.74,
+    "end": 2241.72,
+    "start_hms": "00:37:09",
+    "end_hms": "00:37:21",
+    "text": "paramètres, instance msp, connexion de taille, hop, hop, hop."
+  },
+  {
+    "id": 234,
+    "start": 2241.72,
+    "end": 2255.58,
+    "start_hms": "00:37:21",
+    "end_hms": "00:37:35",
+    "text": "Que va créer quand pour que tu oublies les postes ou les automatiques ?"
+  },
+  {
+    "id": 235,
+    "start": 2255.58,
+    "end": 2262.58,
+    "start_hms": "00:37:35",
+    "end_hms": "00:37:42",
+    "text": "J'utilise un node natif."
+  },
+  {
+    "id": 236,
+    "start": 2262.58,
+    "end": 2272.58,
+    "start_hms": "00:37:42",
+    "end_hms": "00:37:52",
+    "text": "Encore une fois, pas d'une node native, parce qu'en fait on a soit EnvyTank qui propose du coup"
+  },
+  {
+    "id": 237,
+    "start": 2272.58,
+    "end": 2280.58,
+    "start_hms": "00:37:52",
+    "end_hms": "00:38:00",
+    "text": "un node natif, le vrai connecteur de l'une que d'une, ou soit on pourrait faire en HTTP."
+  },
+  {
+    "id": 238,
+    "start": 2280.58,
+    "end": 2284.58,
+    "start_hms": "00:38:00",
+    "end_hms": "00:38:04",
+    "text": "Et ça, ça va être des clés API directement, c'est pas la même chose."
+  },
+  {
+    "id": 239,
+    "start": 2284.58,
+    "end": 2299.33,
+    "start_hms": "00:38:04",
+    "end_hms": "00:38:19",
+    "text": "Et c'est plus complexe à faire. Donc nous on va chercher la simplicité."
+  },
+  {
+    "id": 240,
+    "start": 2299.33,
+    "end": 2302.33,
+    "start_hms": "00:38:19",
+    "end_hms": "00:38:22",
+    "text": "Donc là on va la laisser travailler, on va nous préparer le workflow."
+  },
+  {
+    "id": 241,
+    "start": 2302.33,
+    "end": 2339.51,
+    "start_hms": "00:38:22",
+    "end_hms": "00:38:59",
+    "text": "On va faire des tests, des améliorations, tout simplement."
+  },
+  {
+    "id": 242,
+    "start": 2339.51,
+    "end": 2348.31,
+    "start_hms": "00:38:59",
+    "end_hms": "00:39:08",
+    "text": "Donc là, il est bien entré dans le serveur."
+  },
+  {
+    "id": 243,
+    "start": 2348.31,
+    "end": 2352.23,
+    "start_hms": "00:39:08",
+    "end_hms": "00:39:12",
+    "text": "Une fois que vous avez amené le workflow, vous réévoquez vos clés."
+  },
+  {
+    "id": 244,
+    "start": 2352.23,
+    "end": 2355.11,
+    "start_hms": "00:39:12",
+    "end_hms": "00:39:15",
+    "text": "Ça, il n'y a pas de problème."
+  },
+  {
+    "id": 245,
+    "start": 2355.11,
+    "end": 2357.11,
+    "start_hms": "00:39:15",
+    "end_hms": "00:39:17",
+    "text": "Pour de sécurité,"
+  },
+  {
+    "id": 246,
+    "start": 2357.11,
+    "end": 2358.59,
+    "start_hms": "00:39:17",
+    "end_hms": "00:39:18",
+    "text": "vous allez aller dans"
+  },
+  {
+    "id": 247,
+    "start": 2358.59,
+    "end": 2362.95,
+    "start_hms": "00:39:18",
+    "end_hms": "00:39:22",
+    "text": "tac-tac-tac, instance mcpi,"
+  },
+  {
+    "id": 248,
+    "start": 2362.95,
+    "end": 2365.71,
+    "start_hms": "00:39:22",
+    "end_hms": "00:39:25",
+    "text": "remove access tout simplement."
+  },
+  {
+    "id": 249,
+    "start": 2365.71,
+    "end": 2367.23,
+    "start_hms": "00:39:25",
+    "end_hms": "00:39:27",
+    "text": "Juste ici."
+  },
+  {
+    "id": 250,
+    "start": 2367.23,
+    "end": 2370.39,
+    "start_hms": "00:39:27",
+    "end_hms": "00:39:30",
+    "text": "Après vous pouvez aussi le faire mieux qu'à vous."
+  },
+  {
+    "id": 251,
+    "start": 2370.39,
+    "end": 2412.3,
+    "start_hms": "00:39:30",
+    "end_hms": "00:40:12",
+    "text": "Nous on le laisse travailler le temps parce qu'il n'y a pas fini son biais de cours à prendre."
+  },
+  {
+    "id": 252,
+    "start": 2412.3,
+    "end": 2414.14,
+    "start_hms": "00:40:12",
+    "end_hms": "00:40:14",
+    "text": "Ah c'était sûr qu'il allait faire ça."
+  },
+  {
+    "id": 253,
+    "start": 2414.14,
+    "end": 2415.82,
+    "start_hms": "00:40:14",
+    "end_hms": "00:40:15",
+    "text": "En data table."
+  },
+  {
+    "id": 254,
+    "start": 2415.82,
+    "end": 2418.06,
+    "start_hms": "00:40:15",
+    "end_hms": "00:40:18",
+    "text": "C'est bien, il a la bonne réflexion."
+  },
+  {
+    "id": 255,
+    "start": 2418.06,
+    "end": 2421.66,
+    "start_hms": "00:40:18",
+    "end_hms": "00:40:21",
+    "text": "C'est fou quand même, il a une réflexion."
+  },
+  {
+    "id": 256,
+    "start": 2421.66,
+    "end": 2424.66,
+    "start_hms": "00:40:21",
+    "end_hms": "00:40:24",
+    "text": "Ça elle est vraiment à l'époque, il y a quatre mois ça aurait pu me prendre."
+  },
+  {
+    "id": 257,
+    "start": 2424.66,
+    "end": 2428.02,
+    "start_hms": "00:40:24",
+    "end_hms": "00:40:28",
+    "text": "Honnêtement, deux jours."
+  },
+  {
+    "id": 258,
+    "start": 2428.02,
+    "end": 2431.98,
+    "start_hms": "00:40:28",
+    "end_hms": "00:40:31",
+    "text": "À comprendre qu'il me faut une data table."
+  },
+  {
+    "id": 259,
+    "start": 2431.98,
+    "end": 2437.0,
+    "start_hms": "00:40:31",
+    "end_hms": "00:40:37",
+    "text": "C'est fou, c'est fou."
+  },
+  {
+    "id": 260,
+    "start": 2437.0,
+    "end": 2442.28,
+    "start_hms": "00:40:37",
+    "end_hms": "00:40:42",
+    "text": "Il y a une manière de réfléchir qui est assez intéressante."
+  },
+  {
+    "id": 261,
+    "start": 2443.28,
+    "end": 2444.28,
+    "start_hms": "00:40:43",
+    "end_hms": "00:40:44",
+    "text": "Assez intéressante."
+  },
+  {
+    "id": 262,
+    "start": 2444.28,
+    "end": 2445.28,
+    "start_hms": "00:40:44",
+    "end_hms": "00:40:45",
+    "text": "Et très puissante même."
+  },
+  {
+    "id": 263,
+    "start": 2445.28,
+    "end": 2447.28,
+    "start_hms": "00:40:45",
+    "end_hms": "00:40:47",
+    "text": "Ça fait même peur."
+  },
+  {
+    "id": 264,
+    "start": 2448.28,
+    "end": 2450.28,
+    "start_hms": "00:40:48",
+    "end_hms": "00:40:50",
+    "text": "Je vais écrire une table."
+  },
+  {
+    "id": 265,
+    "start": 2451.28,
+    "end": 2453.28,
+    "start_hms": "00:40:51",
+    "end_hms": "00:40:53",
+    "text": "C'est juste l'opca le qu'on faut faire prendre."
+  },
+  {
+    "id": 266,
+    "start": 2453.28,
+    "end": 2455.28,
+    "start_hms": "00:40:53",
+    "end_hms": "00:40:55",
+    "text": "Jean-Pastore est allé fier et pubile."
+  },
+  {
+    "id": 267,
+    "start": 2455.28,
+    "end": 2457.28,
+    "start_hms": "00:40:55",
+    "end_hms": "00:40:57",
+    "text": "La tena tu finis une cadienne puis marque qu'il a une même conne pubile."
+  },
+  {
+    "id": 268,
+    "start": 2457.28,
+    "end": 2458.28,
+    "start_hms": "00:40:57",
+    "end_hms": "00:40:58",
+    "text": "Ouais c'est ça."
+  },
+  {
+    "id": 269,
+    "start": 2458.28,
+    "end": 2459.28,
+    "start_hms": "00:40:58",
+    "end_hms": "00:40:59",
+    "text": "Exactement."
+  },
+  {
+    "id": 270,
+    "start": 2459.28,
+    "end": 2460.28,
+    "start_hms": "00:40:59",
+    "end_hms": "00:41:00",
+    "text": "Comment on va faire ?"
+  },
+  {
+    "id": 271,
+    "start": 2460.28,
+    "end": 2465.99,
+    "start_hms": "00:41:00",
+    "end_hms": "00:41:05",
+    "text": "On va attendre."
+  },
+  {
+    "id": 272,
+    "start": 2465.99,
+    "end": 2466.99,
+    "start_hms": "00:41:05",
+    "end_hms": "00:41:06",
+    "text": "Je sais pas où il va le faire."
+  },
+  {
+    "id": 273,
+    "start": 2466.99,
+    "end": 2467.99,
+    "start_hms": "00:41:06",
+    "end_hms": "00:41:07",
+    "text": "Je pense qu'il va faire un nouveau workflow."
+  },
+  {
+    "id": 274,
+    "start": 2467.99,
+    "end": 2468.99,
+    "start_hms": "00:41:07",
+    "end_hms": "00:41:08",
+    "text": "Ah non, peut-être pas."
+  },
+  {
+    "id": 275,
+    "start": 2468.99,
+    "end": 2470.99,
+    "start_hms": "00:41:08",
+    "end_hms": "00:41:10",
+    "text": "Toi tu vas le faire ici, mais il est workflow."
+  },
+  {
+    "id": 276,
+    "start": 2470.99,
+    "end": 2526.16,
+    "start_hms": "00:41:10",
+    "end_hms": "00:42:06",
+    "text": "Je sais pas."
+  },
+  {
+    "id": 277,
+    "start": 2526.16,
+    "end": 2535.16,
+    "start_hms": "00:42:06",
+    "end_hms": "00:42:15",
+    "text": "Donc en gros après l'objectif ça va être quoi ? C'est que quand il va nous créer la data table, il va faire une ligne."
+  },
+  {
+    "id": 278,
+    "start": 2535.16,
+    "end": 2539.16,
+    "start_hms": "00:42:15",
+    "end_hms": "00:42:19",
+    "text": "Ok j'ai publié ce post, donc je marque comme terminé."
+  },
+  {
+    "id": 279,
+    "start": 2539.16,
+    "end": 2546.16,
+    "start_hms": "00:42:19",
+    "end_hms": "00:42:26",
+    "text": "Donc du coup le lendemain, le premier post il a déjà été publié, donc je passe la deuxième ligne."
+  },
+  {
+    "id": 280,
+    "start": 2546.16,
+    "end": 2553.16,
+    "start_hms": "00:42:26",
+    "end_hms": "00:42:33",
+    "text": "Est-ce que le champ au fond a été coché ? Est-ce que la publication a été faite ? Non, donc je le publie."
+  },
+  {
+    "id": 281,
+    "start": 2553.16,
+    "end": 2559.16,
+    "start_hms": "00:42:33",
+    "end_hms": "00:42:39",
+    "text": "à la fin du workflow, après on coche, on publie, en gros c'est ça que ça va faire l'automatisation"
+  },
+  {
+    "id": 282,
+    "start": 2559.16,
+    "end": 2563.16,
+    "start_hms": "00:42:39",
+    "end_hms": "00:42:43",
+    "text": "là il n'y aura même pas d'intelligence artificielle à l'intérieur"
+  },
+  {
+    "id": 283,
+    "start": 2563.16,
+    "end": 2567.16,
+    "start_hms": "00:42:43",
+    "end_hms": "00:42:47",
+    "text": "ça va être juste de la logique et de la réflexion"
+  },
+  {
+    "id": 284,
+    "start": 2567.16,
+    "end": 2579.71,
+    "start_hms": "00:42:47",
+    "end_hms": "00:42:59",
+    "text": "je vais voir peut-être qui m'a fait à la table settings"
+  },
+  {
+    "id": 285,
+    "start": 2579.71,
+    "end": 2583.71,
+    "start_hms": "00:42:59",
+    "end_hms": "00:43:03",
+    "text": "je ne sais plus où on va les tables, ça change tellement ce menu"
+  },
+  {
+    "id": 286,
+    "start": 2583.71,
+    "end": 2589.05,
+    "start_hms": "00:43:03",
+    "end_hms": "00:43:09",
+    "text": "exécution mad data babel, voilà, on fait 2"
+  },
+  {
+    "id": 287,
+    "start": 2589.05,
+    "end": 2594.3,
+    "start_hms": "00:43:09",
+    "end_hms": "00:43:14",
+    "text": "Donc là c'est tous les posts avec l'image, etc."
+  },
+  {
+    "id": 288,
+    "start": 2594.3,
+    "end": 2596.3,
+    "start_hms": "00:43:14",
+    "end_hms": "00:43:16",
+    "text": "Ok."
+  },
+  {
+    "id": 289,
+    "start": 2596.3,
+    "end": 2598.3,
+    "start_hms": "00:43:16",
+    "end_hms": "00:43:18",
+    "text": "Donc là il est bien les 100 posts."
+  },
+  {
+    "id": 290,
+    "start": 2598.3,
+    "end": 2600.3,
+    "start_hms": "00:43:18",
+    "end_hms": "00:43:20",
+    "text": "Il n'y a pas toutes les images."
+  },
+  {
+    "id": 291,
+    "start": 2600.3,
+    "end": 2607.12,
+    "start_hms": "00:43:20",
+    "end_hms": "00:43:27",
+    "text": "C'est ce que nous on avait demandé dans le générique 4."
+  },
+  {
+    "id": 292,
+    "start": 2607.12,
+    "end": 2611.61,
+    "start_hms": "00:43:27",
+    "end_hms": "00:43:31",
+    "text": "Il a assez finir de travailler."
+  },
+  {
+    "id": 293,
+    "start": 2611.61,
+    "end": 2617.74,
+    "start_hms": "00:43:31",
+    "end_hms": "00:43:37",
+    "text": "Il a fait l'hemler, tout ça."
+  },
+  {
+    "id": 294,
+    "start": 2617.74,
+    "end": 2619.74,
+    "start_hms": "00:43:37",
+    "end_hms": "00:43:39",
+    "text": "On va voir comment il va gérer le workflow."
+  },
+  {
+    "id": 295,
+    "start": 2619.74,
+    "end": 2640.97,
+    "start_hms": "00:43:39",
+    "end_hms": "00:44:00",
+    "text": "Ça m'intéresse."
+  },
+  {
+    "id": 296,
+    "start": 2640.97,
+    "end": 2642.97,
+    "start_hms": "00:44:00",
+    "end_hms": "00:44:02",
+    "text": "Ça va assez rude ça."
+  },
+  {
+    "id": 297,
+    "start": 2642.97,
+    "end": 2644.97,
+    "start_hms": "00:44:02",
+    "end_hms": "00:44:04",
+    "text": "Par contre, si votre compte commence à péter,"
+  },
+  {
+    "id": 298,
+    "start": 2644.97,
+    "end": 2647.97,
+    "start_hms": "00:44:04",
+    "end_hms": "00:44:07",
+    "text": "vous allez à recevoir énormément de messages de prospection."
+  },
+  {
+    "id": 299,
+    "start": 2647.97,
+    "end": 2656.01,
+    "start_hms": "00:44:07",
+    "end_hms": "00:44:16",
+    "text": "de prospection c'est un peu la tête. Donc là j'ai une reine jazon, donc ça veut dire"
+  },
+  {
+    "id": 300,
+    "start": 2656.01,
+    "end": 2696.54,
+    "start_hms": "00:44:16",
+    "end_hms": "00:44:56",
+    "text": "qu'elle a bientôt terminé. Est-ce qu'elle fait des tests ? Je sais pas. Ok, donc c'est top."
+  },
+  {
+    "id": 301,
+    "start": 2696.54,
+    "end": 2706.02,
+    "start_hms": "00:44:56",
+    "end_hms": "00:45:06",
+    "text": "Si je recharge la page, non pas encore. Moi qui pléfait dans un des deux. Non pas celui-là. Ok"
+  },
+  {
+    "id": 302,
+    "start": 2706.02,
+    "end": 2711.68,
+    "start_hms": "00:45:06",
+    "end_hms": "00:45:11",
+    "text": "bon elle vient d'arriver. Ok donc top. Tous les jours à 9 heures. Ok c'est bien le cas. Il a"
+  },
+  {
+    "id": 303,
+    "start": 2711.68,
+    "end": 2719.58,
+    "start_hms": "00:45:11",
+    "end_hms": "00:45:19",
+    "text": "utiliser le trigger. Le workflow va se déclencher une fois publié le coup d'un lever et ensuite tu vas"
+  },
+  {
+    "id": 304,
+    "start": 2719.58,
+    "end": 2725.06,
+    "start_hms": "00:45:19",
+    "end_hms": "00:45:25",
+    "text": "récupérer la ligne qui n'a pas été traitée. On va voir tout ça ensemble, on détaille un petit peu plus."
+  },
+  {
+    "id": 305,
+    "start": 2725.06,
+    "end": 2737.08,
+    "start_hms": "00:45:25",
+    "end_hms": "00:45:37",
+    "text": "Donc là ce que vous allez faire c'est vous allez le lancer à vide. Parfois ça beugle. Donc là"
+  },
+  {
+    "id": 306,
+    "start": 2737.08,
+    "end": 2741.44,
+    "start_hms": "00:45:37",
+    "end_hms": "00:45:41",
+    "text": "vous cliquez sur le deuxième node pardon, parce que sinon ça va rien faire au niveau de cette"
+  },
+  {
+    "id": 307,
+    "start": 2741.44,
+    "end": 2747.96,
+    "start_hms": "00:45:41",
+    "end_hms": "00:45:47",
+    "text": "partie, vous quittez sur celui là le deuxième node. Et là comme vous"
+  },
+  {
+    "id": 308,
+    "start": 2747.96,
+    "end": 2751.92,
+    "start_hms": "00:45:47",
+    "end_hms": "00:45:51",
+    "text": "pouvez voir c'est des informations. Vous avez là où vous pouvez voir le résultat."
+  },
+  {
+    "id": 309,
+    "start": 2751.92,
+    "end": 2758.46,
+    "start_hms": "00:45:51",
+    "end_hms": "00:45:58",
+    "text": "Donc on a un item, donc l'item c'est une ligne qu'on a récupérée si on va dans"
+  },
+  {
+    "id": 310,
+    "start": 2758.46,
+    "end": 2766.52,
+    "start_hms": "00:45:58",
+    "end_hms": "00:46:06",
+    "text": "le table, la ligne 1 avec la DAC, le statut, le titre, le link-coding-text,"
+  },
+  {
+    "id": 311,
+    "start": 2766.52,
+    "end": 2772.52,
+    "start_hms": "00:46:06",
+    "end_hms": "00:46:12",
+    "text": "l'image URL, l'image, le binary fields data, etc."
+  },
+  {
+    "id": 312,
+    "start": 2772.52,
+    "end": 2775.52,
+    "start_hms": "00:46:12",
+    "end_hms": "00:46:15",
+    "text": "Là on a récupéré toutes les informations pour notre poste."
+  },
+  {
+    "id": 313,
+    "start": 2775.52,
+    "end": 2779.52,
+    "start_hms": "00:46:15",
+    "end_hms": "00:46:19",
+    "text": "Donc nous encore une fois, ce qu'on souhaite, comme on l'a vu,"
+  },
+  {
+    "id": 314,
+    "start": 2779.52,
+    "end": 2783.52,
+    "start_hms": "00:46:19",
+    "end_hms": "00:46:23",
+    "text": "c'est qu'on veut poster sur l'autre organisation, donc il nous faut l'URN."
+  },
+  {
+    "id": 315,
+    "start": 2783.52,
+    "end": 2785.52,
+    "start_hms": "00:46:23",
+    "end_hms": "00:46:25",
+    "text": "L'URN on le recopie."
+  },
+  {
+    "id": 316,
+    "start": 2785.52,
+    "end": 2807.04,
+    "start_hms": "00:46:25",
+    "end_hms": "00:46:47",
+    "text": "Donc là je récupère la variable, donc la variable c'est quoi ? C'est que tous les"
+  },
+  {
+    "id": 317,
+    "start": 2807.04,
+    "end": 2812.32,
+    "start_hms": "00:46:47",
+    "end_hms": "00:46:52",
+    "text": "jours en fait, on aura cette variable-là, il n'y a que d'une texte avec un texte différent."
+  },
+  {
+    "id": 318,
+    "start": 2812.32,
+    "end": 2821.62,
+    "start_hms": "00:46:52",
+    "end_hms": "00:47:01",
+    "text": "Donc on récupère la variable, on la met juste ici et aujourd'hui du coup le texte de la variable"
+  },
+  {
+    "id": 319,
+    "start": 2821.62,
+    "end": 2831.13,
+    "start_hms": "00:47:01",
+    "end_hms": "00:47:11",
+    "text": "c'est ce poste là. Donc c'est top. Ensuite pour la partie images, on va aller dans le data et là"
+  },
+  {
+    "id": 320,
+    "start": 2831.13,
+    "end": 2839.49,
+    "start_hms": "00:47:11",
+    "end_hms": "00:47:19",
+    "text": "ce qu'on peut faire c'est publier. Donc là c'est au niveau de la partie images où on a un"
+  },
+  {
+    "id": 321,
+    "start": 2839.49,
+    "end": 2845.55,
+    "start_hms": "00:47:19",
+    "end_hms": "00:47:25",
+    "text": "problème que sur menu URL ça n'a pas marché. Donc là ce qu'il faut faire c'est"
+  },
+  {
+    "id": 322,
+    "start": 2845.55,
+    "end": 2852.51,
+    "start_hms": "00:47:25",
+    "end_hms": "00:47:32",
+    "text": "demander simplement à Codex s'il y aura tout simplement une mauvaise partie au"
+  },
+  {
+    "id": 323,
+    "start": 2852.51,
+    "end": 2856.35,
+    "start_hms": "00:47:32",
+    "end_hms": "00:47:36",
+    "text": "niveau de PNG. Pourquoi ? Parce que comment il peut récupérer quelque chose"
+  },
+  {
+    "id": 324,
+    "start": 2856.35,
+    "end": 2860.67,
+    "start_hms": "00:47:36",
+    "end_hms": "00:47:40",
+    "text": "sur notre ordinateur qui n'a pas accès ? Donc il faut changer le système mais"
+  },
+  {
+    "id": 325,
+    "start": 2860.67,
+    "end": 2868.07,
+    "start_hms": "00:47:40",
+    "end_hms": "00:47:48",
+    "text": "si j'enlève du coup la partie de mage, là je pubie on voit que derrière"
+  },
+  {
+    "id": 326,
+    "start": 2868.07,
+    "end": 2878.93,
+    "start_hms": "00:47:48",
+    "end_hms": "00:47:58",
+    "text": "node exécuté. Donc si je vais sur mon profil, je recharge, je vais dans poste de la"
+  },
+  {
+    "id": 327,
+    "start": 2878.93,
+    "end": 2891.42,
+    "start_hms": "00:47:58",
+    "end_hms": "00:48:11",
+    "text": "page. Là on a bien mon poste qui a été publié. Je vais supprimer. Et là je vais"
+  },
+  {
+    "id": 328,
+    "start": 2891.42,
+    "end": 2910.5,
+    "start_hms": "00:48:11",
+    "end_hms": "00:48:30",
+    "text": "expliquer à Codex le problème. Donc tac, tac, on va lui envoyer directement le"
+  },
+  {
+    "id": 329,
+    "start": 2910.5,
+    "end": 2919.86,
+    "start_hms": "00:48:30",
+    "end_hms": "00:48:39",
+    "text": "problème, je vous invite à faire ça, parfois c'est plus simple que d'attendre, même de me"
+  },
+  {
+    "id": 330,
+    "start": 2919.86,
+    "end": 2964.75,
+    "start_hms": "00:48:39",
+    "end_hms": "00:49:24",
+    "text": "demander quand même sur dislike pour récupérer les logs, s'expliquer la problématique, je sais pas"
+  },
+  {
+    "id": 331,
+    "start": 2964.75,
+    "end": 2970.51,
+    "start_hms": "00:49:24",
+    "end_hms": "00:49:30",
+    "text": "ce qui lui arrive là, il me gagne un petit peu l'ordre, il me fait plus le coup de temps,"
+  },
+  {
+    "id": 332,
+    "start": 2970.51,
+    "end": 2977.98,
+    "start_hms": "00:49:30",
+    "end_hms": "00:49:37",
+    "text": "on va quand même continuer, on va voir, il y a des modifications, c'est important,"
+  },
+  {
+    "id": 333,
+    "start": 2977.98,
+    "end": 3010.06,
+    "start_hms": "00:49:37",
+    "end_hms": "00:50:10",
+    "text": "et on va faire le même problème par exemple que je vais couper je vais le"
+  },
+  {
+    "id": 334,
+    "start": 3010.06,
+    "end": 3024.9,
+    "start_hms": "00:50:10",
+    "end_hms": "00:50:24",
+    "text": "renforcer. Je sais pas si j'ai bien mes images ou pas, je sais pas si je peux"
+  },
+  {
+    "id": 335,
+    "start": 3024.9,
+    "end": 3045.93,
+    "start_hms": "00:50:24",
+    "end_hms": "00:50:45",
+    "text": "renforcer. Terminal. Ah non c'est bon. Donc là on va"
+  },
+  {
+    "id": 336,
+    "start": 3045.93,
+    "end": 3050.05,
+    "start_hms": "00:50:45",
+    "end_hms": "00:50:50",
+    "text": "modifier. Voilà encore une fois c'était un problème de format. Mediabeneur"
+  },
+  {
+    "id": 337,
+    "start": 3050.05,
+    "end": 3057.25,
+    "start_hms": "00:50:50",
+    "end_hms": "00:50:57",
+    "text": "Alors il y a l'image data, nous on a une image locale sur notre PC, il me faut du binarit,"
+  },
+  {
+    "id": 338,
+    "start": 3057.25,
+    "end": 3070.58,
+    "start_hms": "00:50:57",
+    "end_hms": "00:51:10",
+    "text": "cette recode de l'image, il laisse travailler, il va le faire en autre place, une fois que"
+  },
+  {
+    "id": 339,
+    "start": 3070.58,
+    "end": 3125.58,
+    "start_hms": "00:51:10",
+    "end_hms": "00:52:05",
+    "text": "ce sera terminé, il va refaire un test pour voir si tout fonctionne bien, il va refaire"
+  },
+  {
+    "id": 340,
+    "start": 3125.58,
+    "end": 3179.92,
+    "start_hms": "00:52:05",
+    "end_hms": "00:52:59",
+    "text": "un nouveau workflow, différent, donc il a conclu il y a problématique, dans une fois le parcours"
+  },
+  {
+    "id": 341,
+    "start": 3179.92,
+    "end": 3189.8,
+    "start_hms": "00:52:59",
+    "end_hms": "00:53:09",
+    "text": "il n'est pas très compliqué. On repart de notre audit SEO-GEO. Une fois qu'on est parti de"
+  },
+  {
+    "id": 342,
+    "start": 3189.8,
+    "end": 3196.32,
+    "start_hms": "00:53:09",
+    "end_hms": "00:53:16",
+    "text": "cette audit SEO-GEO, on lui demande de nous rédiger des posts en coding, donc 100 ou 200."
+  },
+  {
+    "id": 343,
+    "start": 3196.32,
+    "end": 3204.52,
+    "start_hms": "00:53:16",
+    "end_hms": "00:53:24",
+    "text": "Ensuite on lui dit de nous faire un XLNX qui derrière va nous permettre de"
+  },
+  {
+    "id": 344,
+    "start": 3204.52,
+    "end": 3211.32,
+    "start_hms": "00:53:24",
+    "end_hms": "00:53:31",
+    "text": "convertir ça en database sur une huitaine. Donc on connecte Codex à une huitaine"
+  },
+  {
+    "id": 345,
+    "start": 3211.32,
+    "end": 3216.68,
+    "start_hms": "00:53:31",
+    "end_hms": "00:53:36",
+    "text": "une fois qu'il nous a fait les postes et après on crée le workflow de l'automatisation."
+  },
+  {
+    "id": 346,
+    "start": 3216.68,
+    "end": 3221.92,
+    "start_hms": "00:53:36",
+    "end_hms": "00:53:41",
+    "text": "Donc je vais tout vous détailler directement sur le support technique,"
+  },
+  {
+    "id": 347,
+    "start": 3221.92,
+    "end": 3225.42,
+    "start_hms": "00:53:41",
+    "end_hms": "00:53:45",
+    "text": "malgré tout être compréhensible que ça vous allez pouvoir faire d'après-temps."
+  },
+  {
+    "id": 348,
+    "start": 3225.42,
+    "end": 3237.49,
+    "start_hms": "00:53:45",
+    "end_hms": "00:53:57",
+    "text": "Ok donc là il a fait une nouvelle base, on va coller le FISA."
+  },
+  {
+    "id": 349,
+    "start": 3237.49,
+    "end": 3254.15,
+    "start_hms": "00:53:57",
+    "end_hms": "00:54:14",
+    "text": "Ok donc il a bien fait vu que là on ne peut pas cliquer dessus,"
+  },
+  {
+    "id": 350,
+    "start": 3254.15,
+    "end": 3262.15,
+    "start_hms": "00:54:14",
+    "end_hms": "00:54:22",
+    "text": "que pas en fait, pas 64, c'est énormément de chiffres, c'est très long, mais énormément de"
+  },
+  {
+    "id": 351,
+    "start": 3262.15,
+    "end": 3276.18,
+    "start_hms": "00:54:22",
+    "end_hms": "00:54:36",
+    "text": "place. Là je pense qu'il est en train de m'enfermer vos jasons. Je vais l'archiver, là aussi,"
+  },
+  {
+    "id": 352,
+    "start": 3276.18,
+    "end": 3291.69,
+    "start_hms": "00:54:36",
+    "end_hms": "00:54:51",
+    "text": "on va attendre qu'il finisse. Il ne faudra pas oublier d'appuyer Publish, fois que vous voulez"
+  },
+  {
+    "id": 353,
+    "start": 3291.69,
+    "end": 3328.59,
+    "start_hms": "00:54:51",
+    "end_hms": "00:55:28",
+    "text": "que le workflow tourne tous les jours, c'est bon ça va, après ça vous fera jamais. Ok donc"
+  },
+  {
+    "id": 354,
+    "start": 3328.59,
+    "end": 3338.45,
+    "start_hms": "00:55:28",
+    "end_hms": "00:55:38",
+    "text": "Donc le workflow a bien changé. Donc là on a deux parcours, qu'on a une branche false et une branche true."
+  },
+  {
+    "id": 355,
+    "start": 3338.45,
+    "end": 3343.45,
+    "start_hms": "00:55:38",
+    "end_hms": "00:55:43",
+    "text": "Donc la branche true c'est pour la partie image, la branche false c'est pour la partie sans image."
+  },
+  {
+    "id": 356,
+    "start": 3343.45,
+    "end": 3347.45,
+    "start_hms": "00:55:43",
+    "end_hms": "00:55:47",
+    "text": "S'il n'y a pas d'image sur le poste, donc à partir du cinquième poste,"
+  },
+  {
+    "id": 357,
+    "start": 3347.45,
+    "end": 3350.45,
+    "start_hms": "00:55:47",
+    "end_hms": "00:55:50",
+    "text": "on n'a pas mis d'image, et bien ça va passer."
+  },
+  {
+    "id": 358,
+    "start": 3350.45,
+    "end": 3352.45,
+    "start_hms": "00:55:50",
+    "end_hms": "00:55:52",
+    "text": "Là les quatre premiers vont passer."
+  },
+  {
+    "id": 359,
+    "start": 3352.45,
+    "end": 3357.45,
+    "start_hms": "00:55:52",
+    "end_hms": "00:55:57",
+    "text": "Là on peut se faire un test, si derrière je vois qu'il y a encore une fausse sur lui."
+  },
+  {
+    "id": 360,
+    "start": 3357.45,
+    "end": 3364.43,
+    "start_hms": "00:55:57",
+    "end_hms": "00:56:04",
+    "text": "on se récupère de la première ligne, hop, donc là regardez, vu qu'il y a une image ça passe sur"
+  },
+  {
+    "id": 361,
+    "start": 3364.43,
+    "end": 3371.49,
+    "start_hms": "00:56:04",
+    "end_hms": "00:56:11",
+    "text": "trou, là on va convertir l'image, donc on a un data, si je fais view juste ici, on voit notre image"
+  },
+  {
+    "id": 362,
+    "start": 3371.49,
+    "end": 3383.89,
+    "start_hms": "00:56:11",
+    "end_hms": "00:56:23",
+    "text": "en question, ensuite du coup maintenant, là on va changer la variable texte, ah merde il a changé, il"
+  },
+  {
+    "id": 363,
+    "start": 3383.89,
+    "end": 3385.89,
+    "start_hms": "00:56:23",
+    "end_hms": "00:56:25",
+    "text": "est en train de changer quelque chose en même temps."
+  },
+  {
+    "id": 364,
+    "start": 3387.89,
+    "end": 3388.89,
+    "start_hms": "00:56:27",
+    "end_hms": "00:56:28",
+    "text": "Ah, c'est pas bon ça."
+  },
+  {
+    "id": 365,
+    "start": 3388.89,
+    "end": 3397.76,
+    "start_hms": "00:56:28",
+    "end_hms": "00:56:37",
+    "text": "Donc du coup, nous on va récupérer la variable au niveau de LinkedIn text"
+  },
+  {
+    "id": 366,
+    "start": 3397.76,
+    "end": 3400.76,
+    "start_hms": "00:56:37",
+    "end_hms": "00:56:40",
+    "text": "parce que c'est là où il y a tout le texte de l'application."
+  },
+  {
+    "id": 367,
+    "start": 3400.76,
+    "end": 3404.76,
+    "start_hms": "00:56:40",
+    "end_hms": "00:56:44",
+    "text": "Et ensuite ça, on va rester dans le data."
+  },
+  {
+    "id": 368,
+    "start": 3406.76,
+    "end": 3424.97,
+    "start_hms": "00:56:46",
+    "end_hms": "00:57:04",
+    "text": "Bah même si c'est magnifique en même temps, c'est pas mal ça."
+  },
+  {
+    "id": 369,
+    "start": 3424.97,
+    "end": 3439.17,
+    "start_hms": "00:57:04",
+    "end_hms": "00:57:19",
+    "text": "Je vois qu'il a un peu..."
+  },
+  {
+    "id": 370,
+    "start": 3439.17,
+    "end": 3441.17,
+    "start_hms": "00:57:19",
+    "end_hms": "00:57:21",
+    "text": "Je vais expliquer encore une fois"
+  },
+  {
+    "id": 371,
+    "start": 3441.17,
+    "end": 3445.17,
+    "start_hms": "00:57:21",
+    "end_hms": "00:57:25",
+    "text": "que l'on a un problème au niveau des images."
+  },
+  {
+    "id": 372,
+    "start": 3445.17,
+    "end": 3453.22,
+    "start_hms": "00:57:25",
+    "end_hms": "00:57:33",
+    "text": "Donc, pourtant, on a les dernières images."
+  },
+  {
+    "id": 373,
+    "start": 3453.22,
+    "end": 3456.94,
+    "start_hms": "00:57:33",
+    "end_hms": "00:57:36",
+    "text": "Et si je ne peux pas fit names,"
+  },
+  {
+    "id": 374,
+    "start": 3456.94,
+    "end": 3459.94,
+    "start_hms": "00:57:36",
+    "end_hms": "00:57:39",
+    "text": "peut-être dans le data, peut-être."
+  },
+  {
+    "id": 375,
+    "start": 3459.94,
+    "end": 3468.6,
+    "start_hms": "00:57:39",
+    "end_hms": "00:57:48",
+    "text": "Peut-être que je mets le data."
+  },
+  {
+    "id": 376,
+    "start": 3468.6,
+    "end": 3470.6,
+    "start_hms": "00:57:48",
+    "end_hms": "00:57:50",
+    "text": "Mais je ne peux pas procéder, je crois."
+  },
+  {
+    "id": 377,
+    "start": 3470.6,
+    "end": 3493.73,
+    "start_hms": "00:57:50",
+    "end_hms": "00:58:13",
+    "text": "Je pense que le fait qu'il y avait tout modifié en même temps que moi,"
+  },
+  {
+    "id": 378,
+    "start": 3493.73,
+    "end": 3498.64,
+    "start_hms": "00:58:13",
+    "end_hms": "00:58:18",
+    "text": "ça a cassé le workflow."
+  },
+  {
+    "id": 379,
+    "start": 3498.64,
+    "end": 3499.64,
+    "start_hms": "00:58:18",
+    "end_hms": "00:58:19",
+    "text": "On va le refaire."
+  },
+  {
+    "id": 380,
+    "start": 3499.64,
+    "end": 3512.39,
+    "start_hms": "00:58:19",
+    "end_hms": "00:58:32",
+    "text": "C'est bien d'indiquer qu'il faut juste mettre le data,"
+  },
+  {
+    "id": 381,
+    "start": 3512.39,
+    "end": 3514.39,
+    "start_hms": "00:58:32",
+    "end_hms": "00:58:34",
+    "text": "mais ce que j'avais fait, le laisser travailler."
+  },
+  {
+    "id": 382,
+    "start": 3514.39,
+    "end": 3516.39,
+    "start_hms": "00:58:34",
+    "end_hms": "00:58:36",
+    "text": "On va faire un test archéal pour live."
+  },
+  {
+    "id": 383,
+    "start": 3516.39,
+    "end": 3538.58,
+    "start_hms": "00:58:36",
+    "end_hms": "00:58:58",
+    "text": "on va réessayer sûrement ce workflow, mais on s'en fait toujours la même chose"
+  },
+  {
+    "id": 384,
+    "start": 3538.58,
+    "end": 3544.98,
+    "start_hms": "00:58:58",
+    "end_hms": "00:59:04",
+    "text": "parce que là déjà d'une part il met pas la bonne variable, ça risque pas de marcher"
+  },
+  {
+    "id": 385,
+    "start": 3544.98,
+    "end": 3558.07,
+    "start_hms": "00:59:04",
+    "end_hms": "00:59:18",
+    "text": "je vais chercher un title, ok donc top là ça a marché"
+  },
+  {
+    "id": 386,
+    "start": 3558.07,
+    "end": 3566.76,
+    "start_hms": "00:59:18",
+    "end_hms": "00:59:26",
+    "text": "donc si je vais juste ici, je vais charger, là on a bien l'image"
+  },
+  {
+    "id": 387,
+    "start": 3566.76,
+    "end": 3572.1,
+    "start_hms": "00:59:26",
+    "end_hms": "00:59:32",
+    "text": "avec toutes les informations, c'est top"
+  },
+  {
+    "id": 388,
+    "start": 3572.1,
+    "end": 3578.82,
+    "start_hms": "00:59:32",
+    "end_hms": "00:59:38",
+    "text": "ok ça marche bien, donc si par exemple là maintenant je clique ici"
+  },
+  {
+    "id": 389,
+    "start": 3578.82,
+    "end": 3585.38,
+    "start_hms": "00:59:38",
+    "end_hms": "00:59:45",
+    "text": "Donc là ça va bien traiter comme terminé cette ligne là."
+  },
+  {
+    "id": 390,
+    "start": 3585.38,
+    "end": 3591.89,
+    "start_hms": "00:59:45",
+    "end_hms": "00:59:51",
+    "text": "Donc maintenant si tu lances une nouvelle fois, c'est un peu billé du coup le deuxième poste."
+  },
+  {
+    "id": 391,
+    "start": 3591.89,
+    "end": 3602.0,
+    "start_hms": "00:59:51",
+    "end_hms": "01:00:02",
+    "text": "Ok top, ça va mal."
+  },
+  {
+    "id": 392,
+    "start": 3604.0,
+    "end": 3621.54,
+    "start_hms": "01:00:04",
+    "end_hms": "01:00:21",
+    "text": "Là si je relance, ok top ça marche bien."
+  },
+  {
+    "id": 393,
+    "start": 3621.54,
+    "end": 3627.26,
+    "start_hms": "01:00:21",
+    "end_hms": "01:00:27",
+    "text": "C'est normal au niveau des images ça fait ça."
+  },
+  {
+    "id": 394,
+    "start": 3627.26,
+    "end": 3635.84,
+    "start_hms": "01:00:27",
+    "end_hms": "01:00:35",
+    "text": "Non non je vais supprimer, supprimer, tac."
+  },
+  {
+    "id": 395,
+    "start": 3635.84,
+    "end": 3642.2,
+    "start_hms": "01:00:35",
+    "end_hms": "01:00:42",
+    "text": "Donc de toute manière, moi je vais vous donner le workflow directement sur la partie"
+  },
+  {
+    "id": 396,
+    "start": 3642.2,
+    "end": 3649.48,
+    "start_hms": "01:00:42",
+    "end_hms": "01:00:49",
+    "text": "Juku support technique, donc le workflow c'est le jazon, donc le jazon c'est ça, c'est ce code là"
+  },
+  {
+    "id": 397,
+    "start": 3649.48,
+    "end": 3654.56,
+    "start_hms": "01:00:49",
+    "end_hms": "01:00:54",
+    "text": "qui derrière va vous permettre d'avoir exactement la même chose que moi."
+  },
+  {
+    "id": 398,
+    "start": 3654.56,
+    "end": 3660.08,
+    "start_hms": "01:00:54",
+    "end_hms": "01:01:00",
+    "text": "Après vous allez pouvoir demander la codex comme je voulais entrer tout de suite"
+  },
+  {
+    "id": 399,
+    "start": 3660.08,
+    "end": 3671.08,
+    "start_hms": "01:01:00",
+    "end_hms": "01:01:11",
+    "text": "Mais pour l'importer à moins un jazon, vous allez cliquer ici, import from field, vous allez sélectionner le point jazon, vous téléchargez le support technique et ensuite vous l'importez."
+  },
+  {
+    "id": 400,
+    "start": 3671.08,
+    "end": 3677.08,
+    "start_hms": "01:01:11",
+    "end_hms": "01:01:17",
+    "text": "J'espère que cette séance elle vous a plu et que derrière vous l'avez trouvé intéressante."
+  },
+  {
+    "id": 401,
+    "start": 3677.08,
+    "end": 3683.08,
+    "start_hms": "01:01:17",
+    "end_hms": "01:01:23",
+    "text": "Je vous remercie, du coup on passe à la suite de la forme à suivre. A tout de suite !"
+  }
+]

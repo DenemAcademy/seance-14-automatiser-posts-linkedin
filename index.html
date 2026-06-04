@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Séance 14 - Automatiser 100 posts LinkedIn | DENEM Academy</title>
+<link rel="icon" href="logo-denem.jpeg">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fbfcff;color:#17142f;font-family:Inter,Arial,sans-serif;line-height:1.6}::selection{background:#35d2c6;color:#101026}a{color:inherit}.progress{position:fixed;left:0;top:0;height:5px;background:linear-gradient(90deg,#17142f,#35d2c6,#ff8a3d);z-index:20;width:0}.topbar{position:sticky;top:0;z-index:15;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:2px solid #17142f}.topbar-inner{max-width:1180px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;font-size:13px}.brand img{width:34px;height:34px;border:2px solid #17142f;border-radius:8px;object-fit:cover}.section-nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:620px}.section-nav a{font:800 11px/1 monospace;text-decoration:none;border:1.5px solid #17142f;padding:7px 8px;background:#fff;border-radius:5px;box-shadow:2px 2px 0 #17142f}.hero{position:relative;overflow:hidden;background:#fff;border-bottom:2px solid #17142f}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(53,210,198,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(23,20,47,.08) 1px,transparent 1px);background-size:34px 34px}.hero-wrap{position:relative;max-width:1180px;margin:auto;padding:74px 18px 56px;display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow,.kicker{display:inline-flex;width:max-content;max-width:100%;border:2px solid #17142f;background:#35d2c6;color:#17142f;border-radius:5px;box-shadow:4px 4px 0 #17142f;padding:7px 11px;font:900 12px/1.2 ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}h1{font-size:clamp(44px,7vw,92px);line-height:.92;margin:20px 0 18px;letter-spacing:0}h1 span{color:#35d2c6;text-shadow:3px 3px 0 #17142f}.hero p{font-size:18px;color:#4b5068;max-width:760px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.stat{border:2px solid #17142f;background:#fff;border-radius:8px;box-shadow:5px 5px 0 #17142f;padding:14px}.stat b{display:block;font-size:28px;line-height:1;color:#17142f}.stat small{font-weight:800;color:#62677c}.media{margin:0;border:2px solid #17142f;border-radius:8px;overflow:hidden;background:#fff;box-shadow:7px 7px 0 #17142f}.media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#eef2f7}.media figcaption{border-top:2px solid #17142f;background:#fff;padding:10px 12px;font-size:13px;font-weight:750;color:#4b5068}.hero .media img{aspect-ratio:16/10;object-fit:cover}.toc{max-width:1180px;margin:auto;padding:28px 18px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.toc a{text-decoration:none;border:2px solid #17142f;background:#fff;border-radius:8px;box-shadow:4px 4px 0 #17142f;padding:14px;min-height:108px}.toc span{font:900 12px/1 monospace;color:#ff6b35}.toc b{display:block;margin-top:9px;font-size:18px;line-height:1.15}.section{border-top:2px solid #17142f;scroll-margin-top:80px}.section:nth-child(even){background:#f1fbfa}.tone-1{background:#fff}.tone-2{background:#f7f4ff}.tone-3{background:#f1fbfa}.tone-4{background:#fff7ed}.tone-5{background:#f8fafc}.tone-6{background:#eff6ff}.wrap{max-width:1180px;margin:auto;padding:58px 18px;display:grid;gap:28px}.layout-image .wrap,.layout-check .wrap,.layout-alert .wrap,.layout-list .wrap,.layout-before .wrap,.layout-diagnostic .wrap,.layout-flow .wrap,.layout-prompt-inline .wrap{grid-template-columns:.9fr 1.1fr;align-items:center}.layout-prompt .wrap,.layout-table .wrap,.layout-cards .wrap,.layout-quote .wrap,.layout-gallery .wrap,.layout-final .wrap{grid-template-columns:1fr}.section-copy h2{font-size:clamp(31px,4vw,54px);line-height:1;margin:14px 0 16px;letter-spacing:0}.section-copy p{color:#4b5068;font-size:18px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.cards article,.alert-box,.diagnostic div,.final-card{border:2px solid #17142f;background:#fff;border-radius:8px;box-shadow:5px 5px 0 #17142f;padding:18px}.cards article strong,.diagnostic b{display:block;font-size:18px;margin-bottom:8px}.cards article p,.diagnostic p,.alert-box p,.final-card p{margin:0;color:#4b5068}.checklist{list-style:none;margin:0;padding:0;display:grid;gap:12px}.checklist li{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;border:2px solid #17142f;background:#fff;border-radius:8px;box-shadow:4px 4px 0 #17142f;padding:12px}.checklist span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#17142f;color:#fff;font:900 14px/1 monospace}.checklist p{margin:0;font-weight:750}.bullet-list{border:2px solid #17142f;background:#fff;border-radius:8px;box-shadow:5px 5px 0 #17142f;padding:24px 24px 24px 42px;font-size:18px;font-weight:750}.bullet-list li+li{margin-top:10px}.alert-box{background:#17142f;color:#fff}.alert-box b{color:#35d2c6;text-transform:uppercase;font:900 13px/1 monospace;letter-spacing:.08em}.alert-box p{color:#eef6f8;font-size:20px;margin-top:10px}.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px}.before-after div{border:2px solid #17142f;border-radius:8px;box-shadow:5px 5px 0 #17142f;padding:18px;background:#fff}.before-after div:last-child{background:#35d2c6}.before-after span{font:900 12px/1 monospace;text-transform:uppercase}.before-after p{font-size:18px;font-weight:850;margin:10px 0 0}.table-wrap{overflow-x:auto;border:2px solid #17142f;border-radius:8px;box-shadow:5px 5px 0 #17142f;background:#fff}table{width:100%;border-collapse:collapse;min-width:620px}th,td{border-bottom:1px solid #d8dee9;padding:14px;text-align:left;vertical-align:top}th{width:220px;background:#17142f;color:#fff;font:900 12px/1.25 monospace;text-transform:uppercase;letter-spacing:.06em}td{color:#4b5068;font-weight:650}blockquote{margin:0;border:2px solid #17142f;background:#35d2c6;border-radius:10px;box-shadow:7px 7px 0 #17142f;padding:34px;font-size:clamp(26px,4vw,46px);font-weight:950;line-height:1.05}.diagnostic{display:grid;gap:12px}.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.flow span{position:relative;border:2px solid #17142f;background:#fff;border-radius:999px;box-shadow:3px 3px 0 #17142f;padding:12px 16px;font:900 13px/1 monospace}.flow span:not(:last-child):after{content:"→";margin-left:10px;color:#ff6b35}.prompt-card{border:2px solid #17142f;border-radius:10px;overflow:hidden;box-shadow:7px 7px 0 #17142f;background:#111225;color:#f6fbff}.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:2px solid rgba(255,255,255,.2);padding:12px 14px;background:#17142f}.prompt-head span{font:900 12px/1 monospace;text-transform:uppercase;letter-spacing:.08em;color:#35d2c6}.copy-btn{border:2px solid #fff;background:#fff;color:#17142f;border-radius:6px;padding:7px 11px;font-weight:900;cursor:pointer;box-shadow:3px 3px 0 rgba(255,255,255,.25)}.prompt-card pre{margin:0;padding:20px;max-height:680px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:600 13px/1.65 ui-monospace,Menlo,monospace}.mini-prompt{position:relative;border:2px solid #17142f;background:#111225;color:#f6fbff;border-radius:10px;box-shadow:5px 5px 0 #17142f;padding:26px 20px;font:800 18px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word}.mini-prompt .mini{position:absolute;right:12px;top:12px;border-color:#35d2c6}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery .media{box-shadow:4px 4px 0 #17142f}.gallery .media img{aspect-ratio:16/9}.final-card{background:#35d2c6;font-size:22px;font-weight:850}.footer{background:#17142f;color:#fff;padding:38px 18px;text-align:center}.footer a{color:#35d2c6}@media (max-width:900px){.hero-wrap,.layout-image .wrap,.layout-check .wrap,.layout-alert .wrap,.layout-list .wrap,.layout-before .wrap,.layout-diagnostic .wrap,.layout-flow .wrap,.layout-prompt-inline .wrap{grid-template-columns:1fr}.toc{grid-template-columns:repeat(2,1fr)}.cards,.gallery{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}.section-nav{display:none}}@media (max-width:620px){.topbar-inner{padding:10px 12px}.hero-wrap{padding:48px 14px 42px}.wrap{padding:44px 14px}.toc{grid-template-columns:1fr;padding:20px 14px}.cards,.gallery,.before-after{grid-template-columns:1fr}.section-copy p,.hero p{font-size:16px}.prompt-card pre{font-size:12px;padding:15px}.table-wrap{overflow:visible}table,tbody,tr,th,td{display:block;width:100%;min-width:0}tr{border-bottom:2px solid #17142f}tr:last-child{border-bottom:0}th,td{border-bottom:0}th{width:100%;padding:10px 12px}td{padding:11px 12px 15px}.media figcaption{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><img src="logo-denem.jpeg" alt="DENEM Academy"><span>DENEM Academy · Séance 14</span></div>
+    <div class="section-nav"><a href="#section-01">01</a>
+<a href="#section-02">02</a>
+<a href="#section-03">03</a>
+<a href="#section-04">04</a>
+<a href="#section-05">05</a>
+<a href="#section-06">06</a>
+<a href="#section-07">07</a>
+<a href="#section-08">08</a>
+<a href="#section-09">09</a>
+<a href="#section-10">10</a>
+<a href="#section-11">11</a>
+<a href="#section-12">12</a>
+<a href="#section-13">13</a>
+<a href="#section-14">14</a>
+<a href="#section-15">15</a>
+<a href="#section-16">16</a>
+<a href="#section-17">17</a>
+<a href="#section-18">18</a>
+<a href="#section-19">19</a>
+<a href="#section-20">20</a>
+<a href="#section-21">21</a>
+<a href="#section-22">22</a>
+<a href="#section-23">23</a>
+<a href="#section-24">24</a>
+<a href="#section-25">25</a>
+<a href="#section-26">26</a>
+<a href="#section-27">27</a>
+<a href="#section-28">28</a>
+<a href="#section-29">29</a>
+<a href="#section-30">30</a>
+<a href="#section-31">31</a>
+<a href="#section-32">32</a>
+<a href="#section-33">33</a>
+<a href="#section-34">34</a>
+<a href="#section-35">35</a>
+<a href="#section-36">36</a>
+<a href="#section-37">37</a>
+<a href="#section-38">38</a>
+<a href="#section-39">39</a>
+<a href="#section-40">40</a>
+<a href="#section-41">41</a>
+<a href="#section-42">42</a>
+<a href="#section-43">43</a>
+<a href="#section-44">44</a>
+<a href="#section-45">45</a>
+<a href="#section-46">46</a>
+<a href="#section-47">47</a>
+<a href="#section-48">48</a>
+<a href="#section-49">49</a>
+<a href="#section-50">50</a>
+<a href="#section-51">51</a>
+<a href="#section-52">52</a>
+<a href="#section-53">53</a>
+<a href="#section-54">54</a>
+<a href="#section-55">55</a>
+<a href="#section-56">56</a>
+<a href="#section-57">57</a>
+<a href="#section-58">58</a>
+<a href="#section-59">59</a>
+<a href="#section-60">60</a>
+<a href="#section-61">61</a>
+<a href="#section-62">62</a>
+<a href="#section-63">63</a>
+<a href="#section-64">64</a>
+<a href="#section-65">65</a>
+<a href="#section-66">66</a>
+<a href="#section-67">67</a>
+<a href="#section-68">68</a>
+<a href="#section-69">69</a>
+<a href="#section-70">70</a>
+<a href="#section-71">71</a>
+<a href="#section-72">72</a></div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-wrap">
+    <div>
+      <p class="eyebrow">Acte 2 · LinkedIn + n8n</p>
+      <h1>Automatiser <span>100 posts LinkedIn</span></h1>
+      <p>Je construis une chaîne complète : Codex transforme l'audit en base éditoriale, je vérifie le classeur et les images, puis n8n publie une seule ligne validée par jour.</p>
+      <div class="stats"><div class="stat"><b>72</b><small>sections guidées</small></div><div class="stat"><b>30</b><small>captures vidéo</small></div><div class="stat"><b>8</b><small>prompts copiables</small></div></div>
+    </div>
+    <figure class="media">
+  <img src="img/session-14/01-intro-support-automatiser-linkedin.jpg" alt="Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n." loading="lazy">
+  <figcaption>Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n.</figcaption>
+</figure>
+  </div>
+</header>
+<div class="toc">
+  <a href="#section-01"><span>Acte 01</span><b>Préparer Codex</b></a>
+  <a href="#section-10"><span>Acte 02</span><b>Générer les posts</b></a>
+  <a href="#section-19"><span>Acte 03</span><b>Contrôler images et XLSX</b></a>
+  <a href="#section-35"><span>Acte 04</span><b>Connecter n8n via MCP</b></a>
+  <a href="#section-44"><span>Acte 05</span><b>Tester et corriger</b></a>
+  <a href="#section-60"><span>Acte 06</span><b>Importer et activer</b></a>
+</div>
+<main>
+<section id="section-01" class="section tone-2 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">01 · Vision</p>
+      <h2>01. Le résultat visé</h2>
+      <p>Je veux une machine simple : Codex prépare les contenus, n8n publie un post par jour, et LinkedIn reçoit seulement ce que j&#x27;ai validé.</p>
+    </div><figure class="media">
+  <img src="img/session-14/01-intro-support-automatiser-linkedin.jpg" alt="Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n." loading="lazy">
+  <figcaption>Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n.</figcaption>
+</figure></div>
+</section>
+<section id="section-02" class="section tone-3 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">02 · Préparation</p>
+      <h2>02. Pourquoi je commence par le dossier local</h2>
+      <p>Je lance Codex dans le bon dossier pour que tous les fichiers sortent au même endroit : XLSX, images, exports et futures corrections.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Ouvrir le dossier réseaux sociaux</p></li><li><span>02</span><p>Lancer le terminal au bon endroit</p></li><li><span>03</span><p>Garder les fichiers de séance ensemble</p></li></ul></div>
+</section>
+<section id="section-03" class="section tone-4 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">03 · Terminal</p>
+      <h2>03. La commande de départ</h2>
+      <p>Je donne à Codex la capacité d&#x27;agir dans le dossier. C&#x27;est pratique pour créer les fichiers, mais je garde le contrôle en vérifiant chaque sortie.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>codex --dangerously-bypass-approvals-and-sandbox</code></pre>
+</div></div>
+</section>
+<section id="section-04" class="section tone-5 layout-cards">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">04 · Choix outil</p>
+      <h2>04. Pourquoi Codex ici</h2>
+      <p>Pour cette séance, j&#x27;utilise Codex parce que je veux générer des fichiers, créer des images, modifier un classeur et piloter n8n via MCP depuis un même environnement.</p>
+    </div><div class="cards"><article><strong>Fichiers</strong><p>Créer le XLSX, ranger les images, renommer proprement.</p></article><article><strong>MCP</strong><p>Se connecter à n8n et créer le workflow directement.</p></article><article><strong>Itération</strong><p>Relancer, compacter, corriger sans repartir de zéro.</p></article></div></div>
+</section>
+<section id="section-05" class="section tone-6 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">05 · Attention</p>
+      <h2>05. Le piège à éviter</h2>
+      <p>Automatiser LinkedIn ne veut pas dire publier n&#x27;importe quoi plus vite. Je sépare la création du contenu, la validation humaine et la publication.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Si le contenu est moyen, l&#x27;automatisation amplifie un problème. Je dois d&#x27;abord obtenir une base éditoriale solide.</p></aside></div>
+</section>
+<section id="section-06" class="section tone-1 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">06 · Contexte</p>
+      <h2>06. L&#x27;audit sert de carburant</h2>
+      <p>Je repars de l&#x27;audit SEO/GEO pour comprendre le business, les offres, les douleurs et les angles. Les posts ne doivent pas parler de l&#x27;audit : ils doivent aider un restaurateur.</p>
+    </div><figure class="media">
+  <img src="img/session-14/03-brave-recherche-automatisation.jpg" alt="Je vérifie que le contenu LinkedIn peut renforcer la visibilité de l&#x27;expertise." loading="lazy">
+  <figcaption>Je vérifie que le contenu LinkedIn peut renforcer la visibilité de l&#x27;expertise.</figcaption>
+</figure></div>
+</section>
+<section id="section-07" class="section tone-2 layout-list">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">07 · Positionnement</p>
+      <h2>07. Ce que le lecteur doit voir</h2>
+      <p>Le lecteur doit sentir que je comprends son quotidien : réservations, no-shows, avis Google, marges, staff, menu, livraison, reporting.</p>
+    </div><ul class="bullet-list"><li>Une douleur concrète</li><li>Une idée exploitable</li><li>Une automatisation simple à imaginer</li><li>Un bénéfice métier clair</li></ul></div>
+</section>
+<section id="section-08" class="section tone-3 layout-before">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">08 · Anti-hype</p>
+      <h2>08. Ce que je ne veux pas</h2>
+      <p>Je ne veux pas de posts sur les robots, les prompts magiques ou la révolution IA. Je veux du terrain, du restaurant, des décisions opérationnelles.</p>
+    </div><div class="before-after"><div><span>Avant</span><p>L&#x27;IA va révolutionner votre restaurant.</p></div><div><span>Après</span><p>Un no-show coûte une table, du temps et parfois une soirée. Voilà comment automatiser le rappel sans harceler le client.</p></div></div></div>
+</section>
+<section id="section-09" class="section tone-4 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">09 · Visibilité</p>
+      <h2>09. La preuve LinkedIn + recherche</h2>
+      <p>Je regarde comment un contenu LinkedIn peut ressortir dans les recherches. L&#x27;objectif n&#x27;est pas seulement d&#x27;avoir des likes, mais d&#x27;installer l&#x27;expertise dans plusieurs surfaces.</p>
+    </div><figure class="media">
+  <img src="img/session-14/04-post-linkedin-reference.jpg" alt="Je regarde comment LinkedIn et les résultats de recherche reprennent les contenus." loading="lazy">
+  <figcaption>Je regarde comment LinkedIn et les résultats de recherche reprennent les contenus.</figcaption>
+</figure></div>
+</section>
+<section id="section-10" class="section tone-5 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">10 · Prompt à copier</p>
+      <h2>10. Le prompt principal</h2>
+      <p>Ce prompt sert à produire la banque complète de posts. Il impose le rôle, le contexte, les colonnes et les garde-fous.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Tu es un stratège B2B senior, ghostwriter LinkedIn, consultant en automatisation IA pour restaurants et directeur artistique photo documentaire.
+
+CONTEXTE BUSINESS
+Tu vas recevoir un audit SEO/GEO complet, le site, les offres, les concurrents, les avis clients, les objections commerciales et les sources chiffrées disponibles.
+Objectif : créer une banque de 100 posts LinkedIn avec images pour positionner l&#x27;entreprise comme spécialiste des automatisations IA concrètes pour restaurants.
+
+RÈGLE IMPORTANTE
+Les posts ne doivent jamais parler de l&#x27;audit SEO/GEO, de la stratégie de contenu ou de RestIA comme sujet principal.
+Ces éléments servent uniquement à comprendre le business.
+Le lecteur doit lire des posts utiles pour son restaurant, pas les coulisses de notre acquisition.
+
+AUDIENCE
+- Restaurateurs indépendants, managers de salle, franchisés, groupes locaux, traiteurs, dark kitchens.
+- Niveau technique faible à moyen.
+- Préoccupations : coût matière, coût staff, no-shows, avis Google, réservations, fidélisation, livraison, planning, manque de temps.
+
+CONTRAINTE STRATÉGIQUE
+Le contenu doit faire terrain, sobre, utile, crédible.
+Interdit : hype IA, robot, jargon technique, promesse miracle, ROI inventé, post générique, formulation LinkedIn cliché.
+Chaque post doit donner une idée exploitable, un calcul, une méthode, une erreur fréquente, un workflow ou une décision opérationnelle.
+
+CONTRAINTE DE VOLUME
+- Génère exactement 100 posts.
+- Chaque post doit avoir un titre, un texte LinkedIn, un CTA, des hashtags, un statut, un ordre de publication et une consigne image.
+- Les 100 posts doivent être différents : pas de hook similaire, pas de même histoire, pas de CTA répété en boucle, pas de même visuel.
+
+PILIERS À COUVRIR
+1. Marges et coûts : food cost, temps manager, tâches répétitives, reporting.
+2. Réservations et no-shows : confirmation, rappel, annulation, liste d&#x27;attente.
+3. Avis et réputation : Google reviews, réponses, analyse des irritants, preuve sociale.
+4. Fidélisation : clients dormants, offres personnalisées, anniversaires, segmentation.
+5. Staff et planning : onboarding, documents internes, passation, recrutement.
+6. Menu, livraison, catering : menu engineering, commandes en ligne, communication locale.
+
+FORMAT DE SORTIE
+Crée un fichier XLSX compatible avec une table n8n.
+Colonnes attendues :
+id, publish_order, status, scheduled_date, pillar, persona, pain, title, linkedin_text, cta, hashtags, proof_type, image_needed, image_prompt, image_file_name, image_alt, published_at, linkedin_post_id
+
+RÈGLES D&#x27;ÉCRITURE
+- Langue : français.
+- Longueur linkedin_text : 900 à 1600 caractères.
+- Premières lignes courtes et percutantes.
+- Une seule idée forte par post.
+- Chiffres : si estimation, écrire clairement &quot;exemple simple&quot; ou &quot;scénario&quot;.
+- CTA discret : audit, commentaire mot-clé, demande de schéma, diagnostic, exemple workflow.
+- Hashtags : 2 à 4 maximum, spécifiques, pas de spam.
+
+RÈGLES IMAGE
+Chaque image_prompt doit produire une photo réaliste et minimaliste.
+Style obligatoire : photographie documentaire, lumière naturelle, restaurant réel, détails opérationnels, pas de texte lisible, pas de logo, pas de visage reconnaissable au premier plan, pas de rendu 3D, pas de robot, pas de futurisme.
+
+CONTRÔLE QUALITÉ AVANT DE LIVRER
+Vérifie : 100 lignes, aucun titre dupliqué, une douleur restaurant précise par post, un bénéfice business par post, aucun chiffre inventé présenté comme fait général.
+
+LIVRABLE
+Crée le fichier XLSX dans le dossier de travail et indique son nom.</code></pre>
+</div></div>
+</section>
+<section id="section-11" class="section tone-6 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">11 · 100 posts</p>
+      <h2>11. Le volume réel</h2>
+      <p>Je demande 100 posts pour créer une réserve longue. Mais je garde en tête qu&#x27;un lot plus petit donne souvent plus de qualité.</p>
+    </div><div class="table-wrap"><table><tr><th>20 à 30 posts</th><td>Très bon pour un premier test qualité.</td></tr><tr><th>50 posts</th><td>Bon équilibre entre volume et contrôle.</td></tr><tr><th>100 posts</th><td>Utile pour une banque longue, mais il faut relire et améliorer.</td></tr><tr><th>200 posts</th><td>Possible, mais plus risqué en répétition et tokens.</td></tr></table></div></div>
+</section>
+<section id="section-12" class="section tone-1 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">12 · Validation</p>
+      <h2>12. Le contrôle qualité avant n8n</h2>
+      <p>Je ne branche pas un tableur sale dans un workflow. Je vérifie d&#x27;abord les titres, les textes, les CTA, les images et les statuts.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Aucun titre dupliqué</p></li><li><span>02</span><p>Pas le même hook partout</p></li><li><span>03</span><p>CTA variés</p></li><li><span>04</span><p>Images cohérentes</p></li><li><span>05</span><p>Statut initial clair</p></li></ul></div>
+</section>
+<section id="section-13" class="section tone-2 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">13 · XLSX</p>
+      <h2>13. Le classeur apparaît</h2>
+      <p>Une fois le fichier généré, je l&#x27;ouvre. Je vérifie que les colonnes sont exploitables par n8n, pas seulement lisibles par un humain.</p>
+    </div><figure class="media">
+  <img src="img/session-14/07-classeur-posts-linkedin.jpg" alt="Le classeur généré contient les posts et les consignes de publication." loading="lazy">
+  <figcaption>Le classeur généré contient les posts et les consignes de publication.</figcaption>
+</figure></div>
+</section>
+<section id="section-14" class="section tone-3 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">14 · Structure</p>
+      <h2>14. Les colonnes importantes</h2>
+      <p>Le tableur doit permettre trois choses : choisir la bonne ligne, publier le bon contenu, puis marquer la ligne comme traitée.</p>
+    </div><div class="table-wrap"><table><tr><th>id</th><td>Identifiant stable de la ligne.</td></tr><tr><th>status</th><td>draft, approved, published ou error.</td></tr><tr><th>scheduled_date</th><td>Date de publication prévue.</td></tr><tr><th>linkedin_text</th><td>Texte complet envoyé à LinkedIn.</td></tr><tr><th>image_file_name</th><td>Nom de l&#x27;image à convertir en binaire.</td></tr><tr><th>published_at</th><td>Trace anti-doublon après publication.</td></tr></table></div></div>
+</section>
+<section id="section-15" class="section tone-4 layout-quote">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">15 · Anti-doublon</p>
+      <h2>15. Le statut est le verrou</h2>
+      <p>Le workflow ne doit pas republier une ligne. La ligne publiée doit être marquée terminée, puis le lendemain n8n prend la suivante.</p>
+    </div><blockquote>Une exécution = une ligne = un post. Après publication, je verrouille la ligne.</blockquote></div>
+</section>
+<section id="section-16" class="section tone-5 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">16 · Relecture</p>
+      <h2>16. Pourquoi je regarde le tableur</h2>
+      <p>Je repère les formulations trop proches. Dans la séance, certaines structures se répètent : je préfère le voir maintenant que le publier pendant 100 jours.</p>
+    </div><figure class="media">
+  <img src="img/session-14/08-tableur-posts-et-prompts.jpg" alt="Le tableur permet de contrôler textes, titres, CTA, prompts image et données." loading="lazy">
+  <figcaption>Le tableur permet de contrôler textes, titres, CTA, prompts image et données.</figcaption>
+</figure></div>
+</section>
+<section id="section-17" class="section tone-6 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">17 · Correction</p>
+      <h2>17. Erreur fréquente : trop de mêmes structures</h2>
+      <p>Quand Codex produit beaucoup, il peut répéter des débuts comme &#x27;exemple simple&#x27; ou &#x27;automatisation concrète&#x27;. Je corrige avant de continuer.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Si tu sens que 10 posts pourraient avoir été écrits par copier-coller, stoppe la chaîne et fais améliorer le lot.</p></aside></div>
+</section>
+<section id="section-18" class="section tone-1 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">18 · Prompt à copier</p>
+      <h2>18. Prompt d&#x27;amélioration</h2>
+      <p>Je l&#x27;utilise quand les posts sont corrects mais trop mécaniques. Le but n&#x27;est pas de tout refaire, seulement de varier et humaniser.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Améliore les 4 premiers posts.
+Objectif : les rendre plus naturels, moins répétitifs, moins &quot;exemple simple&quot; à chaque fois.
+Garde la même intention business, mais varie les hooks, la structure et le CTA.
+Ne change pas la logique du classeur.
+Mets à jour le fichier XLSX.</code></pre>
+</div></div>
+</section>
+<section id="section-19" class="section tone-2 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">19 · Images</p>
+      <h2>19. Les images : objectif et réalité</h2>
+      <p>Je peux demander beaucoup d&#x27;images, mais c&#x27;est long. Pour avancer dans la séance, je limite le test aux premières images et je garde la logique.</p>
+    </div><figure class="media">
+  <img src="img/session-14/14-image-gen-automatisation-complete.jpg" alt="Les images sont longues à générer : je limite le lot quand la séance doit avancer." loading="lazy">
+  <figcaption>Les images sont longues à générer : je limite le lot quand la séance doit avancer.</figcaption>
+</figure></div>
+</section>
+<section id="section-20" class="section tone-3 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">20 · Prompt à copier</p>
+      <h2>20. Prompt petit lot d&#x27;images</h2>
+      <p>Ce prompt permet de vérifier le mécanisme sans attendre 100 générations.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Reprends les 4 premiers posts du fichier.
+Génère les 4 images associées.
+Enregistre les images dans le dossier du projet avec des noms simples et réutilisables.
+Ajoute ou mets à jour les colonnes image_file_name, image_needed et image_alt dans le classeur.
+Vérifie rapidement les dimensions et la cohérence image/post.</code></pre>
+</div></div>
+</section>
+<section id="section-21" class="section tone-4 layout-cards">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">21 · Méthode</p>
+      <h2>21. Pourquoi les lots petits gagnent</h2>
+      <p>Plus le lot est petit, plus Codex garde de précision. Pour un client, je préfère livrer 30 posts très bons que 100 posts moyens.</p>
+    </div><div class="cards"><article><strong>Qualité</strong><p>Moins de répétitions.</p></article><article><strong>Contrôle</strong><p>Relire prend moins de temps.</p></article><article><strong>Itération</strong><p>On améliore une matrice avant de scaler.</p></article></div></div>
+</section>
+<section id="section-22" class="section tone-5 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">22 · Fichiers</p>
+      <h2>22. Nommer les images proprement</h2>
+      <p>Chaque image doit avoir un nom exploitable par le workflow. Pas de nom flou, pas d&#x27;espace compliqué, pas de fichier perdu dans Téléchargements.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Nom court</p></li><li><span>02</span><p>Extension correcte</p></li><li><span>03</span><p>Lien avec l&#x27;id du post</p></li><li><span>04</span><p>Présence dans le dossier projet</p></li></ul></div>
+</section>
+<section id="section-23" class="section tone-6 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">23 · Contrôle</p>
+      <h2>23. Terminal + tableur ensemble</h2>
+      <p>Je garde le terminal visible pour voir ce que Codex fait et le tableur visible pour contrôler le résultat. C&#x27;est le meilleur duo pour ne pas perdre le fil.</p>
+    </div><figure class="media">
+  <img src="img/session-14/17-tableur-terminal-codex.jpg" alt="Le couple tableur + terminal permet de contrôler et corriger vite." loading="lazy">
+  <figcaption>Le couple tableur + terminal permet de contrôler et corriger vite.</figcaption>
+</figure></div>
+</section>
+<section id="section-24" class="section tone-1 layout-diagnostic">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">24 · Debug Codex</p>
+      <h2>24. Quand Codex bloque</h2>
+      <p>Si Codex semble figé, je ne panique pas. Je peux attendre, compacter ou relancer dans le même dossier avec une demande plus courte.</p>
+    </div><div class="diagnostic"><div><b>Symptôme</b><p>Il ne répond plus ou tourne trop longtemps.</p></div><div><b>Action</b><p>Compacter ou relancer Codex.</p></div><div><b>À garder</b><p>Le dossier, les fichiers et la demande précédente.</p></div></div></div>
+</section>
+<section id="section-25" class="section tone-2 layout-prompt-inline">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">25 · Reprise</p>
+      <h2>25. Relancer sans repartir de zéro</h2>
+      <p>Je relance Codex dans le dossier de la séance, puis je lui demande de reprendre avec les fichiers déjà présents.</p>
+    </div><div class="mini-prompt"><button type="button" class="copy-btn mini">Copier</button><code>Reprends le travail dans ce dossier avec le fichier XLSX déjà généré. Vérifie les posts, les images présentes et continue uniquement ce qui manque.</code></div></div>
+</section>
+<section id="section-26" class="section tone-3 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">26 · Passage n8n</p>
+      <h2>26. La base est prête</h2>
+      <p>Quand le XLSX est propre et que les premières images existent, je peux passer à n8n. Je ne cherche pas encore à publier : je prépare le workflow.</p>
+    </div><figure class="media">
+  <img src="img/session-14/19-codex-plan-generation.jpg" alt="Codex planifie, génère, vérifie et livre les fichiers." loading="lazy">
+  <figcaption>Codex planifie, génère, vérifie et livre les fichiers.</figcaption>
+</figure></div>
+</section>
+<section id="section-27" class="section tone-4 layout-cards">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">27 · Outil client</p>
+      <h2>27. Pourquoi n8n dans cette séance</h2>
+      <p>n8n reste très visuel et beaucoup de clients le connaissent ou le demandent. Même si un script Python peut aller plus vite, je dois savoir m&#x27;adapter à l&#x27;outil du client.</p>
+    </div><div class="cards"><article><strong>Visuel</strong><p>Le client voit le chemin du workflow.</p></article><article><strong>Natif</strong><p>Le node LinkedIn évite l&#x27;API HTTP au départ.</p></article><article><strong>Modifiable</strong><p>On peut corriger node par node.</p></article></div></div>
+</section>
+<section id="section-28" class="section tone-5 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">28 · n8n</p>
+      <h2>28. Créer le workflow</h2>
+      <p>Je pars d&#x27;un workflow vide et je laisse Codex construire la base via MCP. Je garde ensuite la main pour tester et corriger.</p>
+    </div><figure class="media">
+  <img src="img/session-14/28-workflow-n8n-canvas.jpg" alt="Le workflow final sépare les branches image et sans image." loading="lazy">
+  <figcaption>Le workflow final sépare les branches image et sans image.</figcaption>
+</figure></div>
+</section>
+<section id="section-29" class="section tone-6 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">29 · LinkedIn</p>
+      <h2>29. Le node LinkedIn natif</h2>
+      <p>Je repère le node LinkedIn, puis je choisis Resource = Post et Operation = Create. C&#x27;est le chemin le plus simple pour la séance.</p>
+    </div><figure class="media">
+  <img src="img/session-14/05-n8n-node-linkedin-form.jpg" alt="Premier repérage du node LinkedIn dans n8n." loading="lazy">
+  <figcaption>Premier repérage du node LinkedIn dans n8n.</figcaption>
+</figure></div>
+</section>
+<section id="section-30" class="section tone-1 layout-before">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">30 · Cible</p>
+      <h2>30. Personne ou organisation</h2>
+      <p>Person publie sur le profil personnel. Organization publie sur la page entreprise. Pour cette stratégie, je veux publier sur la page agence.</p>
+    </div><div class="before-after"><div><span>Avant</span><p>Post As = Person : utile pour tester le credential.</p></div><div><span>Après</span><p>Post As = Organization : utile pour publier sur la page entreprise.</p></div></div></div>
+</section>
+<section id="section-31" class="section tone-2 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">31 · LinkedIn</p>
+      <h2>31. Trouver l&#x27;Organization URN</h2>
+      <p>L&#x27;URN est le numéro de l&#x27;organisation. Je récupère ce numéro depuis la page LinkedIn, puis je le mets dans n8n.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Dans n8n, ne colle pas n&#x27;importe quelle URL LinkedIn. Il faut l&#x27;identifiant attendu par le node.</p></aside></div>
+</section>
+<section id="section-32" class="section tone-3 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">32 · Paramètres</p>
+      <h2>32. Les champs du node</h2>
+      <p>Le node doit recevoir le texte, la catégorie média et le champ binaire si une image est présente.</p>
+    </div><figure class="media">
+  <img src="img/session-14/06-linkedin-create-post-fields.jpg" alt="Le node LinkedIn demande credential, resource, operation, personne ou organisation." loading="lazy">
+  <figcaption>Le node LinkedIn demande credential, resource, operation, personne ou organisation.</figcaption>
+</figure></div>
+</section>
+<section id="section-33" class="section tone-4 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">33 · LinkedIn</p>
+      <h2>33. Configuration minimale</h2>
+      <p>Je commence simple : credential connecté, post create, organization, texte dynamique. L&#x27;image arrive seulement après validation du texte.</p>
+    </div><div class="table-wrap"><table><tr><th>Credential</th><td>Compte LinkedIn connecté dans n8n Cloud.</td></tr><tr><th>Resource</th><td>Post.</td></tr><tr><th>Operation</th><td>Create.</td></tr><tr><th>Post As</th><td>Organization pour la page entreprise.</td></tr><tr><th>Text</th><td>Variable linkedin_text.</td></tr><tr><th>Media</th><td>None au test, Image ensuite.</td></tr></table></div></div>
+</section>
+<section id="section-34" class="section tone-5 layout-quote">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">34 · Test simple</p>
+      <h2>34. Pourquoi tester sans image</h2>
+      <p>Le texte seul isole le problème. Si le texte passe, le credential et le node LinkedIn fonctionnent. Ensuite seulement je corrige l&#x27;image.</p>
+    </div><blockquote>Je valide d&#x27;abord le chemin le plus simple. Puis j&#x27;ajoute la complexité.</blockquote></div>
+</section>
+<section id="section-35" class="section tone-6 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">35 · MCP</p>
+      <h2>35. Connecter n8n à Codex</h2>
+      <p>Je vais dans Settings, puis Instance-level MCP. Je choisis le workflow, je récupère l&#x27;URL et l&#x27;access token pour donner l&#x27;accès à Codex.</p>
+    </div><figure class="media">
+  <img src="img/session-14/23-n8n-linkedin-credential-page.jpg" alt="Le credential LinkedIn est connecté directement dans n8n Cloud." loading="lazy">
+  <figcaption>Le credential LinkedIn est connecté directement dans n8n Cloud.</figcaption>
+</figure></div>
+</section>
+<section id="section-36" class="section tone-1 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">36 · Clés</p>
+      <h2>36. Sécurité MCP</h2>
+      <p>Je peux donner la clé à Codex pour construire le workflow, mais je la révoque après. Ce n&#x27;est pas une clé qu&#x27;on laisse traîner.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Après création du workflow, retourne dans Instance-level MCP et clique Remove access si tu n&#x27;as plus besoin de la connexion.</p></aside></div>
+</section>
+<section id="section-37" class="section tone-2 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">37 · Prompt à copier</p>
+      <h2>37. Prompt connexion MCP</h2>
+      <p>Je commence volontairement avec une demande courte. Codex comprend le contexte grâce au dossier et au MCP.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Maintenant, connecte-toi au MCP n8n.
+Fais un nouveau workflow avec le tableur des posts et les photos associées s&#x27;il te plaît.</code></pre>
+</div></div>
+</section>
+<section id="section-38" class="section tone-3 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">38 · Prompt à copier</p>
+      <h2>38. Prompt workflow complet</h2>
+      <p>Quand je veux être plus précis, j&#x27;impose les règles du workflow : node natif, une ligne, anti-doublon, branche image et branche texte.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Travaille sur n8n via MCP.
+Crée un workflow qui publie automatiquement mes posts LinkedIn depuis la base de posts.
+
+Contraintes :
+- Utilise le node LinkedIn natif de n8n, pas un HTTP API call.
+- Publie sur mon organisation LinkedIn, pas sur mon profil personnel.
+- Une exécution doit publier une seule ligne.
+- Ne publie que les lignes non traitées.
+- Après publication, marque la ligne comme publiée pour éviter les doublons.
+- S&#x27;il y a une image, passe par la branche image.
+- S&#x27;il n&#x27;y a pas d&#x27;image, passe par la branche texte seul.
+- Prévois un test manuel node par node.
+
+Je veux une logique simple, lisible et modifiable.</code></pre>
+</div></div>
+</section>
+<section id="section-39" class="section tone-4 layout-flow">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">39 · Architecture</p>
+      <h2>39. La logique du workflow</h2>
+      <p>n8n ne fait pas de magie ici. Il lit une base, choisit la première ligne non publiée, publie, puis marque la ligne.</p>
+    </div><div class="flow"><span>Trigger</span><span>Data table</span><span>Ligne non traitée</span><span>IF image</span><span>LinkedIn</span><span>Marquer publiée</span></div></div>
+</section>
+<section id="section-40" class="section tone-5 layout-cards">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">40 · Clarté</p>
+      <h2>40. Pas forcément d&#x27;IA dans le workflow</h2>
+      <p>Une fois les contenus créés, le workflow peut rester logique. Il n&#x27;a pas besoin de régénérer du texte tous les jours.</p>
+    </div><div class="cards"><article><strong>Avant</strong><p>IA pour produire la base.</p></article><article><strong>Pendant</strong><p>n8n pour exécuter la publication.</p></article><article><strong>Après</strong><p>Statut pour éviter le doublon.</p></article></div></div>
+</section>
+<section id="section-41" class="section tone-6 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">41 · Base</p>
+      <h2>41. Data table dans n8n</h2>
+      <p>Codex comprend qu&#x27;il faut une table : elle stocke les 100 posts, les images et les statuts. Le workflow vient lire cette table.</p>
+    </div><figure class="media">
+  <img src="img/session-14/30-workflow-final-canvas.jpg" alt="Le workflow complet est prêt quand il publie, marque la ligne, puis passe à la suivante." loading="lazy">
+  <figcaption>Le workflow complet est prêt quand il publie, marque la ligne, puis passe à la suivante.</figcaption>
+</figure></div>
+</section>
+<section id="section-42" class="section tone-1 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">42 · Données</p>
+      <h2>42. Ce que la table doit contenir</h2>
+      <p>La table n8n remplace la lecture manuelle du fichier. Elle devient la base de publication.</p>
+    </div><div class="table-wrap"><table><tr><th>title</th><td>Pour retrouver le sujet.</td></tr><tr><th>linkedin_text</th><td>Texte publié.</td></tr><tr><th>image_file_name</th><td>Image à convertir.</td></tr><tr><th>status</th><td>Non publié, publié, erreur.</td></tr><tr><th>published_at</th><td>Date réelle de publication.</td></tr></table></div></div>
+</section>
+<section id="section-43" class="section tone-2 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">43 · Planification</p>
+      <h2>43. Le trigger quotidien</h2>
+      <p>Je choisis une exécution quotidienne. Dans la séance, l&#x27;idée est claire : un post par jour, pas une boucle qui publie tout.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Intervalle : tous les jours</p></li><li><span>02</span><p>Heure : heure choisie pour la page</p></li><li><span>03</span><p>Timezone cohérente</p></li><li><span>04</span><p>Test manuel avant Publish</p></li></ul></div>
+</section>
+<section id="section-44" class="section tone-3 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">44 · Test node</p>
+      <h2>44. La première exécution</h2>
+      <p>Je clique sur le deuxième node pour voir la première ligne récupérée : titre, texte, image, data, statut.</p>
+    </div><figure class="media">
+  <img src="img/session-14/26-linkedin-node-output.jpg" alt="La sortie du node sert à vérifier si n8n reçoit bien les données." loading="lazy">
+  <figcaption>La sortie du node sert à vérifier si n8n reçoit bien les données.</figcaption>
+</figure></div>
+</section>
+<section id="section-45" class="section tone-4 layout-diagnostic">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">45 · Output</p>
+      <h2>45. Lire la sortie avant de publier</h2>
+      <p>La sortie du node me dit si n8n possède bien ce dont LinkedIn a besoin. Si la donnée n&#x27;est pas là, le post ne peut pas fonctionner.</p>
+    </div><div class="diagnostic"><div><b>Si linkedin_text est vide</b><p>Corrige la table ou la variable.</p></div><div><b>Si image_file_name manque</b><p>Passe en branche texte ou régénère le fichier.</p></div><div><b>Si data n&#x27;existe pas</b><p>Le binaire image n&#x27;est pas prêt.</p></div></div></div>
+</section>
+<section id="section-46" class="section tone-5 layout-prompt-inline">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">46 · Expression</p>
+      <h2>46. Mettre la variable de texte</h2>
+      <p>Je récupère la variable `linkedin_text` et je la place dans le champ Text du node LinkedIn. Chaque jour, cette variable changera avec la ligne choisie.</p>
+    </div><div class="mini-prompt"><button type="button" class="copy-btn mini">Copier</button><code>={{ $json.linkedin_text }}</code></div></div>
+</section>
+<section id="section-47" class="section tone-6 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">47 · Publication</p>
+      <h2>47. Tester le texte seul</h2>
+      <p>Sans image, le post est publié. Ça prouve que LinkedIn, le credential et le champ Text fonctionnent.</p>
+    </div><figure class="media">
+  <img src="img/session-14/20-linkedin-profil-et-texte.jpg" alt="Je teste la logique de publication sur LinkedIn avant d&#x27;activer l&#x27;automatisation." loading="lazy">
+  <figcaption>Je teste la logique de publication sur LinkedIn avant d&#x27;activer l&#x27;automatisation.</figcaption>
+</figure></div>
+</section>
+<section id="section-48" class="section tone-1 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">48 · Hygiène</p>
+      <h2>48. Supprimer le post de test</h2>
+      <p>Quand je publie pour tester, je supprime ensuite le post si ce n&#x27;est pas un vrai contenu. Le test sert à valider le tuyau, pas à laisser une trace inutile.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Publier une ligne de test</p></li><li><span>02</span><p>Vérifier sur LinkedIn</p></li><li><span>03</span><p>Supprimer le test si besoin</p></li><li><span>04</span><p>Revenir corriger n8n</p></li></ul></div>
+</section>
+<section id="section-49" class="section tone-2 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">49 · Erreur réelle</p>
+      <h2>49. Le problème d&#x27;image locale</h2>
+      <p>Le workflow ne peut pas publier une image si n8n ne peut pas y accéder. Une image locale sur mon Mac n&#x27;est pas automatiquement un binaire utilisable par n8n Cloud.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Si n8n Cloud ne voit pas le fichier local, il faut convertir, uploader ou fournir une URL accessible.</p></aside></div>
+</section>
+<section id="section-50" class="section tone-3 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">50 · Prompt à copier</p>
+      <h2>50. Prompt correction image</h2>
+      <p>Je donne le problème exact à Codex. Plus le diagnostic est clair, plus la correction est rapide.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Le workflow publie bien le texte, mais l&#x27;image ne passe pas.
+Le problème vient du fait que l&#x27;image est locale sur mon ordinateur.
+n8n a besoin d&#x27;un binaire utilisable dans le workflow.
+
+Corrige le workflow :
+- transforme l&#x27;image locale en binaire exploitable ;
+- garde le champ binaire dans data ;
+- dans le node LinkedIn image, utilise Input Binary Field = data ;
+- garde linkedin_text comme variable de texte ;
+- refais un test avec la première ligne.</code></pre>
+</div></div>
+</section>
+<section id="section-51" class="section tone-4 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">51 · Workflow</p>
+      <h2>51. Deux branches : true / false</h2>
+      <p>Le workflow corrigé sépare la branche image et la branche sans image. C&#x27;est plus lisible qu&#x27;un node LinkedIn qui essaie de tout faire.</p>
+    </div><figure class="media">
+  <img src="img/session-14/29-linkedin-node-result-panel.jpg" alt="Je vérifie l&#x27;exécution avant de publier réellement." loading="lazy">
+  <figcaption>Je vérifie l&#x27;exécution avant de publier réellement.</figcaption>
+</figure></div>
+</section>
+<section id="section-52" class="section tone-5 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">52 · True</p>
+      <h2>52. Branche image</h2>
+      <p>Si une image existe, n8n la convertit en binaire, vérifie le champ `data`, puis envoie le post LinkedIn avec Media = Image.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Condition image présente</p></li><li><span>02</span><p>Conversion en binaire</p></li><li><span>03</span><p>Binary field = data</p></li><li><span>04</span><p>LinkedIn Image</p></li><li><span>05</span><p>Update row</p></li></ul></div>
+</section>
+<section id="section-53" class="section tone-6 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">53 · False</p>
+      <h2>53. Branche texte seul</h2>
+      <p>Si l&#x27;image n&#x27;existe pas, le workflow publie seulement le texte. C&#x27;est indispensable pour ne pas bloquer toute la chaîne.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Condition image absente</p></li><li><span>02</span><p>LinkedIn sans média</p></li><li><span>03</span><p>Même variable de texte</p></li><li><span>04</span><p>Même marquage published</p></li></ul></div>
+</section>
+<section id="section-54" class="section tone-1 layout-prompt-inline">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">54 · Image</p>
+      <h2>54. Le champ binaire data</h2>
+      <p>Quand je fais View sur le binaire et que je vois l&#x27;image, n8n possède bien le fichier. À ce moment-là, le node LinkedIn doit pointer vers `data`.</p>
+    </div><div class="mini-prompt"><button type="button" class="copy-btn mini">Copier</button><code>Input Binary Field = data</code></div></div>
+</section>
+<section id="section-55" class="section tone-2 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">55 · Piège</p>
+      <h2>55. Ne pas modifier en même temps que Codex</h2>
+      <p>Quand Codex modifie le workflow pendant que je modifie aussi un node, je peux casser la configuration. Je laisse finir, je teste, puis je corrige.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Règle simple : une seule main sur le workflow à la fois.</p></aside></div>
+</section>
+<section id="section-56" class="section tone-3 layout-image">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">56 · Vérification</p>
+      <h2>56. Tester la branche image</h2>
+      <p>Je relance la première ligne. Si l&#x27;image passe en branche true, se convertit, puis arrive dans LinkedIn, le flux image est bon.</p>
+    </div><figure class="media">
+  <img src="img/session-14/27-node-linkedin-settings.jpg" alt="Les réglages changent selon image ou texte seul." loading="lazy">
+  <figcaption>Les réglages changent selon image ou texte seul.</figcaption>
+</figure></div>
+</section>
+<section id="section-57" class="section tone-4 layout-quote">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">57 · Anti-doublon</p>
+      <h2>57. Marquer comme terminé</h2>
+      <p>Après publication, le workflow coche ou met à jour la ligne. Le lendemain, il passe à la ligne suivante.</p>
+    </div><blockquote>Le vrai signe que le workflow marche : la même ligne ne repasse pas deux fois.</blockquote></div>
+</section>
+<section id="section-58" class="section tone-5 layout-diagnostic">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">58 · Test 2</p>
+      <h2>58. Relancer pour vérifier le suivant</h2>
+      <p>Je lance une nouvelle exécution. Si la deuxième ligne sort, l&#x27;anti-doublon fonctionne.</p>
+    </div><div class="diagnostic"><div><b>Résultat attendu</b><p>La première ligne est ignorée.</p></div><div><b>Si la même ligne revient</b><p>Le statut published_at n&#x27;est pas écrit.</p></div><div><b>Si rien ne revient</b><p>Le filtre est trop strict.</p></div></div></div>
+</section>
+<section id="section-59" class="section tone-6 layout-alert">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">59 · Activation</p>
+      <h2>59. Le bouton Publish</h2>
+      <p>Le workflow ne tourne pas seul tant que je ne clique pas sur Publish. Avant ça, je teste manuellement.</p>
+    </div><aside class="alert-box"><b>Attention</b><p>Ne clique pas sur Publish tant que texte, image et update row ne sont pas validés.</p></aside></div>
+</section>
+<section id="section-60" class="section tone-1 layout-prompt">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">60 · Réutilisation</p>
+      <h2>60. Importer un JSON</h2>
+      <p>Le workflow peut être exporté en JSON. Tu peux l&#x27;importer dans ton n8n, puis remplacer les credentials et les valeurs sensibles.</p>
+    </div><div class="prompt-card">
+  <div class="prompt-head"><span>Prompt à copier</span><button type="button" class="copy-btn">Copier</button></div>
+  <pre><code>Pour réutiliser le workflow :
+1. Télécharge le fichier JSON fourni dans le support.
+2. Dans n8n, clique sur le menu du workflow.
+3. Choisis Import from File.
+4. Sélectionne le fichier .json.
+5. Remplace mes credentials, mon Organization URN et tes chemins de fichiers.
+6. Teste à vide avant de cliquer sur Publish.</code></pre>
+</div></div>
+</section>
+<section id="section-61" class="section tone-2 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">61 · Variables</p>
+      <h2>61. Ce qu&#x27;il faut adapter</h2>
+      <p>Un JSON importé n&#x27;est jamais totalement prêt. Il faut remplacer les credentials, l&#x27;URN, la table et les noms de colonnes.</p>
+    </div><div class="table-wrap"><table><tr><th>Credentials</th><td>Ton compte LinkedIn.</td></tr><tr><th>Organization URN</th><td>L&#x27;identifiant de ta page.</td></tr><tr><th>Data table</th><td>Ta base de posts.</td></tr><tr><th>Colonnes</th><td>Tes noms exacts.</td></tr><tr><th>Heure</th><td>Ton horaire de publication.</td></tr></table></div></div>
+</section>
+<section id="section-62" class="section tone-3 layout-flow">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">62 · Récap</p>
+      <h2>62. La méthode complète</h2>
+      <p>Je repars de l&#x27;audit, je produis les posts, je transforme en base, je connecte n8n à Codex, je teste, je corrige, puis j&#x27;active.</p>
+    </div><div class="flow"><span>Audit</span><span>Posts</span><span>Images</span><span>XLSX</span><span>n8n MCP</span><span>Tests</span><span>Publish</span></div></div>
+</section>
+<section id="section-63" class="section tone-4 layout-before">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">63 · Système</p>
+      <h2>63. Avant / après</h2>
+      <p>Avant, il fallait ouvrir LinkedIn chaque jour. Après, je valide une base et le workflow s&#x27;occupe de la publication.</p>
+    </div><div class="before-after"><div><span>Avant</span><p>Je pense à publier, je copie un texte, je cherche une image, j&#x27;oublie parfois.</p></div><div><span>Après</span><p>Je valide des lignes, n8n publie une ligne par jour, puis marque la ligne terminée.</p></div></div></div>
+</section>
+<section id="section-64" class="section tone-5 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">64 · Checklist élève</p>
+      <h2>64. Ce que tu dois refaire</h2>
+      <p>Tu peux refaire la séance en suivant cette checklist. Ne saute pas la validation du tableur.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Préparer le dossier</p></li><li><span>02</span><p>Lancer Codex</p></li><li><span>03</span><p>Coller le prompt 100 posts</p></li><li><span>04</span><p>Relire le XLSX</p></li><li><span>05</span><p>Générer un petit lot d&#x27;images</p></li><li><span>06</span><p>Connecter MCP n8n</p></li><li><span>07</span><p>Créer le workflow</p></li><li><span>08</span><p>Tester texte</p></li><li><span>09</span><p>Tester image</p></li><li><span>10</span><p>Publier seulement à la fin</p></li></ul></div>
+</section>
+<section id="section-65" class="section tone-6 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">65 · Diagnostic</p>
+      <h2>65. Quand ça bloque</h2>
+      <p>La plupart des blocages viennent de trois endroits : credential LinkedIn, variable mal mappée, image locale inaccessible.</p>
+    </div><div class="table-wrap"><table><tr><th>Erreur credential</th><td>Reconnecter LinkedIn dans n8n.</td></tr><tr><th>Texte vide</th><td>Vérifier la colonne linkedin_text.</td></tr><tr><th>Image absente</th><td>Vérifier image_file_name et binaire data.</td></tr><tr><th>Doublon</th><td>Vérifier l&#x27;update status/published_at.</td></tr><tr><th>Codex figé</th><td>Compacter ou relancer dans le même dossier.</td></tr></table></div></div>
+</section>
+<section id="section-66" class="section tone-1 layout-prompt-inline">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">66 · Debug</p>
+      <h2>66. Le bon réflexe avec les logs</h2>
+      <p>Quand une erreur apparaît, je ne décris pas vaguement. Je copie les logs, le node concerné et le comportement attendu, puis je demande une correction ciblée.</p>
+    </div><div class="mini-prompt"><button type="button" class="copy-btn mini">Copier</button><code>Voici l&#x27;erreur du node [NOM_DU_NODE]. Le résultat attendu est [RÉSULTAT]. Corrige uniquement ce problème dans le workflow n8n.</code></div></div>
+</section>
+<section id="section-67" class="section tone-2 layout-cards">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">67 · Niveau</p>
+      <h2>67. Pourquoi c&#x27;est une compétence expert IA</h2>
+      <p>Je ne fais pas juste générer du contenu. Je construis une chaîne complète : stratégie, production, fichiers, workflow, test, correction, publication.</p>
+    </div><div class="cards"><article><strong>Stratégie</strong><p>L&#x27;audit devient contenu utile.</p></article><article><strong>Industrialisation</strong><p>Le tableur devient base de production.</p></article><article><strong>Automatisation</strong><p>n8n exécute sans improviser.</p></article><article><strong>Debug</strong><p>Je corrige avec des preuves.</p></article></div></div>
+</section>
+<section id="section-68" class="section tone-3 layout-quote">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">68 · Qualité</p>
+      <h2>68. La limite à garder en tête</h2>
+      <p>L&#x27;automatisation ne remplace pas la stratégie. Je dois relire, améliorer et supprimer les posts faibles avant qu&#x27;ils partent.</p>
+    </div><blockquote>Le workflow publie. C&#x27;est moi qui décide ce qui mérite d&#x27;être publié.</blockquote></div>
+</section>
+<section id="section-69" class="section tone-4 layout-table">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">69 · Méthode</p>
+      <h2>69. Mini fiche méthode</h2>
+      <p>Pour refaire la séance dans un autre secteur, je garde le même squelette et je remplace seulement le contexte business.</p>
+    </div><div class="table-wrap"><table><tr><th>Restaurant</th><td>No-shows, avis, réservations, staff.</td></tr><tr><th>Agence</th><td>Leads, audits, relances, reporting.</td></tr><tr><th>E-commerce</th><td>Fiches produits, avis, paniers abandonnés.</td></tr><tr><th>Formation</th><td>Onboarding, exercices, relances apprenants.</td></tr></table></div></div>
+</section>
+<section id="section-70" class="section tone-5 layout-gallery">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">70 · Visuels</p>
+      <h2>70. Les 30 captures utilisées</h2>
+      <p>Toutes les images de ce support viennent de la vidéo de la séance. Elles servent à retrouver les écrans clés.</p>
+    </div><div class="gallery"><figure class="media">
+  <img src="img/session-14/01-intro-support-automatiser-linkedin.jpg" alt="Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n." loading="lazy">
+  <figcaption>Je pars de l&#x27;objectif : automatiser LinkedIn avec Codex, un tableur et n8n.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/02-bureau-fichiers-source.jpg" alt="Le dossier local sert de base de travail à Codex." loading="lazy">
+  <figcaption>Le dossier local sert de base de travail à Codex.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/03-brave-recherche-automatisation.jpg" alt="Je vérifie que le contenu LinkedIn peut renforcer la visibilité de l&#x27;expertise." loading="lazy">
+  <figcaption>Je vérifie que le contenu LinkedIn peut renforcer la visibilité de l&#x27;expertise.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/04-post-linkedin-reference.jpg" alt="Je regarde comment LinkedIn et les résultats de recherche reprennent les contenus." loading="lazy">
+  <figcaption>Je regarde comment LinkedIn et les résultats de recherche reprennent les contenus.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/05-n8n-node-linkedin-form.jpg" alt="Premier repérage du node LinkedIn dans n8n." loading="lazy">
+  <figcaption>Premier repérage du node LinkedIn dans n8n.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/06-linkedin-create-post-fields.jpg" alt="Le node LinkedIn demande credential, resource, operation, personne ou organisation." loading="lazy">
+  <figcaption>Le node LinkedIn demande credential, resource, operation, personne ou organisation.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/07-classeur-posts-linkedin.jpg" alt="Le classeur généré contient les posts et les consignes de publication." loading="lazy">
+  <figcaption>Le classeur généré contient les posts et les consignes de publication.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/08-tableur-posts-et-prompts.jpg" alt="Le tableur permet de contrôler textes, titres, CTA, prompts image et données." loading="lazy">
+  <figcaption>Le tableur permet de contrôler textes, titres, CTA, prompts image et données.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/09-fichiers-session-et-terminal.jpg" alt="Je garde le terminal et le dossier visibles pour suivre ce que Codex produit." loading="lazy">
+  <figcaption>Je garde le terminal et le dossier visibles pour suivre ce que Codex produit.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/10-n8n-select-file-modal.jpg" alt="Codex doit comprendre quels fichiers utiliser pour construire la suite." loading="lazy">
+  <figcaption>Codex doit comprendre quels fichiers utiliser pour construire la suite.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/11-connexion-google-sheets.jpg" alt="La logique peut passer par un tableur ou une table n8n, selon le workflow choisi." loading="lazy">
+  <figcaption>La logique peut passer par un tableur ou une table n8n, selon le workflow choisi.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/12-terminal-generation-classeur.jpg" alt="Codex génère et vérifie les fichiers avant de passer à n8n." loading="lazy">
+  <figcaption>Codex génère et vérifie les fichiers avant de passer à n8n.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/13-recherche-web-ia-outils.jpg" alt="Je garde le contenu connecté aux vrais sujets de visibilité." loading="lazy">
+  <figcaption>Je garde le contenu connecté aux vrais sujets de visibilité.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/14-image-gen-automatisation-complete.jpg" alt="Les images sont longues à générer : je limite le lot quand la séance doit avancer." loading="lazy">
+  <figcaption>Les images sont longues à générer : je limite le lot quand la séance doit avancer.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/15-recherche-linkedin-google.jpg" alt="LinkedIn sert aussi de preuve visible dans les recherches liées à l&#x27;expertise." loading="lazy">
+  <figcaption>LinkedIn sert aussi de preuve visible dans les recherches liées à l&#x27;expertise.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/16-tableur-banque-posts.jpg" alt="Je vérifie la banque de posts avant de l&#x27;automatiser." loading="lazy">
+  <figcaption>Je vérifie la banque de posts avant de l&#x27;automatiser.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/17-tableur-terminal-codex.jpg" alt="Le couple tableur + terminal permet de contrôler et corriger vite." loading="lazy">
+  <figcaption>Le couple tableur + terminal permet de contrôler et corriger vite.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/18-terminal-generation-xlsx.jpg" alt="Le fichier final doit être propre avant d&#x27;être converti en base de publication." loading="lazy">
+  <figcaption>Le fichier final doit être propre avant d&#x27;être converti en base de publication.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/19-codex-plan-generation.jpg" alt="Codex planifie, génère, vérifie et livre les fichiers." loading="lazy">
+  <figcaption>Codex planifie, génère, vérifie et livre les fichiers.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/20-linkedin-profil-et-texte.jpg" alt="Je teste la logique de publication sur LinkedIn avant d&#x27;activer l&#x27;automatisation." loading="lazy">
+  <figcaption>Je teste la logique de publication sur LinkedIn avant d&#x27;activer l&#x27;automatisation.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/21-article-outils-ia-reference.jpg" alt="Le contenu doit rester utile et concret, pas devenir du bruit IA." loading="lazy">
+  <figcaption>Le contenu doit rester utile et concret, pas devenir du bruit IA.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/22-tableur-validation-lignes.jpg" alt="La validation humaine passe par le statut de chaque ligne." loading="lazy">
+  <figcaption>La validation humaine passe par le statut de chaque ligne.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/23-n8n-linkedin-credential-page.jpg" alt="Le credential LinkedIn est connecté directement dans n8n Cloud." loading="lazy">
+  <figcaption>Le credential LinkedIn est connecté directement dans n8n Cloud.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/24-linkedin-debug-et-texte.jpg" alt="Je récupère les logs et le texte exact quand un node bloque." loading="lazy">
+  <figcaption>Je récupère les logs et le texte exact quand un node bloque.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/25-linkedin-node-parameters.jpg" alt="Les paramètres du node LinkedIn doivent recevoir les bonnes variables." loading="lazy">
+  <figcaption>Les paramètres du node LinkedIn doivent recevoir les bonnes variables.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/26-linkedin-node-output.jpg" alt="La sortie du node sert à vérifier si n8n reçoit bien les données." loading="lazy">
+  <figcaption>La sortie du node sert à vérifier si n8n reçoit bien les données.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/27-node-linkedin-settings.jpg" alt="Les réglages changent selon image ou texte seul." loading="lazy">
+  <figcaption>Les réglages changent selon image ou texte seul.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/28-workflow-n8n-canvas.jpg" alt="Le workflow final sépare les branches image et sans image." loading="lazy">
+  <figcaption>Le workflow final sépare les branches image et sans image.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/29-linkedin-node-result-panel.jpg" alt="Je vérifie l&#x27;exécution avant de publier réellement." loading="lazy">
+  <figcaption>Je vérifie l&#x27;exécution avant de publier réellement.</figcaption>
+</figure><figure class="media">
+  <img src="img/session-14/30-workflow-final-canvas.jpg" alt="Le workflow complet est prêt quand il publie, marque la ligne, puis passe à la suivante." loading="lazy">
+  <figcaption>Le workflow complet est prêt quand il publie, marque la ligne, puis passe à la suivante.</figcaption>
+</figure></div></div>
+</section>
+<section id="section-71" class="section tone-6 layout-check">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">71 · Go live</p>
+      <h2>71. Dernière vérification avant activation</h2>
+      <p>Je vérifie le workflow une dernière fois avant d&#x27;appuyer sur Publish. Le workflow doit être prévisible.</p>
+    </div><ul class="checklist"><li><span>01</span><p>Un seul item récupéré</p></li><li><span>02</span><p>Texte visible</p></li><li><span>03</span><p>Image visible si branche image</p></li><li><span>04</span><p>Post publié</p></li><li><span>05</span><p>Ligne marquée terminée</p></li><li><span>06</span><p>Clé MCP révoquée si inutile</p></li></ul></div>
+</section>
+<section id="section-72" class="section tone-1 layout-final">
+  <div class="wrap"><div class="section-copy">
+      <p class="kicker">72 · Récap final</p>
+      <h2>72. Ce que tu dois retenir</h2>
+      <p>Je crée une base de contenu avec Codex, je la transforme en base de publication, je demande à Codex de créer n8n via MCP, je teste texte puis image, et j&#x27;active seulement quand l&#x27;anti-doublon marche.</p>
+    </div><div class="final-card"><p>Tu peux refaire la séance avec un autre secteur en gardant la même colonne vertébrale : contexte, posts, table, n8n, test, correction, publication.</p></div></div>
+</section>
+</main>
+<footer class="footer">
+  <p>Support séance 14 · Automatiser ses posts LinkedIn · Transcription et captures locales uniquement.</p>
+  <p><a href="transcription/seance-14-automatiser-linkedin-transcription.md">Transcription propre</a> · <a href="transcription/seance-14-automatiser-linkedin-transcription.txt">Transcription brute</a> · <a href="transcription/seance-14-automatiser-linkedin-segments.json">Segments JSON</a></p>
+</footer>
+<script>
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = max > 0 ? `${(scrollY / max) * 100}%` : '0%';
+}, {passive:true});
+document.querySelectorAll('.copy-btn').forEach((btn) => {
+  btn.addEventListener('click', async () => {
+    const card = btn.closest('.prompt-card');
+    const mini = btn.closest('.mini-prompt');
+    const text = card ? card.querySelector('code').innerText : mini.querySelector('code').innerText;
+    await navigator.clipboard.writeText(text);
+    const old = btn.textContent;
+    btn.textContent = 'Copié';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+});
+</script>
+</body>
+</html>
